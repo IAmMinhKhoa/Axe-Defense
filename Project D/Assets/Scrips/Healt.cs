@@ -6,14 +6,23 @@ public class Healt : MonoBehaviour
 {
     protected int maxHealt = 100;
     public Animator animatorEnemy;
-    public void MinusHelat(int value)
+    public float delay = 0.25f;
+    public void TakeDamage(int value)
     {
         maxHealt-=value;
         Debug.Log("-"+value);
-        animatorEnemy.SetTrigger("Hit");
+        StartCoroutine(DelayedHit());
         if (maxHealt <= 0)
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
+    }
+
+    IEnumerator DelayedHit()
+    {
+        
+        yield return new WaitForSeconds(delay);
+
+        animatorEnemy.SetTrigger("Hit");
     }
 }

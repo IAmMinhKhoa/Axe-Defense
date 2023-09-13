@@ -5,24 +5,36 @@ using UnityEngine;
 public class Healt : MonoBehaviour
 {
     protected int maxHealt = 100;
-    public Animator animatorEnemy;
-    public float delay = 0.25f;
-    public void TakeDamage(int value)
+
+    protected float delayAnimationHit = 0.25f;
+
+    public float delayStatusAttack = 0.5f;
+
+    public bool isAttacking;
+    public void TakeDamage(int value, Animator animator)
     {
         maxHealt-=value;
-        Debug.Log("-"+value);
-        StartCoroutine(DelayedHit());
+        isAttacking = true;
+        StartCoroutine(DelayedHit(animator));
         if (maxHealt <= 0)
         {
             //Destroy(gameObject);
         }
+        StartCoroutine(DelayATK());
     }
 
-    IEnumerator DelayedHit()
+    IEnumerator DelayedHit(Animator animator)
     {
         
-        yield return new WaitForSeconds(delay);
+        yield return new WaitForSeconds(delayAnimationHit);
 
-        animatorEnemy.SetTrigger("Hit");
+        animator.SetTrigger("Hit");
+    }
+
+    IEnumerator DelayATK()
+    {
+        yield return new WaitForSeconds(delayStatusAttack);
+
+        isAttacking = false;
     }
 }

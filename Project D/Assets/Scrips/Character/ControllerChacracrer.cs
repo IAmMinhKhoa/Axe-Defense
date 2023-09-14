@@ -10,7 +10,7 @@ public class ControllerChacracrer : MonoBehaviour
     protected ControllerMoving CT_Moving;
     protected ControllerAttack CT_Attack;
     protected Healt CT_Health;
-    [SerializeField] protected Animator animatorChar;
+    public Animator animatorChar;
 
     protected bool isMoving;
 
@@ -29,7 +29,7 @@ public class ControllerChacracrer : MonoBehaviour
 
     private void ControllerChacracrer_BeingAttack(object sender, EventArgs e)
     {
-        CT_Health.TakeDamage(20,animatorChar);
+        CT_Health.TakeDamage(20);
     }
 
     private void Update()

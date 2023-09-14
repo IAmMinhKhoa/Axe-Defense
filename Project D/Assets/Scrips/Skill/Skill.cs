@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class Skill : MonoBehaviour
 {
-    public Transform target;
+    protected Transform target;
     public float MaxSpeed = 5f;
     public float accelerationRate = 1f;
+ 
+
+    protected int damge;
+
 
     private float currentMoveSpeed;
     private float elapsedTime;
@@ -15,6 +19,8 @@ public class Skill : MonoBehaviour
     {
         currentMoveSpeed = 0;
         elapsedTime = 0f;
+
+
     }
 
     private void Update()
@@ -34,6 +40,10 @@ public class Skill : MonoBehaviour
             // T?ng th?i gian ?ã trôi qua
             elapsedTime += Time.deltaTime;
         }
+        else
+        {
+            Destroy(gameObject);
+        }
         
     }
 
@@ -41,8 +51,17 @@ public class Skill : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            //Debug.Log("ccc");   
+            target.gameObject.GetComponent<Healt>().TakeDamage(damge);
+
             Destroy(gameObject);
         }
+    }
+    public void SetDamgeSKill(int value)
+    {
+        damge = value;
+    }
+    public void SetTargetForSkill(Transform target)
+    {
+        this.target = target;
     }
 }

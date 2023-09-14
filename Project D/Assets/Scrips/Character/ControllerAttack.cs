@@ -9,10 +9,10 @@ public class ControllerAttack : MonoBehaviour
     public float attackCooldown = 2f;
     private float attackTimer;
     private bool canAttack = true;
-   
-    [Header("IF NULL IS MELEE OR CHARACTER HAS SKILL IS MAGE")]
 
-    public GameObject PrefabSkill;
+   // [Header("IF NULL IS MELEE OR CHARACTER HAS SKILL IS MAGE")]
+
+    public SO_Skil So_Skill;
     private void Start()
     {
         attackTimer = attackCooldown;
@@ -38,17 +38,20 @@ public class ControllerAttack : MonoBehaviour
         {
             animator.SetBool("Run",false);
             animator.SetTrigger("Attack");
-            if (PrefabSkill==null)//melee
+            
+            if (So_Skill.Type.ToString() =="Mage" )
             {
-                ControllerChacracrer EnemyController = enemyCollider.GetComponent<ControllerChacracrer>();
-                EnemyController.EventBeingAttack();
-            }else if(PrefabSkill!=null)//not melee
-            {
-                GameObject BallSkill= Instantiate(PrefabSkill,this.transform);
-              
-                BallSkill.GetComponent<Skill>().target = enemyCollider.gameObject.transform;
+                GameObject BallSkill = Instantiate(So_Skill.PrefabSkill, this.transform);
+                Skill Skill = BallSkill.GetComponent<Skill>();
+                Skill.SetTargetForSkill(enemyCollider.gameObject.transform);
+                Skill.SetDamgeSKill(So_Skill.Damge);
             }
-     
+            else if (So_Skill.Type.ToString() == "Melee")
+            {
+                Healt healthEnemy= enemyCollider.GetComponent<Healt>();
+                healthEnemy.TakeDamage(So_Skill.Damge);
+            }
+
             canAttack = false;
         }
     }

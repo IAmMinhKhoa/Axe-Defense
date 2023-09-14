@@ -8,14 +8,22 @@ public class Healt : MonoBehaviour
 
     protected float delayAnimationHit = 0.25f;
 
+    protected Animator animatorCharacter;
+
     public float delayStatusAttack = 0.5f;
 
     public bool isAttacking;
-    public void TakeDamage(int value, Animator animator)
+
+    private void Start()
+    {
+        animatorCharacter=GetComponent<ControllerChacracrer>().animatorChar; 
+    }
+    public void TakeDamage(int value)
     {
         maxHealt-=value;
         isAttacking = true;
-        StartCoroutine(DelayedHit(animator));
+        StartCoroutine(DelayedHit(animatorCharacter));
+        EffectManager.instance.SpawmVFX("Effect Hit Mage", transform);
         if (maxHealt <= 0)
         {
             //Destroy(gameObject);

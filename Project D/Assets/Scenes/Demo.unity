@@ -154,7 +154,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 304820906}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.9, y: -3.77, z: 0}
+  m_LocalPosition: {x: 3.94, y: -4.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -204,7 +204,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   L_ColliderTouching: []
   PointChecking: {fileID: 1025159158}
-  CheckRanged: 0.5
+  CheckRanged: 1
   LayerChecking:
     serializedVersion: 2
     m_Bits: 64
@@ -255,7 +255,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 5
+  m_Constraints: 4
 --- !u!58 &304820914
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -269,9 +269,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.3410281, y: 0.24608326}
+  m_Offset: {x: 1.132833, y: 0.3204174}
   serializedVersion: 2
-  m_Radius: 1.5091132
+  m_Radius: 1.6014719
 --- !u!1 &387340838
 GameObject:
   m_ObjectHideFlags: 0
@@ -691,6 +691,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5340565970127325507, guid: 37690ba3fb3823044bc55701a65faeb6, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5340565970127325507, guid: 37690ba3fb3823044bc55701a65faeb6, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5340565970127325507, guid: 37690ba3fb3823044bc55701a65faeb6, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5340565970127325507, guid: 37690ba3fb3823044bc55701a65faeb6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -730,6 +742,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5340565970127325507, guid: 37690ba3fb3823044bc55701a65faeb6, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5340565970127325564, guid: 37690ba3fb3823044bc55701a65faeb6, type: 3}
       propertyPath: m_Name
       value: Effect Hit Mage
@@ -737,6 +753,10 @@ PrefabInstance:
     - target: {fileID: 5340565970127325565, guid: 37690ba3fb3823044bc55701a65faeb6, type: 3}
       propertyPath: looping
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5340565970167674296, guid: 37690ba3fb3823044bc55701a65faeb6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37690ba3fb3823044bc55701a65faeb6, type: 3}
@@ -830,7 +850,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1025159157}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.99, y: -0.6, z: 0}
+  m_LocalPosition: {x: -0.26, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5840,7 +5860,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1476856801
 Transform:
   m_ObjectHideFlags: 0
@@ -5849,7 +5869,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1476856800}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.55, y: -4.23, z: 0}
+  m_LocalPosition: {x: -6.92, y: -4.12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5886,7 +5906,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   L_ColliderTouching: []
   PointChecking: {fileID: 867755445}
-  CheckRanged: 0.5
+  CheckRanged: 1
   LayerChecking:
     serializedVersion: 2
     m_Bits: 8
@@ -5965,9 +5985,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.47025383}
+  m_Offset: {x: 0.039254785, y: 0.3414694}
   serializedVersion: 2
-  m_Radius: 0.69064367
+  m_Radius: 0.96850085
 --- !u!1 &1628181349
 GameObject:
   m_ObjectHideFlags: 0
@@ -5992,7 +6012,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1628181349}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.841271, y: -2.144657, z: 0.02617231}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6028,7 +6048,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1647956304}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.1592656, y: -1.1005962, z: 0.037024546}
+  m_LocalPosition: {x: 1.4, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6065,10 +6085,8 @@ MonoBehaviour:
   calculateTangents: 0
   maskInteraction: 1
   maskMaterials:
-    materialsMaskDisabled:
-    - {fileID: 2100000, guid: 04b40ce521aee43348177fc4a6ac2dd0, type: 2}
-    materialsInsideMask:
-    - {fileID: 2100000, guid: e3e4de1cfe56b9e49bafe3c3683d20e3, type: 2}
+    materialsMaskDisabled: []
+    materialsInsideMask: []
     materialsOutsideMask: []
   disableRenderingOnOverride: 1
   translator:
@@ -6116,7 +6134,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e3e4de1cfe56b9e49bafe3c3683d20e3, type: 2}
+  - {fileID: 2100000, guid: 04b40ce521aee43348177fc4a6ac2dd0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6405,7 +6423,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1760307632
 Transform:
   m_ObjectHideFlags: 0
@@ -6629,7 +6647,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1890702017}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.316, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

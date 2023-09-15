@@ -17,20 +17,17 @@ public class ControllerChacracrer : MonoBehaviour
 
 
 
-    protected event EventHandler BeingAttack;
+
     private void Start()
     {
         CT_Moving= GetComponent<ControllerMoving>();    
         CT_Collision=GetComponent<ControllerCollision>();
         CT_Attack = GetComponent<ControllerAttack>();
         CT_Health = GetComponent<Healt>();
-        BeingAttack += ControllerChacracrer_BeingAttack;
+        
     }
 
-    private void ControllerChacracrer_BeingAttack(object sender, EventArgs e)
-    {
-        CT_Health.TakeDamage(20);
-    }
+    
 
     private void Update()
     {
@@ -44,15 +41,12 @@ public class ControllerChacracrer : MonoBehaviour
         else if(isMoving!=true)
         {
             Collider2D[] L_Collider=CT_Collision.Return_L_CollderTouching();
-            CT_Attack.Attack(L_Collider[0], animatorChar);
+             CT_Attack.Attack(L_Collider[0], animatorChar);
             
         }
         
     }
 
 
-    public void EventBeingAttack()
-    {
-        BeingAttack?.Invoke(this, EventArgs.Empty);
-    }
+
 }

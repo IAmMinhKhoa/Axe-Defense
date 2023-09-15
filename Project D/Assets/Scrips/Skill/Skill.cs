@@ -15,6 +15,7 @@ public class Skill : MonoBehaviour
     private float currentMoveSpeed;
     private float elapsedTime;
 
+
     private void Start()
     {
         currentMoveSpeed = 0;
@@ -51,7 +52,7 @@ public class Skill : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            target.gameObject.GetComponent<Healt>().TakeDamage(damge);
+            target.gameObject.GetComponent<Healt>().TakeDamage(damge, "Effect Hit Mage");
 
             Destroy(gameObject);
         }

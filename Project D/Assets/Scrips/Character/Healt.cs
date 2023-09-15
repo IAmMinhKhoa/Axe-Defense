@@ -1,6 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using Spine;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
+using static UnityEngine.Rendering.DebugUI;
 
 public class Healt : MonoBehaviour
 {
@@ -18,26 +22,25 @@ public class Healt : MonoBehaviour
     {
         animatorCharacter=GetComponent<ControllerChacracrer>().animatorChar; 
     }
-    public void TakeDamage(int value)
+
+    public void TakeDamage(int value,string nameEffectExplosion)
     {
-        maxHealt-=value;
+        
         isAttacking = true;
-        StartCoroutine(DelayedHit(animatorCharacter));
-        EffectManager.instance.SpawmVFX("Effect Hit Mage", transform);
+        
+
+        maxHealt -= value;
+        animatorCharacter.SetTrigger("Hit"); 
+
+        EffectManager.instance.SpawmVFX(nameEffectExplosion, this.transform);
         if (maxHealt <= 0)
         {
             //Destroy(gameObject);
         }
         StartCoroutine(DelayATK());
     }
+    
 
-    IEnumerator DelayedHit(Animator animator)
-    {
-        
-        yield return new WaitForSeconds(delayAnimationHit);
-
-        animator.SetTrigger("Hit");
-    }
 
     IEnumerator DelayATK()
     {

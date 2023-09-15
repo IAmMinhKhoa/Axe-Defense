@@ -36,6 +36,7 @@ public class ControllerAttack : MonoBehaviour
     {
         if (canAttack)
         {
+            Debug.Log("danh ne");
             animator.SetBool("Run",false);
             animator.SetTrigger("Attack");
             
@@ -49,7 +50,7 @@ public class ControllerAttack : MonoBehaviour
             else if (So_Skill.Type.ToString() == "Melee")
             {
                 Healt healthEnemy= enemyCollider.GetComponent<Healt>();
-                healthEnemy.TakeDamage(So_Skill.Damge);
+                healthEnemy.TakeDamage(So_Skill.Damge, "Effect Hit Melee");
             }
 
             canAttack = false;

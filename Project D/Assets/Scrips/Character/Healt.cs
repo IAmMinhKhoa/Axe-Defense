@@ -8,34 +8,37 @@ using static UnityEngine.Rendering.DebugUI;
 
 public class Healt : MonoBehaviour
 {
-    protected int maxHealt = 100;
+    [SerializeField]protected int maxHealt = 100;
 
     protected float delayAnimationHit = 0.25f;
 
+
+    protected float delayStatusAttack =2.5f;
+
+    protected bool isAttacking;
+
     protected Animator animatorCharacter;
-
-    public float delayStatusAttack = 0.5f;
-
-    public bool isAttacking;
 
     private void Start()
     {
         animatorCharacter=GetComponent<ControllerChacracrer>().animatorChar; 
     }
 
-    public void TakeDamage(int value,string nameEffectExplosion)
+    public void TakeDamage(int value)
     {
         
         isAttacking = true;
         
 
         maxHealt -= value;
-        animatorCharacter.SetTrigger("Hit"); 
+        animatorCharacter.SetTrigger("Hit");
 
-        EffectManager.instance.SpawmVFX(nameEffectExplosion, this.transform);
+        //Effect Hit Mage
+        EffectManager.instance.SpawmVFX("Effect Hit Mage", this.transform);
         if (maxHealt <= 0)
         {
-            //Destroy(gameObject);
+            animatorCharacter.SetTrigger("Die");
+            Destroy(gameObject,1.5f);
         }
         StartCoroutine(DelayATK());
     }
@@ -47,5 +50,10 @@ public class Healt : MonoBehaviour
         yield return new WaitForSeconds(delayStatusAttack);
 
         isAttacking = false;
+    }
+
+    public bool GetIsAttacking()
+    {
+        return isAttacking;
     }
 }

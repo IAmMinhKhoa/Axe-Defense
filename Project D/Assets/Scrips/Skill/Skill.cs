@@ -52,7 +52,7 @@ public class Skill : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            target.gameObject.GetComponent<Healt>().TakeDamage(damge, "Effect Hit Mage");
+            target.gameObject.GetComponent<Healt>().TakeDamage(damge);
 
             Destroy(gameObject);
         }

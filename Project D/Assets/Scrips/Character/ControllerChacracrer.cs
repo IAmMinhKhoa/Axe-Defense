@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Spine;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -8,45 +9,52 @@ public class ControllerChacracrer : MonoBehaviour
 {
     protected ControllerCollision CT_Collision;
     protected ControllerMoving CT_Moving;
-    protected ControllerAttack CT_Attack;
     protected Healt CT_Health;
-    public Animator animatorChar;
-
+    
+    protected Collider2D[] L_Collider;
+    
+    protected float attackCooldown = 2f;
     protected bool isMoving;
+    protected bool canAttack = true;
 
-
-
-
+    public Animator animatorChar;
+    public enum TypeMove{
+        goLeft,
+        goRight
+    }
+    public TypeMove typeMove=TypeMove.goRight;
 
     private void Start()
     {
-        CT_Moving= GetComponent<ControllerMoving>();    
-        CT_Collision=GetComponent<ControllerCollision>();
-        CT_Attack = GetComponent<ControllerAttack>();
+        CT_Moving= GetComponent<ControllerMoving>();
+        CT_Collision = GetComponent<ControllerCollision>();
         CT_Health = GetComponent<Healt>();
-        
+      
     }
 
-    
 
-    private void Update()
+    protected void Attack()
     {
-        isMoving = !CT_Collision.IsTouchingLayer();
-        if (isMoving && CT_Health.isAttacking !=true)//if not touch object && is being attack
-        {
-            bool isMovingRight = gameObject.CompareTag("Player");
-            CT_Moving.Move(isMovingRight,animatorChar);
-
-        }
-        else if(isMoving!=true)
-        {
-            Collider2D[] L_Collider=CT_Collision.Return_L_CollderTouching();
-             CT_Attack.Attack(L_Collider[0], animatorChar);
-            
-        }
-        
+        if (!canAttack)
+            return;
+        StartCoroutine(WaitCoroutine());
+        animatorChar.SetTrigger("Attack");
+        animatorChar.SetBool("Run", false);
+        SetUpAttack();
     }
 
+
+    protected  virtual void SetUpAttack(){}
+
+    IEnumerator WaitCoroutine()
+    {
+        canAttack = false;
+        yield return null;
+        animatorChar.ResetTrigger("Attack");
+        yield return new WaitForSeconds(attackCooldown);
+        canAttack = true;
+    }
+    
 
 
 }

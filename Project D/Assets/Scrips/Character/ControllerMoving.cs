@@ -12,10 +12,8 @@ public class ControllerMoving : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
     }
-    public void Move(bool isMoving,Animator animator) {
-            animator.SetBool("Run", true);
-            float moveSpeed = isMoving ? speed : -speed;
-            rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
-
+    public void Move(bool isMoving) {  
+        float moveSpeed = isMoving ? speed : -speed;
+        rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Spine;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
@@ -32,9 +33,14 @@ public class Healt : MonoBehaviour
 
         maxHealt -= value;
         animatorCharacter.SetTrigger("Hit");
+        GameObject TextDamge= EffectManager.instance.SpawmVFX("FrefabTextDamge", this.transform.position);
+        
 
+        TextMeshProUGUI textMeshPro = TextDamge.GetComponent<TextMeshProUGUI>();
+        Debug.Log(textMeshPro);
+        //TextDamge.GetComponent<TextMeshProUGUI>().SetText(value.ToString());
         //Effect Hit Mage
-        EffectManager.instance.SpawmVFX("Effect Hit Mage", this.transform);
+        EffectManager.instance.SpawmVFX("Effect Hit Mage", this.transform.position);
         if (maxHealt <= 0)
         {
             animatorCharacter.SetTrigger("Die");

@@ -24,12 +24,14 @@ public class EffectManager : MonoBehaviour
         }
     }
 
-    public void SpawmVFX(string nameEffect,Transform position)
+    public GameObject SpawmVFX(string nameEffect, Vector3 position)
     {
         GameObject effect = Get(nameEffect);
-        GameObject newEffect = Instantiate(effect, position);
+        GameObject newEffect = Instantiate(effect, position, Quaternion.identity);
         newEffect.gameObject.SetActive(true);
-    
+        return newEffect;
+
+
     }
     protected GameObject Get(string nameEffect)
     {
@@ -39,4 +41,16 @@ public class EffectManager : MonoBehaviour
         }
         return null;
     }
+
+
+
+   /* private void Update()
+    {
+        if (Input.GetMouseButtonDown(0)) // Ki?m tra xem ng??i dùng ?ã nh?n nút chu?t trái (0) hay không
+        {
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mousePosition = new Vector3(mousePosition.x, mousePosition.y, 0);
+            SpawmVFX("FrefabTextDamge",mousePosition);
+        }
+    }*/
 }

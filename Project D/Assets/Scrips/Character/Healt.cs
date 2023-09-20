@@ -33,17 +33,18 @@ public class Healt : MonoBehaviour
 
         maxHealt -= value;
         animatorCharacter.SetTrigger("Hit");
-        GameObject TextDamge= EffectManager.instance.SpawmVFX("FrefabTextDamge", this.transform.position);
-        
+        GameObject TextDamge= EffectManager.instance.SpawmVFX("FrefabTextDamge",new Vector3(this.transform.position.x,transform.position.y+2f,transform.position.z));
 
-        TextMeshProUGUI textMeshPro = TextDamge.GetComponent<TextMeshProUGUI>();
-        Debug.Log(textMeshPro);
-        //TextDamge.GetComponent<TextMeshProUGUI>().SetText(value.ToString());
-        //Effect Hit Mage
+
+        TMP_Text textMeshPro = TextDamge.GetComponent<TMP_Text>();
+
+        textMeshPro.text = value.ToString();
+
         EffectManager.instance.SpawmVFX("Effect Hit Mage", this.transform.position);
         if (maxHealt <= 0)
         {
             animatorCharacter.SetTrigger("Die");
+        
             Destroy(gameObject,1.5f);
         }
         StartCoroutine(DelayATK());
@@ -61,5 +62,10 @@ public class Healt : MonoBehaviour
     public bool GetIsAttacking()
     {
         return isAttacking;
+    }
+
+       public void SetHealth(int value)
+    {
+        this.maxHealt = value;
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ControllerMoving : MonoBehaviour
 {
-    public float speed = 5f;
+    [SerializeField]public float speed = 5f;
 
     private Rigidbody2D rb;
 
@@ -15,5 +15,10 @@ public class ControllerMoving : MonoBehaviour
     public void Move(bool isMoving) {  
         float moveSpeed = isMoving ? speed : -speed;
         rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
+    }
+
+    public void SetSpeed(int value)
+    {
+        this.speed = value;
     }
 }

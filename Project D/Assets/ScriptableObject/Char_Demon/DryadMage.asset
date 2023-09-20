@@ -9,11 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dcf63a4a057b994682b1e28ec2b2005, type: 3}
-  m_Name: Mage_Red
+  m_Script: {fileID: 11500000, guid: 0e29d8d83cc1f3d4598f9a537127a89e, type: 3}
+  m_Name: DryadMage
   m_EditorClassIdentifier: 
-  Type: 1
-  PrefabSkill: {fileID: 6630136655605506332, guid: 8ce03e5602aa6c942a2947147efb7d45, type: 3}
-  NameSkill: Ball Red Magic
-  MaxSpeed: 10
-  Damge: 10
+  HP: 200
+  RangedAttack: 4
+  SpeedMove: 2
+  Damge: 15
+  CoolDown: 3
+  PrefabSkill: {fileID: 6630136655605506332, guid: 505b5ab27ce9acd41a43c8d358d22005, type: 3}

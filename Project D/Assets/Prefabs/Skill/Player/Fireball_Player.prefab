@@ -116,8 +116,8 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.2
-      minScalar: 0.5
+      scalar: 0.8
+      minScalar: 0.8
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -920,7 +920,7 @@ ParticleSystem:
     rateOverDistance:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 20
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -4837,8 +4837,8 @@ GameObject:
   - component: {fileID: 540728728309356097}
   - component: {fileID: 540728728309356096}
   - component: {fileID: 540728728309356111}
-  m_Layer: 0
-  m_Name: Fireball
+  m_Layer: 7
+  m_Name: Fireball_Player
   m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4852,7 +4852,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6630136655605506332}
   m_LocalRotation: {x: 0, y: 0, z: -0.043350548, w: 0.9990599}
-  m_LocalPosition: {x: 2.32, y: -0.17, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5004,8 +5004,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5413191833d88ed4eb07402c69b4ce4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxSpeed: 6
-  accelerationRate: 5
+  MaxSpeed: 4
+  accelerationRate: 2
 --- !u!58 &540728728309356111
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5138,8 +5138,8 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.2
-      minScalar: 0.5
+      scalar: 0.8
+      minScalar: 0.8
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -5942,7 +5942,7 @@ ParticleSystem:
     rateOverDistance:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 20
       minScalar: 0
       maxCurve:
         serializedVersion: 2

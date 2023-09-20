@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class ControllerCharacterRanged : ControllerChacracrer
 {
-    public SO_Skil So_Skill;
+    public SO_CharacterInforMantionRANGER SO_Information;
     [SerializeField] protected Transform PositionSpawnSkill;
+
+   
     void Update()
     {
         isMoving = !CT_Collision.IsTouchingLayer();
@@ -20,16 +22,24 @@ public class ControllerCharacterRanged : ControllerChacracrer
         {
             L_Collider = CT_Collision.Return_L_CollderTouching();
             Attack();
+            
         }
     }
 
     protected override void SetUpAttack()
     {
-        
-
-        GameObject BallSkill = Instantiate(So_Skill.PrefabSkill, PositionSpawnSkill.position,Quaternion.identity);
+        GameObject BallSkill = Instantiate(SO_Information.PrefabSkill, PositionSpawnSkill.position,Quaternion.identity);
         Skill Skill = BallSkill.GetComponent<Skill>();
+
         Skill.SetTargetForSkill(L_Collider[0].gameObject.transform);
-        Skill.SetDamgeSKill(So_Skill.Damge);
+        Skill.SetDamgeSKill(SO_Information.Damge);
+    }
+
+    protected override void Init()
+    {
+        CT_Health.SetHealth(SO_Information.HP);
+        CT_Collision.SetRanger(SO_Information.RangedAttack);
+        CT_Moving.SetSpeed(SO_Information.SpeedMove);
+        attackCooldown = SO_Information.CoolDown;
     }
 }

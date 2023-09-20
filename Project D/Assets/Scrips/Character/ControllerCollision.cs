@@ -34,4 +34,9 @@ public class ControllerCollision : MonoBehaviour
     {
         return L_ColliderTouching;
     }
+
+    public void SetRanger(float value)
+    {
+        this.CheckRanged = value;   
+    }
 }

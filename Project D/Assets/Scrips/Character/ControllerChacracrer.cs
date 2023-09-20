@@ -29,7 +29,9 @@ public class ControllerChacracrer : MonoBehaviour
         CT_Moving= GetComponent<ControllerMoving>();
         CT_Collision = GetComponent<ControllerCollision>();
         CT_Health = GetComponent<Healt>();
-      
+
+        Init();
+
     }
 
 
@@ -54,7 +56,7 @@ public class ControllerChacracrer : MonoBehaviour
         yield return new WaitForSeconds(attackCooldown);
         canAttack = true;
     }
-    
 
+    protected virtual  void Init() { }
 
 }

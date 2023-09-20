@@ -92,18 +92,18 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
-  - name: glowStone
+  - name: Levels 1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 565
-      width: 141
-      height: 170
-    spriteID: 8e8bdca5da558374c85cfc43e7e5390e
+      x: 186
+      y: 864
+      width: 0
+      height: 0
+    spriteID: 22be164811b8ad64d960754265b4b63c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -112,7 +112,49 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -160, y: 377}
+    uvTransform: {x: -326, y: 352}
+  - name: Curves 1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 186
+      y: 872
+      width: 0
+      height: 0
+    spriteID: dcafa0c8d9b1e34438ee0325c7f596c7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -326, y: 360}
+  - name: Brightness/Contrast 1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 186
+      y: 880
+      width: 0
+      height: 0
+    spriteID: 2bb8a9d8d1af3e44b980c92441c0f06f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -326, y: 368}
   - name: glow
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -134,90 +176,6 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: -27, y: -28}
-  - name: stone_a
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 419
-      y: 428
-      width: 47
-      height: 77
-    spriteID: 2a2db4be25c5daa45aa7b7d4dc0e9576
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 218, y: 63}
-  - name: stone_b
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 153
-      y: 964
-      width: 55
-      height: 54
-    spriteID: 1caa918370174374e92ff2e3c4d8b183
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: -201, y: 593}
-  - name: stone_c
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 419
-      y: 513
-      width: 74
-      height: 37
-    spriteID: 7455f5890501fb54aa705f7730cc8e99
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 65, y: 438}
-  - name: stone_d
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 216
-      y: 964
-      width: 57
-      height: 25
-    spriteID: 8ff55d8bdc4a82e43ba863db3b78f42f
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 81, y: 906}
   - name: stone_e
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -225,8 +183,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 153
-      y: 864
+      x: 237
+      y: 428
       width: 144
       height: 92
     spriteID: 9ee310dd59d434b419d0ef74b687c527
@@ -238,7 +196,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -40, y: 814}
+    uvTransform: {x: 44, y: 378}
   - name: stone_f
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -246,8 +204,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 237
-      y: 428
+      x: 4
+      y: 864
       width: 174
       height: 108
     spriteID: 0278ca6c08e94424aa63cc99ab4f9a7e
@@ -259,7 +217,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 181, y: 330}
+    uvTransform: {x: -52, y: 766}
   - name: stone_g
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -288,7 +246,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 153
+      x: 4
       y: 714
       width: 155
       height: 142
@@ -301,7 +259,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 57, y: 552}
+    uvTransform: {x: -92, y: 552}
   - name: stone_i
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -309,7 +267,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 153
+      x: 4
       y: 565
       width: 165
       height: 141
@@ -322,7 +280,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -106, y: 377}
+    uvTransform: {x: -255, y: 377}
   characterData:
     bones: []
     parts: []
@@ -361,6 +319,36 @@ ScriptedImporter:
     layerID: 22
     mosaicPosition: {x: 4, y: 565}
     flatten: 0
+    isImported: 0
+    isVisible: 0
+  - name: Levels 1
+    spriteName: Levels 1
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 22be164811b8ad64d960754265b4b63c
+    layerID: 26
+    mosaicPosition: {x: 186, y: 864}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Curves 1
+    spriteName: Curves 1
+    isGroup: 0
+    parentIndex: -1
+    spriteID: dcafa0c8d9b1e34438ee0325c7f596c7
+    layerID: 25
+    mosaicPosition: {x: 186, y: 872}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Brightness/Contrast 1
+    spriteName: Brightness/Contrast 1
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 2bb8a9d8d1af3e44b980c92441c0f06f
+    layerID: 24
+    mosaicPosition: {x: 186, y: 880}
+    flatten: 0
     isImported: 1
     isVisible: 1
   - name: glow
@@ -381,8 +369,8 @@ ScriptedImporter:
     layerID: 19
     mosaicPosition: {x: 419, y: 428}
     flatten: 0
-    isImported: 1
-    isVisible: 1
+    isImported: 0
+    isVisible: 0
   - name: stone_b
     spriteName: stone_b
     isGroup: 0
@@ -391,8 +379,8 @@ ScriptedImporter:
     layerID: 17
     mosaicPosition: {x: 153, y: 964}
     flatten: 0
-    isImported: 1
-    isVisible: 1
+    isImported: 0
+    isVisible: 0
   - name: stone_c
     spriteName: stone_c
     isGroup: 0
@@ -401,8 +389,8 @@ ScriptedImporter:
     layerID: 15
     mosaicPosition: {x: 419, y: 513}
     flatten: 0
-    isImported: 1
-    isVisible: 1
+    isImported: 0
+    isVisible: 0
   - name: stone_d
     spriteName: stone_d
     isGroup: 0
@@ -411,15 +399,15 @@ ScriptedImporter:
     layerID: 13
     mosaicPosition: {x: 216, y: 964}
     flatten: 0
-    isImported: 1
-    isVisible: 1
+    isImported: 0
+    isVisible: 0
   - name: stone_e
     spriteName: stone_e
     isGroup: 0
     parentIndex: -1
     spriteID: 9ee310dd59d434b419d0ef74b687c527
     layerID: 11
-    mosaicPosition: {x: 153, y: 864}
+    mosaicPosition: {x: 237, y: 428}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -429,7 +417,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 0278ca6c08e94424aa63cc99ab4f9a7e
     layerID: 9
-    mosaicPosition: {x: 237, y: 428}
+    mosaicPosition: {x: 4, y: 864}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -449,7 +437,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: b1fab58d24931044faf5b8e20115a7da
     layerID: 5
-    mosaicPosition: {x: 153, y: 714}
+    mosaicPosition: {x: 4, y: 714}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -459,7 +447,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 7afecd0bbcbb1574ea6e7606df268d4d
     layerID: 3
-    mosaicPosition: {x: 153, y: 565}
+    mosaicPosition: {x: 4, y: 565}
     flatten: 0
     isImported: 1
     isVisible: 1

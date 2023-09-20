@@ -9,8 +9,8 @@ public class Skill : MonoBehaviour
     public float accelerationRate = 1f;
  
 
-    protected int damge;
 
+    protected int damge;
 
     private float currentMoveSpeed;
     private float elapsedTime;
@@ -50,12 +50,9 @@ public class Skill : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            target.gameObject.GetComponent<Healt>().TakeDamage(damge);
+        target.GetComponent<Healt>().TakeDamage(damge);
 
-            Destroy(gameObject);
-        }
+        Destroy(gameObject);
     }
     public void SetDamgeSKill(int value)
     {

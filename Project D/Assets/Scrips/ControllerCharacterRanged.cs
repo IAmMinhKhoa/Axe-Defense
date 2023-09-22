@@ -7,23 +7,48 @@ public class ControllerCharacterRanged : ControllerChacracrer
     public SO_CharacterInforMantionRANGER SO_Information;
     [SerializeField] protected Transform PositionSpawnSkill;
 
-   
+
+    public float dissolveValue = 0.0f; // Giá tr? dissolve ban ??u
+    public Renderer objectRenderer; // Tham chi?u ??n Renderer c?a ??i t??ng
+    Material material;
+
+
+    private void Start()
+    {
+        base.Init();
+        material = objectRenderer.material;
+    }
+
     void Update()
     {
-        isMoving = !CT_Collision.IsTouchingLayer();
-        if (isMoving && CT_Health.GetIsAttacking() != true)//if not touch object && is being attack
-        {
-            bool RightDirection = (typeMove == TypeMove.goRight) ? true : false;
-            CT_Moving.Move(RightDirection);
-            animatorChar.SetBool("Run", true);
+        WaitingToStartCharacter();
 
-        }
-        else if (isMoving != true)
+        if (stateCharacter == StateCharacter.Start)
         {
-            L_Collider = CT_Collision.Return_L_CollderTouching();
-            Attack();
-            
+
+            isMoving = !CT_Collision.IsTouchingLayer();
+            if (isMoving && CT_Health.GetIsAttacking() != true)//if not touch object && is being attack
+            {
+                bool RightDirection = (typeMove == TypeMove.goRight) ? true : false;
+                CT_Moving.Move(RightDirection);
+                animatorChar.SetBool("Run", true);
+
+            }
+            else if (isMoving != true)
+            {
+                L_Collider = CT_Collision.Return_L_CollderTouching();
+                Attack();
+
+            }
         }
+
+
+
+
+       
+
+        // Thi?t l?p giá tr? dissolve
+        material.SetFloat("valueDis", dissolveValue);
     }
 
     protected override void SetUpAttack()
@@ -42,4 +67,9 @@ public class ControllerCharacterRanged : ControllerChacracrer
         CT_Moving.SetSpeed(SO_Information.SpeedMove);
         attackCooldown = SO_Information.CoolDown;
     }
+
+
+ 
+
+
 }

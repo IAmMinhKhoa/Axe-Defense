@@ -50,7 +50,7 @@ public class Skill : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        target.GetComponent<Healt>().TakeDamage(damge);
+        target.GetComponent<Healt>().TakeDamage(damge,ControllerChacracrer.TypeCharacter.Mage);
 
         Destroy(gameObject);
     }

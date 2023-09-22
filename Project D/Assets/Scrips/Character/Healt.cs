@@ -20,19 +20,21 @@ public class Healt : MonoBehaviour
 
     protected Animator animatorCharacter;
 
+
     private void Start()
     {
         animatorCharacter=GetComponent<ControllerChacracrer>().animatorChar; 
     }
 
-    public void TakeDamage(int value)
+    public void TakeDamage(int value, ControllerChacracrer.TypeCharacter typeChar)
     {
         
         isAttacking = true;
         
-
         maxHealt -= value;
+
         animatorCharacter.SetTrigger("Hit");
+
         GameObject TextDamge= EffectManager.instance.SpawmVFX("FrefabTextDamge",new Vector3(this.transform.position.x,transform.position.y+2f,transform.position.z));
 
 
@@ -40,13 +42,22 @@ public class Healt : MonoBehaviour
 
         textMeshPro.text = value.ToString();
 
-        EffectManager.instance.SpawmVFX("Effect Hit Mage", this.transform.position);
+        if(typeChar== ControllerChacracrer.TypeCharacter.Mage){
+            EffectManager.instance.SpawmVFX("Effect Hit Mage", this.transform.position);
+        }
+        else
+        {
+            EffectManager.instance.SpawmVFX("Effect Hit Melee", this.transform.position);
+        }
+        
+
         if (maxHealt <= 0)
         {
             animatorCharacter.SetTrigger("Die");
         
             Destroy(gameObject,1.5f);
         }
+
         StartCoroutine(DelayATK());
     }
     

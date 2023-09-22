@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Spine;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using static UnityEngine.CullingGroup;
 
 public class ControllerChacracrer : MonoBehaviour
 {
@@ -24,15 +25,25 @@ public class ControllerChacracrer : MonoBehaviour
     }
     public TypeMove typeMove=TypeMove.goRight;
 
-    private void Start()
+    public enum TypeCharacter
     {
-        CT_Moving= GetComponent<ControllerMoving>();
-        CT_Collision = GetComponent<ControllerCollision>();
-        CT_Health = GetComponent<Healt>();
-
-        Init();
-
+        Melee,
+        Mage
     }
+    [SerializeField]
+    public static TypeCharacter typeCharacter;
+
+
+    public enum StateCharacter
+    {
+        Waiting,
+        Start
+    }
+    public StateCharacter stateCharacter;
+
+    protected float WaitingToStart = 4.5f;
+        
+  
 
 
     protected void Attack()
@@ -57,6 +68,23 @@ public class ControllerChacracrer : MonoBehaviour
         canAttack = true;
     }
 
-    protected virtual  void Init() { }
+    protected virtual  void Init() {
+        CT_Moving = GetComponent<ControllerMoving>();
+        CT_Collision = GetComponent<ControllerCollision>();
+        CT_Health = GetComponent<Healt>();
+    }
 
+    protected void WaitingToStartCharacter() {
+        switch (stateCharacter)
+        {
+            case StateCharacter.Waiting:
+                WaitingToStart -= Time.deltaTime;
+                if (WaitingToStart < 0f)
+                {
+                    stateCharacter = StateCharacter.Start;
+                }
+                break;
+           
+        }
+    }
 }

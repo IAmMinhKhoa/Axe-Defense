@@ -419,7 +419,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 304820906}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.61, y: -4.01, z: 0}
+  m_LocalPosition: {x: 6.38, y: -3.63, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -523,6 +523,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animatorChar: {fileID: 1647956307}
   typeMove: 0
+  stateCharacter: 0
   damge: 10
 --- !u!1 &309178401
 GameObject:
@@ -11081,6 +11082,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animatorChar: {fileID: 1890702020}
   typeMove: 1
+  stateCharacter: 0
   damge: 10
 --- !u!1 &1628181349
 GameObject:
@@ -11179,10 +11181,8 @@ MonoBehaviour:
   calculateTangents: 0
   maskInteraction: 1
   maskMaterials:
-    materialsMaskDisabled:
-    - {fileID: 2100000, guid: 04b40ce521aee43348177fc4a6ac2dd0, type: 2}
-    materialsInsideMask:
-    - {fileID: 2100000, guid: e3e4de1cfe56b9e49bafe3c3683d20e3, type: 2}
+    materialsMaskDisabled: []
+    materialsInsideMask: []
     materialsOutsideMask: []
   disableRenderingOnOverride: 1
   translator:
@@ -11230,7 +11230,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e3e4de1cfe56b9e49bafe3c3683d20e3, type: 2}
+  - {fileID: 2100000, guid: 04b40ce521aee43348177fc4a6ac2dd0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11638,8 +11638,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animatorChar: {fileID: 387340841}
   typeMove: 1
+  stateCharacter: 0
   SO_Information: {fileID: 11400000, guid: ac1f03d532de1c94d80eeec8e8903d46, type: 2}
   PositionSpawnSkill: {fileID: 741724891}
+  dissolveValue: 1
+  objectRenderer: {fileID: 387340842}
 --- !u!1 &1781974293
 GameObject:
   m_ObjectHideFlags: 0
@@ -11966,8 +11969,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2026767257}
   m_LocalRotation: {x: -0.17251487, y: 0.985007, z: -0, w: 0}
-  m_LocalPosition: {x: -0.36, y: -0.8, z: 0}
-  m_LocalScale: {x: 0.22363743, y: 0.2236374, z: 0.22363749}
+  m_LocalPosition: {x: -0.35999978, y: -0.79999995, z: 0}
+  m_LocalScale: {x: 0.22363743, y: 0.22363742, z: 0.22363752}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 741724891}
@@ -12111,8 +12114,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animatorChar: {fileID: 42889014}
   typeMove: 0
+  stateCharacter: 0
   SO_Information: {fileID: 11400000, guid: bc1c5701bda16834aa19a957b9984945, type: 2}
   PositionSpawnSkill: {fileID: 309178402}
+  dissolveValue: 0
+  objectRenderer: {fileID: 0}
 --- !u!114 &2107456510
 MonoBehaviour:
   m_ObjectHideFlags: 0

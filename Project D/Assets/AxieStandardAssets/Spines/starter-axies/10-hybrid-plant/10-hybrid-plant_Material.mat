@@ -52,7 +52,7 @@ Material:
     - _OutlineMipLevel: 0
     - _OutlineReferenceTexWidth: 1024
     - _OutlineSmoothness: 1
-    - _OutlineThinkness: 0.065
+    - _OutlineThinkness: 0.394
     - _OutlineWidth: 3
     - _StencilComp: 8
     - _StencilRef: 1

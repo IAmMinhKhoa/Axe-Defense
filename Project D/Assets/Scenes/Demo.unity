@@ -419,7 +419,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 304820906}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.38, y: -3.63, z: 0}
+  m_LocalPosition: {x: -3.69, y: -4.24, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -522,6 +522,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animatorChar: {fileID: 1647956307}
+  dissolveValue: 0
+  material: {fileID: 0}
   typeMove: 0
   stateCharacter: 0
   damge: 10
@@ -11081,6 +11083,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animatorChar: {fileID: 1890702020}
+  dissolveValue: 0
+  material: {fileID: 0}
   typeMove: 1
   stateCharacter: 0
   damge: 10
@@ -11637,12 +11641,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animatorChar: {fileID: 387340841}
+  dissolveValue: 1
+  material: {fileID: 2100000, guid: 056295ff8c2fc45cb9f092c2d97dd77c, type: 2}
   typeMove: 1
   stateCharacter: 0
   SO_Information: {fileID: 11400000, guid: ac1f03d532de1c94d80eeec8e8903d46, type: 2}
   PositionSpawnSkill: {fileID: 741724891}
-  dissolveValue: 1
-  objectRenderer: {fileID: 387340842}
+  Weapon: {fileID: 2026767257}
 --- !u!1 &1781974293
 GameObject:
   m_ObjectHideFlags: 0
@@ -11960,7 +11965,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2026767258
 Transform:
   m_ObjectHideFlags: 0
@@ -12113,12 +12118,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animatorChar: {fileID: 42889014}
+  dissolveValue: 0
+  material: {fileID: 0}
   typeMove: 0
   stateCharacter: 0
   SO_Information: {fileID: 11400000, guid: bc1c5701bda16834aa19a957b9984945, type: 2}
   PositionSpawnSkill: {fileID: 309178402}
-  dissolveValue: 0
-  objectRenderer: {fileID: 0}
+  Weapon: {fileID: 0}
 --- !u!114 &2107456510
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -19,6 +19,18 @@ public class ControllerChacracrer : MonoBehaviour
     protected bool canAttack = true;
 
     public Animator animatorChar;
+
+    public event EventHandler E_CharacterDie;
+    public event EventHandler E_CharacterStateStart;
+
+
+
+    public float dissolveValue = 1f; // Giá tr? dissolve ban ??u
+
+    public Material material;
+
+    int _valueDis = Shader.PropertyToID("_valueDis");
+
     public enum TypeMove{
         goLeft,
         goRight
@@ -72,6 +84,11 @@ public class ControllerChacracrer : MonoBehaviour
         CT_Moving = GetComponent<ControllerMoving>();
         CT_Collision = GetComponent<ControllerCollision>();
         CT_Health = GetComponent<Healt>();
+
+      
+        
+     
+        Debug.Log(material);
     }
 
     protected void WaitingToStartCharacter() {
@@ -79,12 +96,19 @@ public class ControllerChacracrer : MonoBehaviour
         {
             case StateCharacter.Waiting:
                 WaitingToStart -= Time.deltaTime;
+                material.SetFloat("_valueDis",((WaitingToStart-1)/4.5f));
                 if (WaitingToStart < 0f)
                 {
                     stateCharacter = StateCharacter.Start;
+                    E_CharacterStateStart?.Invoke(this, EventArgs.Empty);                                                                                                       
                 }
                 break;
            
         }
+    }
+
+    public void OnCharacterDie()
+    {
+        E_CharacterDie?.Invoke(this, EventArgs.Empty);
     }
 }

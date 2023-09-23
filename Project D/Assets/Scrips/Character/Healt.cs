@@ -20,10 +20,11 @@ public class Healt : MonoBehaviour
 
     protected Animator animatorCharacter;
 
-
+    protected ControllerChacracrer controllerChacracrer;
     private void Start()
     {
-        animatorCharacter=GetComponent<ControllerChacracrer>().animatorChar; 
+        controllerChacracrer=GetComponent<ControllerChacracrer>();
+        animatorCharacter = controllerChacracrer.animatorChar; 
     }
 
     public void TakeDamage(int value, ControllerChacracrer.TypeCharacter typeChar)
@@ -54,7 +55,9 @@ public class Healt : MonoBehaviour
         if (maxHealt <= 0)
         {
             animatorCharacter.SetTrigger("Die");
-        
+
+            controllerChacracrer.OnCharacterDie();
+
             Destroy(gameObject,1.5f);
         }
 

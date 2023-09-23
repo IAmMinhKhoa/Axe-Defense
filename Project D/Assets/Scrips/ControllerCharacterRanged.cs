@@ -7,16 +7,26 @@ public class ControllerCharacterRanged : ControllerChacracrer
     public SO_CharacterInforMantionRANGER SO_Information;
     [SerializeField] protected Transform PositionSpawnSkill;
 
+    public GameObject Weapon;
 
-    public float dissolveValue = 0.0f; // Giá tr? dissolve ban ??u
-    public Renderer objectRenderer; // Tham chi?u ??n Renderer c?a ??i t??ng
-    Material material;
 
 
     private void Start()
     {
         base.Init();
-        material = objectRenderer.material;
+       
+        E_CharacterDie += ControllerCharacterRanged_E_CharacterDie;
+        E_CharacterStateStart += ControllerCharacterRanged_E_CharacterStateStart;
+    }
+
+    private void ControllerCharacterRanged_E_CharacterStateStart(object sender, System.EventArgs e)
+    {
+        Weapon.SetActive(true);
+    }
+
+    private void ControllerCharacterRanged_E_CharacterDie(object sender, System.EventArgs e)
+    {
+        Weapon.SetActive(false);
     }
 
     void Update()
@@ -42,13 +52,8 @@ public class ControllerCharacterRanged : ControllerChacracrer
             }
         }
 
+    
 
-
-
-       
-
-        // Thi?t l?p giá tr? dissolve
-        material.SetFloat("valueDis", dissolveValue);
     }
 
     protected override void SetUpAttack()
@@ -60,7 +65,7 @@ public class ControllerCharacterRanged : ControllerChacracrer
         Skill.SetDamgeSKill(SO_Information.Damge);
     }
 
-    protected override void Init()
+    protected override void Init() //code chua chay dc (lo ch?y cai init)
     {
         CT_Health.SetHealth(SO_Information.HP);
         CT_Collision.SetRanger(SO_Information.RangedAttack);

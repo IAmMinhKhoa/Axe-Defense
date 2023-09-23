@@ -52,14 +52,14 @@ Material:
     - _OutlineMipLevel: 0
     - _OutlineReferenceTexWidth: 1024
     - _OutlineSmoothness: 1
-    - _OutlineThinkness: 0.394
+    - _OutlineThinkness: 0.085
     - _OutlineWidth: 3
     - _StencilComp: 8
     - _StencilRef: 1
     - _StraightAlphaInput: 0
     - _ThresholdEnd: 0.25
     - _Use8Neighbourhood: 1
-    - _valueDis: 0
+    - _valueDis: -0.2224439
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}

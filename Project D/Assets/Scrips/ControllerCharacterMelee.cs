@@ -5,11 +5,13 @@ using UnityEngine;
 
 public class ControllerCharacterMelee : ControllerChacracrer
 {
-    public int damge = 10;
+
+    [SerializeField] protected SO_CharacterInforMantion SO_Information;
+    protected int damge = 10;
 
     private void Start()
     {
-        base.Init();
+        Init();
     }
 
     void Update()
@@ -40,4 +42,15 @@ public class ControllerCharacterMelee : ControllerChacracrer
         Healt healthEnemy = L_Collider[0].GetComponent<Healt>();
         healthEnemy.TakeDamage(damge,typeCharacter);
     }
+
+    protected override void Init()
+    {
+        base.Init();
+        //Load data(HP,Ranger ATK, Speed, CD) from SO to Player
+        CT_Health.SetHealth(SO_Information.HP);
+        CT_Collision.SetRanger(SO_Information.RangedAttack);
+        CT_Moving.SetSpeed(SO_Information.SpeedMove);
+        attackCooldown = SO_Information.CoolDown;        
+    }
+
 }

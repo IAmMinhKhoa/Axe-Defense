@@ -38,7 +38,6 @@ public class Healt : MonoBehaviour
 
         GameObject TextDamge= EffectManager.instance.SpawmVFX("FrefabTextDamge",new Vector3(this.transform.position.x,transform.position.y+2f,transform.position.z));
 
-
         TMP_Text textMeshPro = TextDamge.GetComponent<TMP_Text>();
 
         textMeshPro.text = value.ToString();

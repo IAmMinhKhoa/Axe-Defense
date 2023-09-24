@@ -8,29 +8,35 @@ using static UnityEngine.CullingGroup;
 
 public class ControllerChacracrer : MonoBehaviour
 {
+    #region MainController
     protected ControllerCollision CT_Collision;
     protected ControllerMoving CT_Moving;
     protected Healt CT_Health;
-    
-    protected Collider2D[] L_Collider;
-    
+    protected ControllerShader CT_Shader;
+    #endregion
+
+    #region List
+    protected Collider2D[] L_Collider; //list collider object with later
+    #endregion
+
+    #region Component
+    public Animator animatorChar;
+    #endregion
+
+    #region Event
+    public event EventHandler E_CharacterDie;
+    public event EventHandler E_CharacterStateStart;
+    #endregion
+
+    #region Variable
     protected float attackCooldown = 2f;
     protected bool isMoving;
     protected bool canAttack = true;
+    [SerializeField] protected float WaitingToStart = 4.5f;
+    protected float _TimeToStart;
+    #endregion
 
-    public Animator animatorChar;
-
-    public event EventHandler E_CharacterDie;
-    public event EventHandler E_CharacterStateStart;
-
-
-
-    public float dissolveValue = 1f; // Giá tr? dissolve ban ??u
-
-    public Material material;
-
-    int _valueDis = Shader.PropertyToID("_valueDis");
-
+    #region Enum Type SomeThing
     public enum TypeMove{
         goLeft,
         goRight
@@ -52,10 +58,8 @@ public class ControllerChacracrer : MonoBehaviour
         Start
     }
     public StateCharacter stateCharacter;
+    #endregion
 
-    protected float WaitingToStart = 4.5f;
-        
-  
 
 
     protected void Attack()
@@ -65,13 +69,15 @@ public class ControllerChacracrer : MonoBehaviour
         StartCoroutine(WaitCoroutine());
         animatorChar.SetTrigger("Attack");
         animatorChar.SetBool("Run", false);
+
+        //Each type of character will have a different attack method
         SetUpAttack();
     }
 
 
     protected  virtual void SetUpAttack(){}
 
-    IEnumerator WaitCoroutine()
+    IEnumerator WaitCoroutine()//Waiting Cooldown
     {
         canAttack = false;
         yield return null;
@@ -80,34 +86,31 @@ public class ControllerChacracrer : MonoBehaviour
         canAttack = true;
     }
 
-    protected virtual  void Init() {
+    protected virtual  void Init() {    //Run when start object
         CT_Moving = GetComponent<ControllerMoving>();
         CT_Collision = GetComponent<ControllerCollision>();
         CT_Health = GetComponent<Healt>();
+        CT_Shader = GetComponent<ControllerShader>();
 
-      
-        
-     
-        Debug.Log(material);
+        _TimeToStart = WaitingToStart;
     }
 
-    protected void WaitingToStartCharacter() {
+    protected void WaitingToStartCharacter() { //State machine for state game
         switch (stateCharacter)
         {
             case StateCharacter.Waiting:
-                WaitingToStart -= Time.deltaTime;
-                material.SetFloat("_valueDis",((WaitingToStart-1)/4.5f));
-                if (WaitingToStart < 0f)
+                _TimeToStart -= Time.deltaTime;
+                CT_Shader.SetShader("_valueDis",_TimeToStart, WaitingToStart);
+                if (_TimeToStart < 0f)
                 {
                     stateCharacter = StateCharacter.Start;
                     E_CharacterStateStart?.Invoke(this, EventArgs.Empty);                                                                                                       
                 }
                 break;
-           
         }
     }
 
-    public void OnCharacterDie()
+    public void OnCharacterDie()    //Catch event when character DIE
     {
         E_CharacterDie?.Invoke(this, EventArgs.Empty);
     }

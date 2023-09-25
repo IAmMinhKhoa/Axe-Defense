@@ -63,7 +63,7 @@ public class Healt : MonoBehaviour
         StartCoroutine(DelayATK());
     }
     
-
+    protected virtual void EventDie() {  }
 
     IEnumerator DelayATK()
     {

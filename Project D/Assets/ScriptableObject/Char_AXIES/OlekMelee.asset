@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: OlekMelee
   m_EditorClassIdentifier: 
   HP: 200
-  RangedAttack: 4
+  RangedAttack: 1
   SpeedMove: 2
   Damge: 10
   CoolDown: 3

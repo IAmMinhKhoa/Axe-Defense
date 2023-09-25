@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e29d8d83cc1f3d4598f9a537127a89e, type: 3}
   m_Name: HybirdMage
   m_EditorClassIdentifier: 
-  HP: 100
+  HP: 222
   RangedAttack: 4
   SpeedMove: 2
   Damge: 10

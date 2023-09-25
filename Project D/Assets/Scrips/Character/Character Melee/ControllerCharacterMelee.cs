@@ -7,7 +7,7 @@ public class ControllerCharacterMelee : ControllerChacracrer
 {
 
     [SerializeField] protected SO_CharacterInforMantion SO_Information;
-    protected int damge = 10;
+    [SerializeField] protected int damge = 10;
 
     private void Start()
     {
@@ -39,8 +39,8 @@ public class ControllerCharacterMelee : ControllerChacracrer
 
     protected override void SetUpAttack()
     {
-        Healt healthEnemy = L_Collider[0].GetComponent<Healt>();
-        healthEnemy.TakeDamage(damge,typeCharacter);
+        Health healthEnemy = L_Collider[0].GetComponent<Health>();
+        healthEnemy.TakeDamage(damge);
     }
 
     protected override void Init()

@@ -8,6 +8,8 @@ TagManager:
   - FxTemporaire
   - Projectile
   - BallSkill
+  - CharacterRanged
+  - CharacterMelee
   layers:
   - Default
   - TransparentFX

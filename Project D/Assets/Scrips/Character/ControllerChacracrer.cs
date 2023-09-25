@@ -11,7 +11,7 @@ public class ControllerChacracrer : MonoBehaviour
     #region MainController
     protected ControllerCollision CT_Collision;
     protected ControllerMoving CT_Moving;
-    protected Healt CT_Health;
+    protected Health CT_Health;
     protected ControllerShader CT_Shader;
     #endregion
 
@@ -26,10 +26,11 @@ public class ControllerChacracrer : MonoBehaviour
     #region Event
     public event EventHandler E_CharacterDie;
     public event EventHandler E_CharacterStateStart;
+    public event EventHandler E_CharacterHit;
     #endregion
 
     #region Variable
-    protected float attackCooldown = 2f;
+    [SerializeField] protected float attackCooldown = 2f;
     protected bool isMoving;
     protected bool canAttack = true;
     [SerializeField] protected float WaitingToStart = 4.5f;
@@ -89,10 +90,25 @@ public class ControllerChacracrer : MonoBehaviour
     protected virtual  void Init() {    //Run when start object
         CT_Moving = GetComponent<ControllerMoving>();
         CT_Collision = GetComponent<ControllerCollision>();
-        CT_Health = GetComponent<Healt>();
+        CT_Health = GetComponent<Health>();
         CT_Shader = GetComponent<ControllerShader>();
 
+        E_CharacterHit += ControllerChacracrer_E_CharacterHit;
+        E_CharacterDie += ControllerChacracrer_E_CharacterDie;
+
         _TimeToStart = WaitingToStart;
+    }
+
+    private void ControllerChacracrer_E_CharacterDie(object sender, EventArgs e)
+    {
+        canAttack = false;
+        animatorChar.SetTrigger("Die");
+
+    }
+
+    private void ControllerChacracrer_E_CharacterHit(object sender, EventArgs e)
+    {
+        animatorChar.SetTrigger("Hit");
     }
 
     protected void WaitingToStartCharacter() { //State machine for state game
@@ -113,5 +129,9 @@ public class ControllerChacracrer : MonoBehaviour
     public void OnCharacterDie()    //Catch event when character DIE
     {
         E_CharacterDie?.Invoke(this, EventArgs.Empty);
+    }
+    public void OnCharacterHIT()    //Catch event when character by HIT
+    {
+        E_CharacterHit?.Invoke(this, EventArgs.Empty);
     }
 }

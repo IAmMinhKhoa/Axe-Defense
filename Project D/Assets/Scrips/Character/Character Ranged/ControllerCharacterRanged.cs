@@ -32,6 +32,7 @@ public class ControllerCharacterRanged : ControllerChacracrer
 
     private void ControllerCharacterRanged_E_CharacterDie(object sender, System.EventArgs e)
     {
+
         //After DIE -> Disappear Weapon
         if (L_ChildWeapon != null)
         {
@@ -55,10 +56,12 @@ public class ControllerCharacterRanged : ControllerChacracrer
                 bool RightDirection = (typeMove == TypeMove.goRight) ? true : false;
                 CT_Moving.Move(RightDirection);
                 animatorChar.SetBool("Run", true);
-
+                
+                
             }
             else if (isMoving != true)
             {
+               
                 L_Collider = CT_Collision.Return_L_CollderTouching();
                 Attack();
             }

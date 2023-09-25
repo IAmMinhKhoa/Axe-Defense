@@ -47,12 +47,22 @@ public class Skill : MonoBehaviour
         }
         
     }
-
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        target.GetComponent<Healt>().TakeDamage(damge,ControllerChacracrer.TypeCharacter.Mage);
-
-        Destroy(gameObject);
+        if (collision.gameObject.CompareTag("CharacterRanged"))
+        {
+            collision.gameObject.GetComponent<Health_Ranged>().TakeDamage(damge);
+            //target.GetComponent<Health_Ranged>().TakeDamage(damge);
+            Destroy(gameObject);
+        }
+        else if (collision.gameObject.CompareTag("CharacterMelee"))
+        {
+            collision.gameObject.GetComponent<Health_Melee>().TakeDamage(damge);
+            //target.GetComponent<Health_Melee>().TakeDamage(damge);
+            Destroy(gameObject);
+        }
+       
     }
     public void SetDamgeSKill(int value)
     {

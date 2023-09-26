@@ -26,7 +26,7 @@ public class ControllerCharacterMelee : ControllerChacracrer
                 bool RightDirection = (typeMove == TypeMove.goRight) ? true : false;
                 CT_Moving.Move(RightDirection);
                 animatorChar.SetBool("Run", true);
-                Debug.Log("move");
+               
             }
             else if (isMoving != true)
             {
@@ -34,13 +34,43 @@ public class ControllerCharacterMelee : ControllerChacracrer
                 Attack();
             }
         }
-        
     }
 
     protected override void SetUpAttack()
     {
-        Health healthEnemy = L_Collider[0].GetComponent<Health>();
-        healthEnemy.TakeDamage(damge);
+        Health healthEnemy = null;
+
+        if (L_Collider[0].gameObject.tag == "CharacterRanged")
+        {
+            Health_Ranged healthRanged = L_Collider[0].GetComponent<Health_Ranged>();
+            if (healthRanged != null)
+            {
+                healthEnemy = healthRanged;
+            }
+        }
+        else if (L_Collider[0].gameObject.tag == "CharacterMelee")
+        {
+            Health_Melee healthMelee = L_Collider[0].GetComponent<Health_Melee>();
+            if (healthMelee != null)
+            {
+                healthEnemy = healthMelee;
+            }
+        }
+        else if (L_Collider[0].gameObject.tag == "Tower")
+        {
+            Health_Tower healthTower = L_Collider[0].GetComponent<Health_Tower>();
+            if (healthTower != null)
+            {
+                healthEnemy = healthTower;
+            }
+        }
+
+        if (healthEnemy != null)
+        {
+            healthEnemy.TakeDamage(damge);
+            EffectManager.instance.SpawmVFX("Effect Hit Melee", L_Collider[0].transform.position);
+        }
+
     }
 
     protected override void Init()

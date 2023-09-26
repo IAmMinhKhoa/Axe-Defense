@@ -2,27 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Health_Ranged : Health
+public class Health_Tower : Health
 {
-    protected ControllerChacracrer controllerChacracrer;
+    protected ControllerTower controllerTower;
     private void Start()
     {
-        controllerChacracrer = GetComponent<ControllerChacracrer>();
+        controllerTower = GetComponent<ControllerTower>();
     }
     public override void TakeDamage(int value)
     {
         base.TakeDamage(value);
-
-        
-
     }
-
     protected override void EventDie()
     {
-        controllerChacracrer.OnCharacterDie();
+        controllerTower.OnTowerDie();
     }
     protected override void EventHit()
     {
-        controllerChacracrer.OnCharacterHIT();
+        controllerTower.OnTowerHit();
     }
 }

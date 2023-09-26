@@ -12,8 +12,6 @@ public class Health_Melee : Health
     public override void TakeDamage(int value)
     {
         base.TakeDamage(value);
-
-        EffectManager.instance.SpawmVFX("Effect Hit Melee", this.transform.position);
     }
     protected override void EventDie()
     {

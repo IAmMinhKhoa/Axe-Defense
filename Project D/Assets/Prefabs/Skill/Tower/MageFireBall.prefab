@@ -4824,6 +4824,37 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!1 &6187184666671654097
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6463339552502927577}
+  m_Layer: 7
+  m_Name: Point Check LitmitDame
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6463339552502927577
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6187184666671654097}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7565967977373764431}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6630136655605506332
 GameObject:
   m_ObjectHideFlags: 0
@@ -4837,9 +4868,10 @@ GameObject:
   - component: {fileID: 540728728309356097}
   - component: {fileID: 540728728309356111}
   - component: {fileID: 1791909150594084154}
+  - component: {fileID: 138088720558009196}
   m_Layer: 7
   m_Name: MageFireBall
-  m_TagString: Projectile
+  m_TagString: BallSkill
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4858,6 +4890,7 @@ Transform:
   m_Children:
   - {fileID: 4552062673140602748}
   - {fileID: 2282796077833345966}
+  - {fileID: 6463339552502927577}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -4.969}
@@ -4980,7 +5013,7 @@ MonoBehaviour:
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 0
+  m_PointLightInnerRadius: 0.15651
   m_PointLightOuterRadius: 1.6371276
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
@@ -5005,9 +5038,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.04202632, y: 0.43}
   serializedVersion: 2
-  m_Radius: 0.38
+  m_Radius: 0.44718125
 --- !u!114 &1791909150594084154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5020,8 +5053,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1be2f3e782e8654a91c13026b80d2fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target: {fileID: 0}
+  CT_Collision: {fileID: 138088720558009196}
   moveSpeed: 2
+--- !u!114 &138088720558009196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6630136655605506332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c945b557ed3568e45b31d05e048e5929, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  L_ColliderTouching: []
+  PointChecking: {fileID: 6463339552502927577}
+  CheckRanged: 3.42
+  LayerChecking:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1 &7984660891855698573
 GameObject:
   m_ObjectHideFlags: 0

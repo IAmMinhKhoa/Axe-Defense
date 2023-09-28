@@ -13,6 +13,7 @@ public class ControllerCollision : MonoBehaviour
     private void Update()
     {
         L_ColliderTouching = Physics2D.OverlapCircleAll(PointChecking.position, CheckRanged, LayerChecking);
+        
     }
 
 

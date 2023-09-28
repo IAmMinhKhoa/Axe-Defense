@@ -5081,7 +5081,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!95 &8335421818957002254
 Animator:
@@ -5138,7 +5138,7 @@ MonoBehaviour:
     materialsOutsideMask: []
   disableRenderingOnOverride: 1
   translator:
-    autoReset: 1
+    autoReset: 0
     useCustomMixMode: 1
     layerMixModes: 01000000
     layerBlendModes: 01000000

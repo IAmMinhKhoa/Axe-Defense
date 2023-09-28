@@ -7,6 +7,7 @@ public class ObjectMovement : MonoBehaviour
     private bool isDragging = false;
     private Vector3 offset;
     public Collider2D forbiddenAreaCollider;
+    protected bool CanMoveOject = true;
     private void OnMouseDown()
     {
         isDragging = true;
@@ -20,11 +21,11 @@ public class ObjectMovement : MonoBehaviour
 
     private void Update()
     {
-        if (isDragging)
+        if (isDragging&&CanMoveOject)
         {
             Vector3 mousePos = GetMouseWorldPosition();
             Vector3 newPosition = mousePos + offset;
-            // Ki?m tra va ch?m v?i Collider c?a khu v?c không ???c phép
+
             if (!forbiddenAreaCollider.bounds.Contains(newPosition))
             {
                 transform.position = newPosition;
@@ -37,5 +38,9 @@ public class ObjectMovement : MonoBehaviour
         Vector3 mousePos = Input.mousePosition;
         mousePos.z = -Camera.main.transform.position.z;
         return Camera.main.ScreenToWorldPoint(mousePos);
+    }
+    public void SetCanMoveObject(bool temp)
+    {
+        this.CanMoveOject = temp;
     }
 }

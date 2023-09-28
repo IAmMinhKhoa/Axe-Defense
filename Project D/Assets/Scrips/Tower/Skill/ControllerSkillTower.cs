@@ -28,7 +28,7 @@ public class ControllerSkillTower : MonoBehaviour
 
     private void ControllerSkillTower_E_StartSkill(object sender, EventArgs e)
     {
-        GameObject MegaFireBalll= Instantiate(Prefab_skill, new Vector3(Target_Skill.position.x, Target_Skill.position.y + 5, 0), Quaternion.identity);
+        GameObject MegaFireBalll= Instantiate(Prefab_skill, new Vector3(Target_Skill.position.x, Target_Skill.position.y + 10, 0), Quaternion.identity);
         MegaFireBalll.GetComponent<SkillTower>().SetTarget(Target_Skill);
     }
 
@@ -42,15 +42,21 @@ public class ControllerSkillTower : MonoBehaviour
                 {
                     StateSkill = State.Start;
                     E_StartSkill?.Invoke(this, EventArgs.Empty);
-                    Debug.Log("spawm");
                 }
                 break;
             case State.Start:
+                Target_Skill.gameObject.GetComponent<ObjectMovement>().SetCanMoveObject(false);
                 break;
             case State.End:
                 break;
             default:
                 break;
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            E_StartSkill?.Invoke(this, EventArgs.Empty);
         }
     }
 }

@@ -11,6 +11,7 @@ TagManager:
   - CharacterRanged
   - CharacterMelee
   - Tower
+  - TargetPoint
   layers:
   - Default
   - TransparentFX

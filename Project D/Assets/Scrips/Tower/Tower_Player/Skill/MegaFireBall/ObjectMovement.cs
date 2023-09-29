@@ -6,7 +6,7 @@ public class ObjectMovement : MonoBehaviour
 {
     private bool isDragging = false;
     private Vector3 offset;
-    public Collider2D forbiddenAreaCollider;
+ 
     protected bool CanMoveOject = true;
     private void OnMouseDown()
     {
@@ -25,11 +25,8 @@ public class ObjectMovement : MonoBehaviour
         {
             Vector3 mousePos = GetMouseWorldPosition();
             Vector3 newPosition = mousePos + offset;
-
-            if (!forbiddenAreaCollider.bounds.Contains(newPosition))
-            {
-                transform.position = newPosition;
-            }
+            transform.position = newPosition;
+            
         }
     }
 

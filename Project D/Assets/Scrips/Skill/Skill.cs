@@ -15,7 +15,6 @@ public class Skill : MonoBehaviour
     private float currentMoveSpeed;
     private float elapsedTime;
 
-
     private void Start()
     {
         currentMoveSpeed = 0;
@@ -28,17 +27,21 @@ public class Skill : MonoBehaviour
     {
         if (target != null)
         {
-          
-            // Tính toán h??ng di chuy?n t? v? trí hi?n t?i c?a ObjectA ??n v? trí hi?n t?i c?a target
+
+
             Vector3 direction = (target.position - transform.position).normalized;
+                 currentMoveSpeed = accelerationRate * elapsedTime;
 
-            // Tính toán t?c ?? di chuy?n d?a trên th?i gian ?ã trôi qua
-            currentMoveSpeed =  accelerationRate * elapsedTime;
-
-            // Di chuy?n ObjectA theo h??ng di chuy?n v?i t?c ?? hi?n t?i
             transform.position += direction * currentMoveSpeed * Time.deltaTime;
 
-            // T?ng th?i gian ?ã trôi qua
+            float distanceThreshold = 0.1f; // Ng??ng kho?ng cách ?? xem ?ã ch?m ??n hay ch?a
+
+            float distanceToTarget = Vector3.Distance(transform.position, target.position);
+
+            if (distanceToTarget <= distanceThreshold)
+            {
+                MadeDamage();
+            }
             elapsedTime += Time.deltaTime;
         }
         else
@@ -48,28 +51,29 @@ public class Skill : MonoBehaviour
         
     }
     
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected void MadeDamage()
     {
-        if (collision.gameObject.CompareTag("CharacterRanged"))
+        if (target.gameObject.CompareTag("CharacterRanged"))
         {
-            collision.gameObject.GetComponent<Health_Ranged>().TakeDamage(damge);
+            target.gameObject.GetComponent<Health_Ranged>().TakeDamage(damge);
             EffectManager.instance.SpawmVFX("Effect Hit Mage", this.transform.position);
             Destroy(gameObject);
         }
-        else if (collision.gameObject.CompareTag("CharacterMelee"))
+        else if (target.gameObject.CompareTag("CharacterMelee"))
         {
-            collision.gameObject.GetComponent<Health_Melee>().TakeDamage(damge);
+            target.gameObject.GetComponent<Health_Melee>().TakeDamage(damge);
             EffectManager.instance.SpawmVFX("Effect Hit Mage", this.transform.position);
             Destroy(gameObject);
         }
-        else if (collision.gameObject.CompareTag("Tower"))
+        else if (target.gameObject.CompareTag("Tower"))
         {
-            collision.gameObject.GetComponent<Health_Tower>().TakeDamage(damge);
+            target.gameObject.GetComponent<Health_Tower>().TakeDamage(damge);
             EffectManager.instance.SpawmVFX("Effect Hit Mage", this.transform.position);
             Destroy(gameObject);
         }
-        
     }
+
+   
     public void SetDamgeSKill(int value)
     {
         damge = value;

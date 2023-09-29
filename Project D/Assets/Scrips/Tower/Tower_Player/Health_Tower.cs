@@ -8,6 +8,7 @@ public class Health_Tower : Health
     private void Start()
     {
         controllerTower = GetComponent<ControllerTower>();
+
     }
     public override void TakeDamage(int value)
     {
@@ -18,7 +19,7 @@ public class Health_Tower : Health
         controllerTower.OnTowerDie();
     }
     protected override void EventHit()
-    {
+    {    
         controllerTower.OnTowerHit();
     }
 }

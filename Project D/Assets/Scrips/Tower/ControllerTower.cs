@@ -10,7 +10,7 @@ public class ControllerTower : MonoBehaviour
     #region GameObject
     [SerializeField] protected Button Btn_Skill;
     [SerializeField] protected Image Img_LoadSkill;
- 
+    [SerializeField] protected GameObject Obj_Skill;
     #endregion
 
     #region Variable
@@ -37,16 +37,13 @@ public class ControllerTower : MonoBehaviour
         if (canSkill)
         {
             CDSkillTimer += Time.deltaTime;
-
-            // C?p nh?t fill amount c?a hình ?nh
            Img_LoadSkill.fillAmount = CDSkillTimer / CDSkillTower;
 
             if (CDSkillTimer >= CDSkillTower)
             {
-                // Khi cooldown k?t thúc, cho phép click l?i và ??t fill amount v? 0
                 canSkill = false;
                 CDSkillTimer = 0f;
-               
+                
             }
         }
     }
@@ -56,7 +53,7 @@ public class ControllerTower : MonoBehaviour
         if (!canSkill)
         {
             Img_LoadSkill.fillAmount = 0f;
-            // B?t ??u cooldown
+            Obj_Skill.SetActive(true);
             canSkill = true;
         }
     }

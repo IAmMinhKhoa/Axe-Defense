@@ -8,12 +8,11 @@ public class Health_Ranged : Health
     private void Start()
     {
         controllerChacracrer = GetComponent<ControllerChacracrer>();
+    
     }
     public override void TakeDamage(int value)
     {
         base.TakeDamage(value);
-
-        
 
     }
 

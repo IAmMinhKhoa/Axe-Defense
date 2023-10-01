@@ -8,9 +8,10 @@ using static Unity.VisualScripting.FlowStateWidget;
 public class Health : MonoBehaviour
 {
     [SerializeField] protected int maxHealt = 100;
+    private int DefaultHealth;
     protected bool isAttacking;
     protected float delayStatusAttack = .5f;
-
+    [SerializeField] TextMeshProUGUI textHealth;
     public virtual void TakeDamage(int value)
     {
         EventHit();
@@ -31,10 +32,13 @@ public class Health : MonoBehaviour
             Destroy(gameObject, 1.5f);
         }
         StartCoroutine(DelayATK());
+
+        textHealth.SetText(maxHealt.ToString() + "/"+ DefaultHealth);
     }
 
     protected virtual void EventDie() { }
     protected virtual void EventHit() { }
+    
     IEnumerator DelayATK()
     {
         yield return new WaitForSeconds(delayStatusAttack);
@@ -48,5 +52,7 @@ public class Health : MonoBehaviour
     public void SetHealth(int value)
     {
         this.maxHealt = value;
+        DefaultHealth = maxHealt;
+        textHealth.SetText(maxHealt.ToString() + "/" + DefaultHealth);
     }
 }

@@ -8,6 +8,7 @@ public class Health_Melee : Health
     private void Start()
     {
         controllerChacracrer = GetComponent<ControllerChacracrer>();
+       
     }
     public override void TakeDamage(int value)
     {

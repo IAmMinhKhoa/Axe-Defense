@@ -11,6 +11,8 @@ public class ControllerTower_Enemy : ControllerTower
 
     protected bool canAttack = true;
     [SerializeField] protected float attackCooldown;
+
+   
     private void Start()
     {
         CT_Collision=GetComponent<ControllerCollision>();
@@ -31,6 +33,7 @@ public class ControllerTower_Enemy : ControllerTower
     {
         if (!canAttack)
             return;
+        L_A_InTower[1].SetTrigger("Attack");
         SetUpSkill();
         StartCoroutine(WaitCoroutine());
     }

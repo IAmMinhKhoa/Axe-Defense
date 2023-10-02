@@ -11,7 +11,7 @@ public class ControllerTower : MonoBehaviour
     #endregion
 
     #region GameObject
-    [SerializeField] protected Animator A_Tower;
+    [SerializeField] protected Animator[] L_A_InTower;
     #endregion
    
     protected void Init()
@@ -21,13 +21,20 @@ public class ControllerTower : MonoBehaviour
     }
     private void ControllerTower_E_TowerDie(object sender, EventArgs e)
     {
-        A_Tower.SetTrigger("Die");
+        foreach (Animator A_each_InTower in L_A_InTower)
+        {
+            A_each_InTower.SetTrigger("Die");
+        }
+        
     }
 
     private void ControllerTower_E_TowerHit(object sender, EventArgs e)
     {
-        
-        A_Tower.SetTrigger("Hit");
+
+        foreach (Animator A_each_InTower in L_A_InTower)
+        {
+            A_each_InTower.SetTrigger("Hit");
+        }
     }
     public void OnTowerHit()
     {

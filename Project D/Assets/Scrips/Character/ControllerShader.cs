@@ -6,22 +6,28 @@ using UnityEngine;
 public class ControllerShader : MonoBehaviour
 {
    
-    public Material _material;
-    public MeshRenderer render ;
+    protected Material orginalMaterial;
+    protected Material cloneMaterial;
+    public SkeletonRenderer skeletonRenderer;
     protected Material clonedMaterial;
     private void Awake()
     {
-        clonedMaterial = Instantiate(_material);
-        render.material = clonedMaterial;
+        if (orginalMaterial == null)
+        {
+            orginalMaterial = skeletonRenderer.skeletonDataAsset.atlasAssets[0].PrimaryMaterial;
+            cloneMaterial=Instantiate(orginalMaterial);
+            skeletonRenderer.CustomMaterialOverride[orginalMaterial] = cloneMaterial;
+        }
+
     }
   
     public  void SetShader(string NameVariable,float elapsedTime,float timeMax)
     {
-        if (_material != null)
+        if (cloneMaterial != null)
         {
-            _material = render.material;
+            
             float valueDis = Mathf.Clamp01(elapsedTime / timeMax);
-            _material.SetFloat(NameVariable, valueDis);
+            cloneMaterial.SetFloat(NameVariable, valueDis);
         }
         else
         {

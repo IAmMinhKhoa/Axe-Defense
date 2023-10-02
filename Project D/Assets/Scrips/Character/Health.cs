@@ -29,6 +29,7 @@ public class Health : MonoBehaviour
         if (maxHealt <= 0)
         {
             EventDie();
+            textHealth.enabled=false;   
             Destroy(gameObject, 1.5f);
         }
         StartCoroutine(DelayATK());

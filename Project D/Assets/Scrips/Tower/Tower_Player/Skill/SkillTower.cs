@@ -7,7 +7,7 @@ public class SkillTower : MonoBehaviour
     protected Transform Target;
     [SerializeField] ControllerCollision CT_Collision;
     public float moveSpeed = 5f;
-
+    [SerializeField] int Damgage;
 
     private void Update()
     {
@@ -28,7 +28,7 @@ public class SkillTower : MonoBehaviour
                     if (healthRanged != null)
                     {
                         healthEnemy = healthRanged;
-                        healthEnemy.TakeDamage(2);
+                        healthEnemy.TakeDamage(Damgage);
                     }
                 }
                 else if (enemy.gameObject.tag == "CharacterMelee")
@@ -37,7 +37,7 @@ public class SkillTower : MonoBehaviour
                     if (healthMelee != null)
                     {
                         healthEnemy = healthMelee;
-                        healthEnemy.TakeDamage(2);
+                        healthEnemy.TakeDamage(Damgage);
                     }
                 }
             }

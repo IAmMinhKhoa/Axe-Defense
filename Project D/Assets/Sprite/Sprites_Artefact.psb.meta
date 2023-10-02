@@ -90,6 +90,7 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
+    spritePosition: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
   - name: Levels 1
@@ -112,7 +113,8 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -326, y: 352}
+    uvTransform: {x: 186, y: 864}
+    spritePosition: {x: 0, y: 512}
   - name: Curves 1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -133,7 +135,8 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -326, y: 360}
+    uvTransform: {x: 186, y: 872}
+    spritePosition: {x: 0, y: 512}
   - name: Brightness/Contrast 1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -154,7 +157,8 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -326, y: 368}
+    uvTransform: {x: 186, y: 880}
+    spritePosition: {x: 0, y: 512}
   - name: glow
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -175,7 +179,8 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -27, y: -28}
+    uvTransform: {x: 4, y: 4}
+    spritePosition: {x: 31, y: 32}
   - name: stone_e
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -196,7 +201,8 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 44, y: 378}
+    uvTransform: {x: 237, y: 428}
+    spritePosition: {x: 193, y: 50}
   - name: stone_f
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -217,7 +223,8 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -52, y: 766}
+    uvTransform: {x: 4, y: 864}
+    spritePosition: {x: 56, y: 98}
   - name: stone_g
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -238,7 +245,8 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -240, y: 319}
+    uvTransform: {x: 4, y: 428}
+    spritePosition: {x: 244, y: 109}
   - name: stone_h
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -259,7 +267,8 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -92, y: 552}
+    uvTransform: {x: 4, y: 714}
+    spritePosition: {x: 96, y: 162}
   - name: stone_i
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -280,7 +289,8 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -255, y: 377}
+    uvTransform: {x: 4, y: 565}
+    spritePosition: {x: 259, y: 188}
   characterData:
     bones: []
     parts: []

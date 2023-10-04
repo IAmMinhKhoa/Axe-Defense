@@ -21,19 +21,26 @@ public class ControllerTower : MonoBehaviour
     }
     private void ControllerTower_E_TowerDie(object sender, EventArgs e)
     {
+        string triggerName = "Die";
         foreach (Animator A_each_InTower in L_A_InTower)
         {
-            A_each_InTower.SetTrigger("Die");
+            if (A_each_InTower.HasParameter(triggerName))
+            {
+                A_each_InTower.SetTrigger(triggerName);
+            }
         }
         
     }
 
     private void ControllerTower_E_TowerHit(object sender, EventArgs e)
     {
-
+        string triggerName = "Hit";
         foreach (Animator A_each_InTower in L_A_InTower)
         {
-            A_each_InTower.SetTrigger("Hit");
+            if (A_each_InTower.HasParameter(triggerName))
+            {
+                A_each_InTower.SetTrigger(triggerName);
+            }
         }
     }
     public void OnTowerHit()

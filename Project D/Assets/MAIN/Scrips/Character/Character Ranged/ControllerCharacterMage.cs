@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ControllerCharacterRanged : ControllerChacracrer
+public class ControllerCharacterMage : ControllerChacracrer
 {
     [SerializeField] protected SO_CharacterInforMantionRANGER SO_Information;
 
@@ -74,6 +74,7 @@ public class ControllerCharacterRanged : ControllerChacracrer
         Skill Skill = BallSkill.GetComponent<Skill>();
 
         Skill.SetTargetForSkill(L_Collider[0].gameObject.transform);//Get first object in list object "enemy layer"
+        Skill.SetTagOwnSkill(this.gameObject.tag);
         Skill.SetDamgeSKill(SO_Information.Damge);
     }
 

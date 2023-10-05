@@ -7,12 +7,12 @@ using static Unity.VisualScripting.FlowStateWidget;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] protected int maxHealt = 100;
-    private int DefaultHealth;
+    [SerializeField] protected float maxHealt = 100;
+    private float DefaultHealth;
     protected bool isAttacking;
     protected float delayStatusAttack = .5f;
     [SerializeField] TextMeshProUGUI textHealth;
-    public virtual void TakeDamage(int value)
+    public virtual void TakeDamage(float value)
     {
         EventHit();
 
@@ -50,7 +50,7 @@ public class Health : MonoBehaviour
     {
         return isAttacking;
     }
-    public void SetHealth(int value)
+    public void SetHealth(float value)
     {
         this.maxHealt = value;
         DefaultHealth = maxHealt;

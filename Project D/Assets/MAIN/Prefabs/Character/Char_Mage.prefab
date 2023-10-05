@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 1206663874065484444}
   m_Layer: 6
   m_Name: Char_Mage
-  m_TagString: CharacterRanged
+  m_TagString: CharacterMage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -7,7 +7,7 @@ public class ControllerCharacterMelee : ControllerChacracrer
 {
 
     [SerializeField] protected SO_CharacterInforMantion SO_Information;
-    [SerializeField] protected int damge = 10;
+    [SerializeField] protected float damage = 10;
 
     private void Start()
     {
@@ -39,38 +39,28 @@ public class ControllerCharacterMelee : ControllerChacracrer
     protected override void SetUpAttack()
     {
         Health healthEnemy = null;
+        string enemyTag = L_Collider[0].gameObject.tag;
 
-        if (L_Collider[0].gameObject.tag == "CharacterRanged")
+        if (enemyTag == "CharacterMage")
         {
-            Health_Ranged healthRanged = L_Collider[0].GetComponent<Health_Ranged>();
-            if (healthRanged != null)
-            {
-                healthEnemy = healthRanged;
-            }
+            healthEnemy = L_Collider[0].GetComponent<Health_Ranged>();
         }
-        else if (L_Collider[0].gameObject.tag == "CharacterMelee")
+        else if (enemyTag == "CharacterMelee")
         {
-            Health_Melee healthMelee = L_Collider[0].GetComponent<Health_Melee>();
-            if (healthMelee != null)
-            {
-                healthEnemy = healthMelee;
-            }
+            healthEnemy = L_Collider[0].GetComponent<Health_Melee>();
         }
-        else if (L_Collider[0].gameObject.tag == "Tower")
+        else if (enemyTag == "Tower")
         {
-            Health_Tower healthTower = L_Collider[0].GetComponent<Health_Tower>();
-            if (healthTower != null)
-            {
-                healthEnemy = healthTower;
-            }
+            healthEnemy = L_Collider[0].GetComponent<Health_Tower>();
         }
 
         if (healthEnemy != null)
         {
-            healthEnemy.TakeDamage(damge);
+            string myTag = this.gameObject.tag;
+            float coefficient = DEFAULT_VALUE.GetAttackCoefficient(myTag, enemyTag);
+            healthEnemy.TakeDamage(damage * coefficient);
             EffectManager.instance.SpawmVFX("Effect Hit Melee", L_Collider[0].transform.position);
         }
-
     }
 
     protected override void Init()
@@ -83,4 +73,5 @@ public class ControllerCharacterMelee : ControllerChacracrer
         attackCooldown = SO_Information.CoolDown;        
     }
 
+    
 }

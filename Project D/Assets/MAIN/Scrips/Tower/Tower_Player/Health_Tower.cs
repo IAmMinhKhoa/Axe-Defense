@@ -10,7 +10,7 @@ public class Health_Tower : Health
         controllerTower = GetComponent<ControllerTower>();
         SetHealth(100); 
     }
-    public override void TakeDamage(int value)
+    public override void TakeDamage(float value)
     {
         base.TakeDamage(value);
     }

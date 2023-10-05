@@ -10,7 +10,9 @@ public class Skill : MonoBehaviour
  
 
 
-    protected int damge;
+    protected int damage;
+
+    protected string typeChar;
 
     private float currentMoveSpeed;
     private float elapsedTime;
@@ -50,36 +52,45 @@ public class Skill : MonoBehaviour
         }
         
     }
-    
+
     protected void MadeDamage()
     {
-        if (target.gameObject.CompareTag("CharacterRanged"))
+        Health healthComponent=null;
+        string enemyTag = target.gameObject.gameObject.tag;
+
+        if (enemyTag == "CharacterMage")
         {
-            target.gameObject.GetComponent<Health_Ranged>().TakeDamage(damge);
-            EffectManager.instance.SpawmVFX("Effect Hit Mage", this.transform.position);
-            Destroy(gameObject);
+            healthComponent = target.gameObject.GetComponent<Health_Ranged>();
         }
-        else if (target.gameObject.CompareTag("CharacterMelee"))
+        else if (enemyTag == "CharacterMelee")
         {
-            target.gameObject.GetComponent<Health_Melee>().TakeDamage(damge);
-            EffectManager.instance.SpawmVFX("Effect Hit Mage", this.transform.position);
-            Destroy(gameObject);
+            healthComponent = target.gameObject.GetComponent<Health_Melee>();
         }
-        else if (target.gameObject.CompareTag("Tower"))
+        else if (enemyTag == "Tower")
         {
-            target.gameObject.GetComponent<Health_Tower>().TakeDamage(damge);
-            EffectManager.instance.SpawmVFX("Effect Hit Mage", this.transform.position);
+            healthComponent = target.gameObject.GetComponent<Health_Tower>();
+        }
+        if (healthComponent != null)
+        {
+            
+            float coefficient = DEFAULT_VALUE.GetAttackCoefficient(typeChar,enemyTag);
+            healthComponent.TakeDamage(damage * coefficient);
+            EffectManager.instance.SpawmVFX("Effect Hit Mage", transform.position);
             Destroy(gameObject);
         }
     }
 
-   
+
     public void SetDamgeSKill(int value)
     {
-        damge = value;
+        damage = value;
     }
     public void SetTargetForSkill(Transform target)
     {
         this.target = target;
+    }
+    public  void SetTagOwnSkill(string myTag)
+    {
+        typeChar = myTag;
     }
 }

@@ -10,7 +10,7 @@ public class Health_Melee : Health
         controllerChacracrer = GetComponent<ControllerChacracrer>();
        
     }
-    public override void TakeDamage(int value)
+    public override void TakeDamage(float value)
     {
         base.TakeDamage(value);
     }

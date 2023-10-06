@@ -4,30 +4,31 @@ using UnityEngine;
 
 public static class DEFAULT_VALUE
 {
-    public static float COEFICIENT_ATTACK_DEFAULT = 1f;
-    public static float COEFICIENT_ATTACK_MAGE=1.2f;
-    public static float COEFICIENT_ATTACK_MELEE = 1.3f;
-    public static float COEFICIENT_ATTACK_ARCHER = 1.4f;
+    public static float COEFICIENT_ATTACK_DEFAULT = 1f; //DEFAULT 
+    public static float COEFICIENT_ATTACK_MAGE_MELEE=1.2f; //MAGE COUNTER MELEE
+    public static float COEFICIENT_ATTACK_MELEE_ARCHER = 1.3f; //MELEE COUNTER ARCHER
+    public static float COEFICIENT_ATTACK_ARCHER_MAGE = 1.4f; //ARCHER COUNTER MAGE
 
+    private static Dictionary<string, float> attackCoefficients =new Dictionary<string, float>();
+
+
+    static DEFAULT_VALUE()
+    {
+        attackCoefficients.Add("CharacterMage - CharacterMelee", COEFICIENT_ATTACK_MAGE_MELEE);
+        attackCoefficients.Add("CharacterMelee - CharacterArcher", COEFICIENT_ATTACK_MELEE_ARCHER);
+        attackCoefficients.Add("CharacterArcher - CharacterMage", COEFICIENT_ATTACK_ARCHER_MAGE);
+    }
     public static float GetAttackCoefficient(string playerTag,string enemyTag)
     {
-        if (enemyTag == playerTag)
+        string key = playerTag + " - " + enemyTag;
+        if (attackCoefficients.ContainsKey(key))
         {
-            return DEFAULT_VALUE.COEFICIENT_ATTACK_DEFAULT;
+            return attackCoefficients[key];
         }
         else
         {
-            switch (enemyTag)
-            {
-                case "CharacterMage":
-                    return DEFAULT_VALUE.COEFICIENT_ATTACK_MAGE;
-                case "CharacterMelee":
-                    return DEFAULT_VALUE.COEFICIENT_ATTACK_MELEE;
-                case "Tower":
-                    return DEFAULT_VALUE.COEFICIENT_ATTACK_DEFAULT;
-                default:
-                    return 1f; // Giá tr? m?c ??nh n?u không tìm th?y tag phù h?p
-            }
+            return 1f; // Giá tr? m?c ??nh n?u không tìm th?y key phù h?p
+            
         }
     }
 }

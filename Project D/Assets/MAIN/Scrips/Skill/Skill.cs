@@ -62,6 +62,10 @@ public class Skill : MonoBehaviour
         {
             healthComponent = target.gameObject.GetComponent<Health_Ranged>();
         }
+        else if (enemyTag == "CharacterArcher")
+        {
+            healthComponent = target.gameObject.GetComponent<Health_Ranged>();
+        }
         else if (enemyTag == "CharacterMelee")
         {
             healthComponent = target.gameObject.GetComponent<Health_Melee>();
@@ -77,6 +81,7 @@ public class Skill : MonoBehaviour
             healthComponent.TakeDamage(damage * coefficient);
             EffectManager.instance.SpawmVFX("Effect Hit Mage", transform.position);
             Destroy(gameObject);
+          
         }
     }
 

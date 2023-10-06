@@ -11,6 +11,7 @@ public class Health : MonoBehaviour
     private float DefaultHealth;
     protected bool isAttacking;
     protected float delayStatusAttack = .5f;
+    protected bool isDie = false;
     [SerializeField] TextMeshProUGUI textHealth;
     public virtual void TakeDamage(float value)
     {
@@ -26,7 +27,7 @@ public class Health : MonoBehaviour
 
         textMeshPro.text = value.ToString();
 
-        if (maxHealt <= 0)
+        if (maxHealt <= 0 && isDie==false)
         {
             EventDie();
             textHealth.enabled=false;   

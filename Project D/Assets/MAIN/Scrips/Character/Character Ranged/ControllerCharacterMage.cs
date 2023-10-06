@@ -10,6 +10,8 @@ public class ControllerCharacterMage : ControllerChacracrer
     [SerializeField] protected GameObject WeaponParent;
     protected List<GameObject> L_ChildWeapon =new List<GameObject>();
 
+   
+
     private void Start()
     {
         Init();
@@ -68,9 +70,11 @@ public class ControllerCharacterMage : ControllerChacracrer
         }
     }   
 
-    protected override void SetUpAttack()
+    protected override void SetUpAttack() //this function base in "Attack" in parent ControllerCharcter
     {
         GameObject BallSkill = Instantiate(SO_Information.PrefabSkill, WeaponParent.transform.position,Quaternion.identity);
+
+
         Skill Skill = BallSkill.GetComponent<Skill>();
 
         Skill.SetTargetForSkill(L_Collider[0].gameObject.transform);//Get first object in list object "enemy layer"

@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e29d8d83cc1f3d4598f9a537127a89e, type: 3}
-  m_Name: QuaticArcher
+  m_Name: SlimeArcher
   m_EditorClassIdentifier: 
-  HP: 200
-  RangedAttack: 6
-  SpeedMove: 2
-  Damge: 20
+  HP: 100
+  RangedAttack: 2
+  SpeedMove: 1
+  Damge: 10
   CoolDown: 2
-  PrefabSkill: {fileID: 8660094175212884607, guid: cff7a8dbc7ad4d94891106f524f222cf, type: 3}
+  PrefabSkill: {fileID: 6783017651545389813, guid: f4cbaa5effc3f064e8447cb7b11eacee, type: 3}

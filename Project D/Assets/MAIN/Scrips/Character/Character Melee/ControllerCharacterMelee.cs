@@ -45,6 +45,10 @@ public class ControllerCharacterMelee : ControllerChacracrer
         {
             healthEnemy = L_Collider[0].GetComponent<Health_Ranged>();
         }
+        else if (enemyTag == "CharacterArcher")
+        {
+            healthEnemy = L_Collider[0].GetComponent<Health_Ranged>();
+        }
         else if (enemyTag == "CharacterMelee")
         {
             healthEnemy = L_Collider[0].GetComponent<Health_Melee>();

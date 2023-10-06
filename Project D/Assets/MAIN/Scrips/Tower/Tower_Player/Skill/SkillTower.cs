@@ -22,7 +22,7 @@ public class SkillTower : MonoBehaviour
             Health healthEnemy = null;
             foreach (Collider2D enemy in CT_Collision.Return_L_CollderTouching())
             {
-                if (enemy.gameObject.tag == "CharacterRanged")
+                if (enemy.gameObject.tag == "CharacterMage" || enemy.gameObject.tag == "CharacterArcher")
                 {
                     Health_Ranged healthRanged = enemy.GetComponent<Health_Ranged>();
                     if (healthRanged != null)

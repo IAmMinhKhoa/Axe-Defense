@@ -13,12 +13,19 @@ public class TextPopUp : MonoBehaviour
     private float timer = 0f;
     private float initialFontSize;
     private TextMeshPro textMeshPro;
+    private bool check_EndPop = false;
 
-
-    private void Start()
+    
+    private void Awake()
     {
         textMeshPro = GetComponent<TextMeshPro>();
         initialFontSize = textMeshPro.fontSize;
+       
+    }
+    private void OnEnable()
+    {
+        check_EndPop = false;
+        timer = 0f;
     }
 
     private void Update()
@@ -43,9 +50,11 @@ public class TextPopUp : MonoBehaviour
             float alpha = Mathf.Lerp(1f, 0f, (timer - popUpDuration) * fadeSpeed);
             textMeshPro.alpha = alpha;
 
-            if (alpha <= 0f)
+            if (alpha <= 0f && check_EndPop==false)
             {
-                Destroy(gameObject);
+                //Destroy(gameObject);
+                check_EndPop = true;
+                ObjectPoolManager.ReturnOjectToPool(gameObject);
             }
         }
     }

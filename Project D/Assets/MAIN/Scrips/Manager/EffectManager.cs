@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class EffectManager : MonoBehaviour
 {
     static public EffectManager instance;
     public List<GameObject> effects;
+
+ 
 
     private void Awake()
     {
@@ -27,8 +30,9 @@ public class EffectManager : MonoBehaviour
     public GameObject SpawmVFX(string nameEffect, Vector3 position)
     {
         GameObject effect = Get(nameEffect);
-        GameObject newEffect = Instantiate(effect, position, Quaternion.identity);
-        newEffect.gameObject.SetActive(true);
+        //GameObject newEffect = Instantiate(effect, position, Quaternion.identity);
+       GameObject newEffect = ObjectPoolManager.SpawnOject(effect, position, Quaternion.identity,ObjectPoolManager.Pooltyle.Gameobject);
+      newEffect.gameObject.SetActive(true);
         return newEffect;
 
 
@@ -44,13 +48,11 @@ public class EffectManager : MonoBehaviour
 
 
 
-   /* private void Update()
+  /*  private void Update()
     {
-        if (Input.GetMouseButtonDown(0)) // Ki?m tra xem ng??i dùng ?ã nh?n nút chu?t trái (0) hay không
+        if (Input.GetMouseButtonDown(0)) 
         {
-            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            mousePosition = new Vector3(mousePosition.x, mousePosition.y, 0);
-            SpawmVFX("FrefabTextDamge",mousePosition);
+            GameObject newEffect = ObjectPoolManager.SpawnOject(cc, transform.position, Quaternion.identity, ObjectPoolManager.Pooltyle.Gameobject);
         }
     }*/
 }

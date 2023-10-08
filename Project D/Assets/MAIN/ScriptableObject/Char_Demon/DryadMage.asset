@@ -15,6 +15,6 @@ MonoBehaviour:
   HP: 200
   RangedAttack: 4
   SpeedMove: 2
-  Damge: 15
+  Damge: 10
   CoolDown: 3
   PrefabSkill: {fileID: 6630136655605506332, guid: 505b5ab27ce9acd41a43c8d358d22005, type: 3}

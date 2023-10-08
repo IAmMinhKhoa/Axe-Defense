@@ -41,7 +41,7 @@ public class SkillTower : MonoBehaviour
                     }
                 }
             }
-            EffectManager.instance.SpawmVFX("Effect Hit Mage", this.transform.position);
+            EffectManager.instance.SpawmVFX("Effect Hit Mage", this.transform.position, ObjectPoolManager.Pooltyle.ParticleSystem);
             Destroy(this.gameObject);
             
         }

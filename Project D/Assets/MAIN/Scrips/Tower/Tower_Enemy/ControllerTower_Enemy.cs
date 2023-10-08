@@ -40,7 +40,8 @@ public class ControllerTower_Enemy : ControllerTower
 
     protected void SetUpSkill()
     {
-        GameObject BallSkill = Instantiate(SO_Information.PrefabSkill, PointAttack.position, Quaternion.identity);
+        // GameObject BallSkill = Instantiate(SO_Information.PrefabSkill, PointAttack.position, Quaternion.identity);
+        GameObject BallSkill = ObjectPoolManager.SpawnOject(SO_Information.PrefabSkill, PointAttack.transform.position, Quaternion.identity, ObjectPoolManager.Pooltyle.Skill);
         Skill Skill = BallSkill.GetComponent<Skill>();
 
         Skill.SetTargetForSkill(L_Collider[0].gameObject.transform);//Get first object in list object "enemy layer"

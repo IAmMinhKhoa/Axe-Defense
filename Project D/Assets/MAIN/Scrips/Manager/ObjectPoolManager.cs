@@ -12,11 +12,13 @@ public class ObjectPoolManager : MonoBehaviour
 
     private static GameObject _particleSystemsEmpty;
     private static GameObject _gameObjectsEmpty;
+    private static GameObject _skillEmpty;
 
     public enum Pooltyle
     {
         ParticleSystem,
         Gameobject,
+        Skill,
         None
     }
     public static Pooltyle PoolingType;
@@ -35,6 +37,9 @@ public class ObjectPoolManager : MonoBehaviour
 
         _gameObjectsEmpty = new GameObject("GameObjects");
         _gameObjectsEmpty.transform.SetParent(_objectPoolEmptyHoder.transform);
+
+        _skillEmpty = new GameObject("Skills");
+        _skillEmpty.transform.SetParent(_objectPoolEmptyHoder.transform);
     }
 
 
@@ -53,15 +58,7 @@ public class ObjectPoolManager : MonoBehaviour
         //check if there are any iactive objects in the pool
         GameObject spawnableObj = pool.InactiveObjects.FirstOrDefault();
 
-        /* GameObject spawnableObj = null;
-         foreach (GameObject obj in pool.InactiveObjects)
-         {
-             if (obj != null)
-             {
-                 spawnableObj = obj;
-                 break;
-             }
-         }*/
+  
 
         if (spawnableObj == null)
         {
@@ -114,6 +111,8 @@ public class ObjectPoolManager : MonoBehaviour
                 return _particleSystemsEmpty;
             case Pooltyle.Gameobject:
                 return _gameObjectsEmpty;
+            case Pooltyle.Skill:
+                return _skillEmpty;
             case Pooltyle.None:
                 return null;
             default:

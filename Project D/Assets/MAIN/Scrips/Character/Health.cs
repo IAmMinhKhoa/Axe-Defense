@@ -21,7 +21,7 @@ public class Health : MonoBehaviour
 
         maxHealt -= value;
 
-        GameObject TextDamge = EffectManager.instance.SpawmVFX("FrefabTextDamge", new Vector3(this.transform.position.x, transform.position.y + 2f, transform.position.z));
+        GameObject TextDamge = EffectManager.instance.SpawmVFX("FrefabTextDamge", new Vector3(this.transform.position.x, transform.position.y + 2f, transform.position.z), ObjectPoolManager.Pooltyle.Gameobject);
 
         TMP_Text textMeshPro = TextDamge.GetComponent<TMP_Text>();
 

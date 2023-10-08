@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: SlimeArcher
   m_EditorClassIdentifier: 
   HP: 100
-  RangedAttack: 2
+  RangedAttack: 4
   SpeedMove: 1
   Damge: 10
   CoolDown: 2
-  PrefabSkill: {fileID: 6783017651545389813, guid: f4cbaa5effc3f064e8447cb7b11eacee, type: 3}
+  PrefabSkill: {fileID: 8660094175212884607, guid: e901ab27297d5964e90ab9e02bcc2fe0, type: 3}

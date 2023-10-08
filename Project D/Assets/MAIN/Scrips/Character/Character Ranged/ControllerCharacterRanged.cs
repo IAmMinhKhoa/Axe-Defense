@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ControllerCharacterMage : ControllerChacracrer
+public class ControllerCharacterRanged : ControllerChacracrer
 {
     [SerializeField] protected SO_CharacterInforMantionRANGER SO_Information;
 
@@ -72,8 +72,8 @@ public class ControllerCharacterMage : ControllerChacracrer
 
     protected override void SetUpAttack() //this function base in "Attack" in parent ControllerCharcter
     {
-        GameObject BallSkill = Instantiate(SO_Information.PrefabSkill, WeaponParent.transform.position,Quaternion.identity);
-
+        // GameObject BallSkill = Instantiate(SO_Information.PrefabSkill, WeaponParent.transform.position,Quaternion.identity);
+        GameObject BallSkill = ObjectPoolManager.SpawnOject(SO_Information.PrefabSkill, WeaponParent.transform.position, Quaternion.identity, ObjectPoolManager.Pooltyle.Skill);
 
         Skill Skill = BallSkill.GetComponent<Skill>();
 

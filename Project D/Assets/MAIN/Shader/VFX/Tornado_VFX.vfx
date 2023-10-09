@@ -27,19 +27,10 @@ MonoBehaviour:
     - model: {fileID: 8926484042661614555}
       id: 0
       isStickyNote: 0
-    - model: {fileID: 8926484042661614611}
-      id: 0
-      isStickyNote: 0
     - model: {fileID: 8926484042661614618}
       id: 0
       isStickyNote: 0
     - model: {fileID: 8926484042661614558}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614580}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614620}
       id: 0
       isStickyNote: 0
     - model: {fileID: 8926484042661614647}
@@ -73,15 +64,6 @@ MonoBehaviour:
       id: 0
       isStickyNote: 0
     - model: {fileID: 8926484042661614606}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614653}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614644}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614664}
       id: 0
       isStickyNote: 0
   - title: TORNADO CORE
@@ -1117,7 +1099,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Mesh, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"obj":{"fileID":-8708077450106395685,"guid":"d2f9e1d3d98ac8248ab32b7d9d94aa21","type":3}}'
+      m_SerializableObject: '{"obj":{"fileID":-8708077450106395685,"guid":"429a181e694b11c4bb9d9af55279c5c7","type":3}}'
     m_Space: 2147483647
   m_Property:
     name: mesh
@@ -5529,7 +5511,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Mesh, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"obj":{"fileID":-8708077450106395685,"guid":"d2f9e1d3d98ac8248ab32b7d9d94aa21","type":3}}'
+      m_SerializableObject: '{"obj":{"fileID":-8708077450106395685,"guid":"429a181e694b11c4bb9d9af55279c5c7","type":3}}'
     m_Space: 2147483647
   m_Property:
     name: mesh

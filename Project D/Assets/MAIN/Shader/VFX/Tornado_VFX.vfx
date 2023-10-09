@@ -1099,7 +1099,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Mesh, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"obj":{"fileID":-8708077450106395685,"guid":"429a181e694b11c4bb9d9af55279c5c7","type":3}}'
+      m_SerializableObject: '{"obj":{"fileID":-8708077450106395685,"guid":"9c31832e029987d44bcc5770aef231be","type":3}}'
     m_Space: 2147483647
   m_Property:
     name: mesh
@@ -2259,7 +2259,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 0.2
+      m_SerializableObject: 25
     m_Space: 2147483647
   m_Property:
     name: Size
@@ -5511,7 +5511,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Mesh, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"obj":{"fileID":-8708077450106395685,"guid":"429a181e694b11c4bb9d9af55279c5c7","type":3}}'
+      m_SerializableObject: '{"obj":{"fileID":-8708077450106395685,"guid":"9c31832e029987d44bcc5770aef231be","type":3}}'
     m_Space: 2147483647
   m_Property:
     name: mesh
@@ -5808,7 +5808,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 0.2
+      m_SerializableObject: 25
     m_Space: 2147483647
   m_Property:
     name: Size

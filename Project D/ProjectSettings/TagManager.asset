@@ -13,6 +13,7 @@ TagManager:
   - Tower
   - TargetPoint
   - CharacterArcher
+  - ValidDropArea
   layers:
   - Default
   - TransparentFX

@@ -6,11 +6,25 @@ using UnityEngine.UI;
 [CreateAssetMenu(fileName = "New Character", menuName = "Character/Melee")]
 public class SO_CharacterInforMantion : ScriptableObject
 {
-    protected string nameChar;
-    protected Image Avatar;
+    
+    public enum TypeChar{
+        Melee,
+        Mage,
+        Archer
+    }
+    [Header("VARIABLE DEFAULT")]
+    [Space(20)]
+    public TypeChar typeCharacter;
+
+    public string nameChar;
+    public Image Avatar;
     public int HP;
+    public int Damge; //set truc tiep khi instance skill
+    public GameObject Prefab_Character;
+
     public float RangedAttack;
     public int SpeedMove;
-    public int Damge; //set truc tiep khi instance skill
     public int CoolDown;
+    
+
 }

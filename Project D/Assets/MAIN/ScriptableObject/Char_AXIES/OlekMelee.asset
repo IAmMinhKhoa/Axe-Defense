@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec7b20182af1e3a43b72eb07666f35e3, type: 3}
   m_Name: OlekMelee
   m_EditorClassIdentifier: 
+  typeCharacter: 0
+  nameChar: Olek
+  Avatar: {fileID: 0}
   HP: 200
+  Damge: 10
+  Prefab_Character: {fileID: 8335421818274721578, guid: de9f98233131f884e993f4fa014516a7, type: 3}
   RangedAttack: 1
   SpeedMove: 2
-  Damge: 10
   CoolDown: 3

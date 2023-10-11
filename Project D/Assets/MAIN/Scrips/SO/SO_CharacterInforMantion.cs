@@ -7,14 +7,14 @@ using UnityEngine.UI;
 public class SO_CharacterInforMantion : ScriptableObject
 {
     
-    public enum TypeChar{
+    public  enum TypeChar{
         Melee,
         Mage,
         Archer
     }
     [Header("VARIABLE DEFAULT")]
     [Space(20)]
-    public TypeChar typeCharacter;
+    public  TypeChar typeCharacter;
 
     public string nameChar;
     public Image Avatar;

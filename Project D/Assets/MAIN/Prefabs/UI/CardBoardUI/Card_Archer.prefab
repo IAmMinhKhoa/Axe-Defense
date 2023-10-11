@@ -109,7 +109,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -252,7 +252,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef228127644654c4f9c071efb303f255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab_Character_Of_Card: {fileID: 0}
 --- !u!114 &-4986209160422993475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,3 +264,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1ac7b7ffb4585d47b4baecf918e2e6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textName: {fileID: 7979142810995510568}
+  G_Prefab_Character: {fileID: 0}

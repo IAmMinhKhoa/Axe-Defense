@@ -14,7 +14,7 @@ public class GUI_CardBoard : MonoBehaviour
 
 
     protected Vector3 P_Summon;
-
+    
 
     private void Start()
     {

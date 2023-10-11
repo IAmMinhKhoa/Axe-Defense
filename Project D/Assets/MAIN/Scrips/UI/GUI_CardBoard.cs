@@ -28,7 +28,8 @@ public class GUI_CardBoard : MonoBehaviour
 
     public void SetEvent_SummonPrefab(Vector3 Position)
     {
-        E_Summon_Prefab?.Invoke(this, EventArgs.Empty);
         P_Summon = Position;
+        E_Summon_Prefab?.Invoke(this, EventArgs.Empty);
+        
     }
 }

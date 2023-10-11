@@ -6,52 +6,72 @@ public class ControllerBoardCardUI : MonoBehaviour
 {
     [SerializeField] protected List<SO_CharacterInforMantion> L_SO_Information_Characters = new List<SO_CharacterInforMantion>();
     [SerializeField] protected List<InforCard> L_Card_Default = new List<InforCard>();
-   
+    public GameObject BrCanDrop;
+    public GameObject BrNotCanDrop;
+
+    protected event EventHandler E_SummonCard;
+
 
     private void Start()
     {
-        /* GameObject card = Instantiate(L_Card_Default[0], transform);
-         card.transform.parent = T_Content_Scroll;
-         GUI_CardBoard Gui_Card = card.GetComponent<GUI_CardBoard>();
-         Gui_Card.textName.text = L_SO_Information_Characters[0].name.ToString();
-         Gui_Card.G_Prefab_Character = L_SO_Information_Characters[0].Prefab_Character;*/
+        TurnOffBR();
         LoadCard();
+        E_SummonCard += ControllerBoardCardUI_E_SummonCard;
+    }
+
+    private void ControllerBoardCardUI_E_SummonCard(object sender, EventArgs e)
+    {
+      
     }
 
     protected void LoadCard()
-    {
-        System.Random random = new System.Random();
-        
-        for (int i = 0; i < 3; i++)
+    { 
+        for (int i = 0; i < 4; i++)
         {
-            int Random_Char_Card = random.Next(0, 3);
-            // if (L_SO_Information_Characters[Random_Char_Card].typeCharacter)
-            AddDataToCard(L_SO_Information_Characters[Random_Char_Card]);
-            Debug.Log(L_SO_Information_Characters[Random_Char_Card].name);
+            CreatRandomCard();
         }
     }
 
-    protected void AddDataToCard(SO_CharacterInforMantion SO_Infor)
+    protected void CreatRandomCard()
+    {
+        System.Random random = new System.Random();
+        int Random_Char_Card = random.Next(0, 3);
+        GameObject card = AddDataToCard(L_SO_Information_Characters[Random_Char_Card]);
+        card.transform.parent = this.transform;
+    }
+
+    protected GameObject AddDataToCard(SO_CharacterInforMantion SO_Infor)
     {
         foreach (InforCard inforCard in L_Card_Default)
         {
-            Debug.Log(inforCard.name_Type +" " + SO_Infor.typeCharacter.ToString());
             if (inforCard.name_Type == SO_Infor.typeCharacter.ToString())
             {
-                Debug.Log("chuan :" + inforCard.name_Type);
+               
                 GameObject card = Instantiate(inforCard.card, transform);
                 card.transform.parent = this.transform;
                 GUI_CardBoard Gui_Card = card.GetComponent<GUI_CardBoard>();
 
                 Gui_Card.textName.text = SO_Infor.name.ToString();
                 Gui_Card.G_Prefab_Character = SO_Infor.Prefab_Character;
-            }
-            else
-            {
-                Debug.Log("deo");
+
+                return card;
             }
         }
+        return null;
     }
+
+  
+    public void TurnOffBR()
+    {
+        BrCanDrop.SetActive(false);
+        BrNotCanDrop.SetActive(false);
+    }
+    public void SetEventSummon()
+    {
+        CreatRandomCard();
+    }
+
+
 }
 
 [System.Serializable]

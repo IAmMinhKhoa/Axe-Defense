@@ -252,6 +252,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef228127644654c4f9c071efb303f255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftHalfScreenLimit: -1
+  boundaryLineRenderer: {fileID: 0}
 --- !u!114 &-4986209160422993475
 MonoBehaviour:
   m_ObjectHideFlags: 0

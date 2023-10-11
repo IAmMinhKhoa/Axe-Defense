@@ -15,7 +15,11 @@ public class Health : MonoBehaviour
     [SerializeField] TextMeshProUGUI textHealth;
     public virtual void TakeDamage(float value)
     {
-        EventHit();
+        if (isDie!=true)//if character not die
+        {
+            EventHit();
+        }
+        
 
         isAttacking = true;
 
@@ -30,6 +34,7 @@ public class Health : MonoBehaviour
         if (maxHealt <= 0 && isDie==false)
         {
             EventDie();
+            isDie = true;
             textHealth.enabled=false;   
             Destroy(gameObject, 1.5f);
         }

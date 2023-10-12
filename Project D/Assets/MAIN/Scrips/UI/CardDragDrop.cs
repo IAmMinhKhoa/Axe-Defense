@@ -16,6 +16,8 @@ public class CardDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         protected Vector3 mousePosition; //position of mouse
         public float leftHalfScreenLimit = -1f; //limit can drop object 
         private const float FlipDuration = 0.25f;
+    //protected int SumMana = PlayerPrefs.GetInt("Mana_InGame");
+        protected int cost_To_Summon;
     #endregion
 
     #region Component
@@ -46,7 +48,9 @@ public class CardDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         scrollViewParent = transform.parent;
         scrollViewInitialPosition = scrollViewParent.position;
         Gui_Card = GetComponent<GUI_CardBoard>();
-        controllerBoardCardUI = GetComponentInParent<ControllerBoardCardUI>();    
+        controllerBoardCardUI = GetComponentInParent<ControllerBoardCardUI>();
+
+        cost_To_Summon = int.Parse(Gui_Card.textCostSummon.text.ToString()) ;
 
         GetVaribleScreen();
     }
@@ -64,7 +68,7 @@ public class CardDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = 0f;
-        if (mousePosition.x < screenLeft || mousePosition.x > screenRight || mousePosition.y < screenBottom || mousePosition.y > screenTop || mousePosition.x >leftHalfScreenLimit)
+        if (mousePosition.x < screenLeft || mousePosition.x > screenRight || mousePosition.y < screenBottom || mousePosition.y > screenTop || mousePosition.x >leftHalfScreenLimit ||cost_To_Summon> PlayerPrefs.GetInt("Mana_InGame"))
         {
             canDrop = false;
             controllerBoardCardUI.BrNotCanDrop.SetActive(true);
@@ -76,6 +80,7 @@ public class CardDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
             controllerBoardCardUI.BrCanDrop.SetActive(true);
             controllerBoardCardUI.BrNotCanDrop.SetActive(false);
         }
+        
 
     }
 
@@ -99,6 +104,11 @@ public class CardDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
                 //Instantiate(prefab_Character_Of_Card, mousePosition, Quaternion.identity);
                 Gui_Card.SetEvent_SummonPrefab(mousePosition);
                 controllerBoardCardUI.SetEventSummon();
+
+                //affter summon => sumCost = sumcost - cost_To_Summon => update new sumcost
+                int sumCost = PlayerPrefs.GetInt("Mana_InGame");
+                PlayerPrefs.SetInt("Mana_InGame", sumCost - cost_To_Summon);
+
                 Destroy(gameObject);
                 controllerBoardCardUI.TurnOffBR();
             }

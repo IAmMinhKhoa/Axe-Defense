@@ -62,4 +62,8 @@ public class Health : MonoBehaviour
         DefaultHealth = maxHealt;
         textHealth.SetText(maxHealt.ToString() + "/" + DefaultHealth);
     }
+    public bool GetStatusIsDie()
+    {
+        return isDie;
+    }
 }

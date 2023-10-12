@@ -31,8 +31,8 @@ public class ControllerBoardCardUI : MonoBehaviour
     public void CreatRandomCard()
     {
         System.Random random = new System.Random();
-        int Random_Char_Card = random.Next(0, 3);
-        GameObject card = AddDataToCard(L_SO_Information_Characters[Random_Char_Card]);
+       // int Random_Char_Card = random.Next(0, 3);
+        GameObject card = AddDataToCard(L_SO_Information_Characters[0]);
         card.transform.SetParent(this.transform, false);
     }
 
@@ -47,8 +47,16 @@ public class ControllerBoardCardUI : MonoBehaviour
                 
                 GUI_CardBoard Gui_Card = card.GetComponent<GUI_CardBoard>();
 
-                Gui_Card.textName.text = SO_Infor.name.ToString();
-                Gui_Card.G_Prefab_Character = SO_Infor.Prefab_Character;
+                /*Gui_Card.textName.text = SO_Infor.name.ToString();
+                Gui_Card.SetPrefabSummon(SO_Infor.Prefab_Character);*/
+                string Name = SO_Infor.name.ToString();
+                string Cost= SO_Infor.CostSummon.ToString();
+                string HP = SO_Infor.HP.ToString();
+                string Damage = SO_Infor.Damge.ToString();
+                Sprite Img = SO_Infor.Avatar;
+                GameObject Prefab_Char = SO_Infor.Prefab_Character;
+
+                Gui_Card.SetDataToCard(Name, Cost, HP, Damage, Img, Prefab_Char);
 
                 return card;
             }

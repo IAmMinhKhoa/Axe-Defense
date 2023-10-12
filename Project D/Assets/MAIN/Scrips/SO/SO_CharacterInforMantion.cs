@@ -17,9 +17,10 @@ public class SO_CharacterInforMantion : ScriptableObject
     public  TypeChar typeCharacter;
 
     public string nameChar;
-    public Image Avatar;
+    public Sprite Avatar;
     public int HP;
     public int Damge; //set truc tiep khi instance skill
+    public int CostSummon;
     public GameObject Prefab_Character;
 
     public float RangedAttack;

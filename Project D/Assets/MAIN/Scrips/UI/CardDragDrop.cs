@@ -15,15 +15,17 @@ public class CardDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     
         protected Vector3 mousePosition; //position of mouse
         public float leftHalfScreenLimit = -1f; //limit can drop object 
+        private const float FlipDuration = 0.25f;
     #endregion
 
     #region Component
         protected GUI_CardBoard Gui_Card;
         protected ControllerBoardCardUI controllerBoardCardUI;
+        private Coroutine flipCoroutine;
     #endregion
 
     #region Variable_Position_Of_Screen
-        protected float screenLeft;
+    protected float screenLeft;
         protected float screenRight;
         protected float screenTop;
         protected float screenBottom;
@@ -32,7 +34,9 @@ public class CardDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     #region Bool
         protected bool canDrop;
         private bool isFlipped = false;
+        private bool isFlipping = false;
     #endregion
+
     #region GameObject
         public GameObject frontCard; 
         public GameObject endCard; 
@@ -103,35 +107,47 @@ public class CardDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
     public void OnMouseDown()
     {
+        if (!isFlipping )
+        {
+            if (isFlipped)
+            {
+                flipCoroutine = StartCoroutine(FlipCard(endCard, frontCard));
+            }
+            else
+            {
+                
+                flipCoroutine = StartCoroutine(FlipCard(frontCard, endCard));
+            }
+
+            isFlipped = !isFlipped;
+        }
+    }
+
+    private IEnumerator FlipCard(GameObject fromCard, GameObject toCard)
+    {
+        isFlipping = true;
+
+        Quaternion startRotation = fromCard.transform.rotation;
+        Quaternion endRotation = Quaternion.Euler(0f, 180f, 0f);
+
       
-        if (isFlipped)
+
+        float elapsedTime = 0f;
+
+        while (elapsedTime < FlipDuration)
         {
-            
-            FlipToFront();
+            float t = elapsedTime / FlipDuration;
+            fromCard.transform.rotation = Quaternion.Slerp(startRotation, endRotation, t);
+            elapsedTime += Time.deltaTime;
+            yield return null;
         }
-        else
-        {
-           
-            FlipToEnd();
-        }
-    }
 
-    private void FlipToFront()
-    {
-        // ?n m?t sau và hi?n th? m?t tr??c
-        endCard.SetActive(false);
-        frontCard.SetActive(true);
 
-        isFlipped = false; // C?p nh?t tr?ng thái flip
-    }
+        fromCard.SetActive(false);
+        fromCard.transform.rotation = startRotation;
+        toCard.SetActive(true);
 
-    private void FlipToEnd()
-    {
-        // ?n m?t tr??c và hi?n th? m?t sau
-        frontCard.SetActive(false);
-        endCard.SetActive(true);
-
-        isFlipped = true; // C?p nh?t tr?ng thái flip
+        isFlipping = false;
     }
 
 

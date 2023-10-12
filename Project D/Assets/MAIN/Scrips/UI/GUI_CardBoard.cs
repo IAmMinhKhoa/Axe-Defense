@@ -3,11 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GUI_CardBoard : MonoBehaviour
 {
     public TextMeshProUGUI textName;
-    public GameObject G_Prefab_Character;
+    public TextMeshProUGUI textCostSummon;
+    public TextMeshProUGUI textHP;
+    public TextMeshProUGUI textDamage;
+    public Image IMG_Avatar;
+    protected GameObject G_Prefab_Character;
 
 
     public event EventHandler E_Summon_Prefab;
@@ -32,6 +37,20 @@ public class GUI_CardBoard : MonoBehaviour
         E_Summon_Prefab?.Invoke(this, EventArgs.Empty); 
     }
 
-
+    public void SetPrefabSummon(GameObject obj)
+    {
+        G_Prefab_Character = obj;
+    }
     
+    public void SetDataToCard(string name, string cost,  string HP, string damage,Sprite img, GameObject prefab_Summon)
+    {
+        textCostSummon.text = cost;
+        textName.text = name;
+        textHP.text = HP;   
+        textDamage.text = damage;   
+        IMG_Avatar.sprite=img;
+
+        G_Prefab_Character = prefab_Summon;
+    }
+
 }

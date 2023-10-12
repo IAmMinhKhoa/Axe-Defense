@@ -8,13 +8,14 @@ public class ControllerSummon : MonoBehaviour
 {
     public TextMeshProUGUI textCountMana;
     public int BounsMana=1;
+    public int DefaultMana = 5;
     private void Awake()
     {
-        PlayerPrefs.SetInt("Mana_InGame", 20);
+        PlayerPrefs.SetInt("Mana_InGame", DefaultMana);
     }
     private void Start()
     {
-        InvokeRepeating("DelayedSum", 1, 1);//first: function, second: time firt to run that function, third: time every second to recall that function
+        InvokeRepeating("DelayedSum", 1, 4);//first: function, second: time firt to run that function, third: time every second to recall that function
     }
     private void Update()
     {

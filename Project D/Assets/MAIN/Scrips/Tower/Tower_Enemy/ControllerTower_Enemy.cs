@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class ControllerTower_Enemy : ControllerTower
@@ -12,11 +13,13 @@ public class ControllerTower_Enemy : ControllerTower
     protected bool canAttack = true;
     [SerializeField] protected float attackCooldown;
 
-   
+    [SerializeField] protected List<GameObject> L_Enemy =new List<GameObject> ();
     private void Start()
     {
         CT_Collision=GetComponent<ControllerCollision>();
         Init();
+
+        InvokeRepeating("SpamtRandomEnemy", 1, 10);
     }
 
     private void Update()
@@ -55,5 +58,14 @@ public class ControllerTower_Enemy : ControllerTower
       
         yield return new WaitForSeconds(attackCooldown);
         canAttack = true;
+    }
+
+
+    public void SpamtRandomEnemy()
+    {
+        System.Random random = new System.Random();
+        int Random_Index = random.Next(0, 3);
+        GameObject Enemy = Instantiate(L_Enemy[Random_Index],new Vector3(transform.position.x-4f, transform.position.y, transform.position.z),quaternion.identity);
+       
     }
 }

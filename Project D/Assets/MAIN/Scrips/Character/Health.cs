@@ -35,7 +35,13 @@ public class Health : MonoBehaviour
         {
             EventDie();
             isDie = true;
-            textHealth.enabled=false;   
+            textHealth.enabled=false;
+            //add mana when enemy die
+            if (gameObject.layer == LayerMask.NameToLayer("Enemy"))
+            {
+                int nowMana = PlayerPrefs.GetInt("Mana_InGame");
+                PlayerPrefs.SetInt("Mana_InGame", nowMana + 2);
+            }
             Destroy(gameObject, 1.5f);
         }
         StartCoroutine(DelayATK());

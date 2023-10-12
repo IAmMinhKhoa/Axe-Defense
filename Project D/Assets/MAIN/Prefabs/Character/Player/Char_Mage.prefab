@@ -33,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 588952512292439609}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8851, y: 0.8851, z: 0.8851}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 588952514279880113}
@@ -42,7 +42,7 @@ Transform:
   - {fileID: 588952513287961933}
   - {fileID: 1211708690598005546}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &588952512292439585
 CircleCollider2D:

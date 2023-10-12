@@ -9,20 +9,16 @@ public class ControllerBoardCardUI : MonoBehaviour
     public GameObject BrCanDrop;
     public GameObject BrNotCanDrop;
 
-    protected event EventHandler E_SummonCard;
+    
 
 
     private void Start()
     {
         TurnOffBR();
         LoadCard();
-        E_SummonCard += ControllerBoardCardUI_E_SummonCard;
+       
     }
 
-    private void ControllerBoardCardUI_E_SummonCard(object sender, EventArgs e)
-    {
-      
-    }
 
     protected void LoadCard()
     { 
@@ -32,12 +28,12 @@ public class ControllerBoardCardUI : MonoBehaviour
         }
     }
 
-    protected void CreatRandomCard()
+    public void CreatRandomCard()
     {
         System.Random random = new System.Random();
         int Random_Char_Card = random.Next(0, 3);
         GameObject card = AddDataToCard(L_SO_Information_Characters[Random_Char_Card]);
-        card.transform.parent = this.transform;
+        card.transform.SetParent(this.transform, false);
     }
 
     protected GameObject AddDataToCard(SO_CharacterInforMantion SO_Infor)
@@ -48,7 +44,7 @@ public class ControllerBoardCardUI : MonoBehaviour
             {
                
                 GameObject card = Instantiate(inforCard.card, transform);
-                card.transform.parent = this.transform;
+                
                 GUI_CardBoard Gui_Card = card.GetComponent<GUI_CardBoard>();
 
                 Gui_Card.textName.text = SO_Infor.name.ToString();

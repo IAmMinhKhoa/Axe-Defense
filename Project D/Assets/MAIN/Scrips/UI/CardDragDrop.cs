@@ -31,8 +31,12 @@ public class CardDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
     #region Bool
         protected bool canDrop;
+        private bool isFlipped = false;
     #endregion
-
+    #region GameObject
+        public GameObject frontCard; 
+        public GameObject endCard; 
+    #endregion
     private void Start()
     {
         scrollViewParent = transform.parent;
@@ -41,9 +45,6 @@ public class CardDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         controllerBoardCardUI = GetComponentInParent<ControllerBoardCardUI>();    
 
         GetVaribleScreen();
-
-
-
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -74,7 +75,6 @@ public class CardDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
     }
 
-
     public void OnEndDrag(PointerEventData eventData)
     {
         if (transform.parent == parentToReturnTo)
@@ -82,9 +82,7 @@ public class CardDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
             transform.position = initialPosition;
         }
         else
-        {
-            
-              
+        { 
             if (canDrop==false)
             {
                 //out area screen
@@ -94,16 +92,46 @@ public class CardDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
             }   
             else
             {
-                 
                 //Instantiate(prefab_Character_Of_Card, mousePosition, Quaternion.identity);
                 Gui_Card.SetEvent_SummonPrefab(mousePosition);
                 controllerBoardCardUI.SetEventSummon();
                 Destroy(gameObject);
                 controllerBoardCardUI.TurnOffBR();
-
             }
-            
         }
+    }
+
+    public void OnMouseDown()
+    {
+      
+        if (isFlipped)
+        {
+            
+            FlipToFront();
+        }
+        else
+        {
+           
+            FlipToEnd();
+        }
+    }
+
+    private void FlipToFront()
+    {
+        // ?n m?t sau và hi?n th? m?t tr??c
+        endCard.SetActive(false);
+        frontCard.SetActive(true);
+
+        isFlipped = false; // C?p nh?t tr?ng thái flip
+    }
+
+    private void FlipToEnd()
+    {
+        // ?n m?t tr??c và hi?n th? m?t sau
+        frontCard.SetActive(false);
+        endCard.SetActive(true);
+
+        isFlipped = true; // C?p nh?t tr?ng thái flip
     }
 
 
@@ -114,6 +142,10 @@ public class CardDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         screenTop = Camera.main.ScreenToWorldPoint(new Vector3(0f, Screen.height, 0f)).y;
         screenBottom = Camera.main.ScreenToWorldPoint(Vector3.zero).y;
     }
-
+    public void DestroyThisObject()
+    {
+        controllerBoardCardUI.CreatRandomCard();
+        Destroy(this.gameObject);
+    }
 
 }

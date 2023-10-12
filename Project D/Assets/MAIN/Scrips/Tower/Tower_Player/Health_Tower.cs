@@ -13,9 +13,18 @@ public class Health_Tower : Health
     public override void TakeDamage(float value)
     {
         base.TakeDamage(value);
+       
     }
     protected override void EventDie()
     {
+        if (gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        {
+            GAMEPLAYmanager.instance.stateGame = GAMEPLAYmanager.StateGame.Win;
+        }
+        else if (gameObject.layer == LayerMask.NameToLayer("Player"))
+        {
+            GAMEPLAYmanager.instance.stateGame = GAMEPLAYmanager.StateGame.Lose;
+        }
         controllerTower.OnTowerDie();
     }
     protected override void EventHit()

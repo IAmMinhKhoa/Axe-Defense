@@ -63,7 +63,7 @@ public class ControllerCharacterMelee : ControllerChacracrer
             string myTag = this.gameObject.tag;
             
             float coefficient = DEFAULT_VALUE.GetAttackCoefficient(myTag, enemyTag);
-            healthEnemy.TakeDamage(damage * coefficient);
+            healthEnemy.TakeDamage(damage * Mathf.Round(coefficient));
             EffectManager.instance.SpawmVFX("Effect Hit Melee", L_Collider[0].transform.position, ObjectPoolManager.Pooltyle.ParticleSystem);
         }
     }

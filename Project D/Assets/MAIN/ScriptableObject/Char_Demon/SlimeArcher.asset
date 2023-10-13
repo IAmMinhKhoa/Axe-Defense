@@ -12,9 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e29d8d83cc1f3d4598f9a537127a89e, type: 3}
   m_Name: SlimeArcher
   m_EditorClassIdentifier: 
-  HP: 100
+  typeCharacter: 0
+  nameChar: 
+  Avatar: {fileID: 0}
+  HP: 130
+  Damge: 13
+  CostSummon: 0
+  Prefab_Character: {fileID: 0}
   RangedAttack: 4
   SpeedMove: 1
-  Damge: 10
   CoolDown: 2
   PrefabSkill: {fileID: 8660094175212884607, guid: e901ab27297d5964e90ab9e02bcc2fe0, type: 3}

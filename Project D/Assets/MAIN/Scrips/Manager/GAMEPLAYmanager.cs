@@ -5,13 +5,24 @@ using UnityEngine;
 
 public class GAMEPLAYmanager : MonoBehaviour
 {
+    #region Singloten
     public static GAMEPLAYmanager instance;
+    #endregion
 
+    #region Event
+    public event EventHandler E_OnWin, E_OnLose;
+    #endregion
+
+    #region GameObject
     public GameObject UI_Win, UI_Lose;
+    #endregion
 
-    public event EventHandler E_OnWin,E_OnLose;
-
+    #region Variable
     protected bool isPaused = false;
+    public int DefaultMana = 3;
+    #endregion
+
+
     public enum StateGame
     {
         Playing,
@@ -22,9 +33,14 @@ public class GAMEPLAYmanager : MonoBehaviour
     }
     public  StateGame stateGame;
 
-    private void Start()
+    private void Awake()
     {
         instance = this;
+    }
+
+    private void Start()
+    {
+        
         stateGame = StateGame.Playing;
         Time.timeScale = 1f;
         E_OnLose += GAMEPLAYmanager_E_OnLose;
@@ -67,6 +83,14 @@ public class GAMEPLAYmanager : MonoBehaviour
     public void TogglePause()
     {
         isPaused = !isPaused;
+        if (isPaused)
+        {
+            stateGame = StateGame.Pause;
+        }
+        else
+        {
+            stateGame = StateGame.Playing;
+        }
         Time.timeScale = isPaused ? 0f : 1f;
     }
 

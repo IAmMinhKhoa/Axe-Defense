@@ -12,9 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e29d8d83cc1f3d4598f9a537127a89e, type: 3}
   m_Name: DryadMage
   m_EditorClassIdentifier: 
-  HP: 200
-  RangedAttack: 4
-  SpeedMove: 2
+  typeCharacter: 0
+  nameChar: 
+  Avatar: {fileID: 0}
+  HP: 150
   Damge: 10
+  CostSummon: 0
+  Prefab_Character: {fileID: 0}
+  RangedAttack: 3
+  SpeedMove: 1
   CoolDown: 3
   PrefabSkill: {fileID: 6630136655605506332, guid: 505b5ab27ce9acd41a43c8d358d22005, type: 3}

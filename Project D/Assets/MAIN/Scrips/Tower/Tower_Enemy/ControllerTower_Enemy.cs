@@ -5,7 +5,24 @@ using UnityEngine;
 
 public class ControllerTower_Enemy : ControllerTower
 {
+    #region Controller
     protected ControllerCollision CT_Collision;
+    #endregion
+
+    #region
+
+    #endregion
+
+    #region
+    #endregion
+
+    #region
+    #endregion
+
+
+
+
+
     protected Collider2D[] L_Collider; //list collider object with layer
     [SerializeField] protected SO_CharacterInforMantionRANGER SO_Information;
     [SerializeField] protected Transform PointAttack;
@@ -19,7 +36,8 @@ public class ControllerTower_Enemy : ControllerTower
         CT_Collision=GetComponent<ControllerCollision>();
         Init();
 
-        InvokeRepeating("SpamtRandomEnemy", 1, 10);
+        //spam enemy by time
+        InvokeRepeating("SpamtRandomEnemy",4 , 20);
     }
 
     private void Update()

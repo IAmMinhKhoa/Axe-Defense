@@ -190,7 +190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animatorChar: {fileID: 588952514279880127}
   attackCooldown: 2
-  WaitingToStart: 4.5
+  WaitingToStart: 2
   typeMove: 1
   stateCharacter: 0
   SO_Information: {fileID: 11400000, guid: ac1f03d532de1c94d80eeec8e8903d46, type: 2}

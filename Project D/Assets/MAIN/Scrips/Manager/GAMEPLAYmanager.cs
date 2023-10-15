@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GAMEPLAYmanager : MonoBehaviour
 {
@@ -14,11 +16,13 @@ public class GAMEPLAYmanager : MonoBehaviour
     #endregion
 
     #region GameObject
-    public GameObject UI_Win, UI_Lose;
+    [SerializeField] protected GameObject UI_Win, UI_Lose;
+    [SerializeField] protected Button Btn_SpeedGame;
     #endregion
 
     #region Variable
     protected bool isPaused = false;
+    protected bool isX2Speed=false;
     public int DefaultMana = 3;
     #endregion
 
@@ -45,6 +49,7 @@ public class GAMEPLAYmanager : MonoBehaviour
         Time.timeScale = 1f;
         E_OnLose += GAMEPLAYmanager_E_OnLose;
         E_OnWin += GAMEPLAYmanager_E_OnWin;
+        Btn_SpeedGame.onClick.AddListener(UpSpeedGame);
     }
 
     private void GAMEPLAYmanager_E_OnWin(object sender, EventArgs e)
@@ -121,4 +126,19 @@ public class GAMEPLAYmanager : MonoBehaviour
         SceneManager.instance.LoadScene(i);*/
 
     }
+
+    public void UpSpeedGame()
+    {
+        if(isX2Speed) {
+            Time.timeScale = 1.5f;
+            Btn_SpeedGame.GetComponentInChildren<TextMeshProUGUI>().text = "X2 Speed";
+        }
+        else
+        {
+            Time.timeScale = 1f;
+            Btn_SpeedGame.GetComponentInChildren<TextMeshProUGUI>().text = "X1 Speed";
+        }
+        isX2Speed = !isX2Speed;
+    }
+
 }

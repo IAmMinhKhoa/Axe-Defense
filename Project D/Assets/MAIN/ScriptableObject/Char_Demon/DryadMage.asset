@@ -15,11 +15,11 @@ MonoBehaviour:
   typeCharacter: 0
   nameChar: 
   Avatar: {fileID: 0}
-  HP: 150
+  HP: 170
   Damge: 10
   CostSummon: 0
   Prefab_Character: {fileID: 0}
-  RangedAttack: 3
+  RangedAttack: 4
   SpeedMove: 1
   CoolDown: 3
   PrefabSkill: {fileID: 6630136655605506332, guid: 505b5ab27ce9acd41a43c8d358d22005, type: 3}

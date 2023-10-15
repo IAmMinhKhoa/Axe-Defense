@@ -19,7 +19,7 @@ MonoBehaviour:
   Damge: 15
   CostSummon: 4
   Prefab_Character: {fileID: 4088087033786030313, guid: e37e2b22c1dab7d4cbf153ec6e6ec73f, type: 3}
-  RangedAttack: 4
+  RangedAttack: 5
   SpeedMove: 1
-  CoolDown: 2
+  CoolDown: 3
   PrefabSkill: {fileID: 8660094175212884607, guid: cff7a8dbc7ad4d94891106f524f222cf, type: 3}

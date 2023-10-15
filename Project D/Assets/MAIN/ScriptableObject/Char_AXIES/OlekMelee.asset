@@ -21,4 +21,4 @@ MonoBehaviour:
   Prefab_Character: {fileID: 8335421818274721578, guid: de9f98233131f884e993f4fa014516a7, type: 3}
   RangedAttack: 1
   SpeedMove: 1
-  CoolDown: 3
+  CoolDown: 2

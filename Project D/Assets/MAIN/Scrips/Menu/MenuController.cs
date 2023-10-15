@@ -7,9 +7,11 @@ public class MenuController : MonoBehaviour
 {
     public static MenuController instance;
 
-    public event EventHandler OnPhaseChanged;
+    public event EventHandler OnPhaseChanged, OnShowSkip;
 
     public Animator animator;
+
+    private bool hasPlayedIntro = false;
 
     // Enum liệt kê các giai đoạn của Scene menu
     public enum MenuPhase
@@ -22,6 +24,8 @@ public class MenuController : MonoBehaviour
     // Thời gian hiển thị của từng giai đoạn
     public float logoDuration = 3f;
     public float animationDuration = 17f;
+    public float buttonTimeSkip = 10f;
+    private bool textDisplayed = false;
 
     // Giai đoạn hiện tại
     private MenuPhase currentPhase;
@@ -35,6 +39,25 @@ public class MenuController : MonoBehaviour
 
     private void Update()
     {
+        if (!textDisplayed)
+        {
+            // Giảm giá trị của biến đếm thời gian
+            buttonTimeSkip -= Time.deltaTime;
+
+            // Kiểm tra nếu giá trị của biến đếm thời gian nhỏ hơn hoặc bằng 0
+            if (buttonTimeSkip <= 0f)
+            {
+                // Hiển thị đoạn text
+                OnShowSkip?.Invoke(this, new EventArgs());
+
+                // Đánh dấu biến đã hiển thị là true
+                textDisplayed = true;
+            }
+        }
+        if (textDisplayed && Input.GetKeyDown(KeyCode.Space))
+        {
+            setPhaseMenuIdle();
+        }
         switch (currentPhase)
         {
             case MenuPhase.Logo:
@@ -46,7 +69,7 @@ public class MenuController : MonoBehaviour
                 }
                 break;
             case MenuPhase.Animation:
-                animationDuration -= Time.deltaTime;
+                animationDuration -= Time.deltaTime;    
                 if (animationDuration < 0)
                 {
                     currentPhase = MenuPhase.Menu;
@@ -55,8 +78,10 @@ public class MenuController : MonoBehaviour
                 break;
             case MenuPhase.Menu:
                 animator.SetTrigger("Idle");
+                OnShowSkip?.Invoke(this, new EventArgs());
                 break;
         }
+        Debug.Log(currentPhase);
     }
 
     public bool isLogoIntro()
@@ -73,4 +98,10 @@ public class MenuController : MonoBehaviour
     {
         return currentPhase == MenuPhase.Menu;
     }
+
+    public void setPhaseMenuIdle()
+    {
+        currentPhase = MenuPhase.Menu;
+    }
+
 }

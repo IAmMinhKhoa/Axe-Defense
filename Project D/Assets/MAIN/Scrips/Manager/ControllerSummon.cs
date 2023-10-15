@@ -6,25 +6,43 @@ using UnityEngine;
 
 public class ControllerSummon : MonoBehaviour
 {
-    public TextMeshProUGUI textCountMana;
-    public int BounsMana=1;
-    protected int DefaultMana;
+    public static ControllerSummon instance;
 
+    [SerializeField] protected TextMeshProUGUI textCountMana;
+    [SerializeField] protected TextMeshProUGUI textAddManaByTime;
+    public int BounsMana;
+    protected int DefaultMana;
+    public int ManaMax;
+    public int TimeBoundMana;
+
+    private void Awake()
+    {
+        instance = this;    
+    }
     private void Start()
     {
         DefaultMana = GAMEPLAYmanager.instance.DefaultMana;
         PlayerPrefs.SetInt("Mana_InGame", DefaultMana);
-        InvokeRepeating("DelayedSum", 1, 8);//first: function, second: time firt to run that function, third: time every second to recall that function
+        InvokeRepeating("RepeatAddMana", 1, TimeBoundMana);//first: function, second: time firt to run that function, third: time every second to recall that function
+        textAddManaByTime.text = "+" + BounsMana.ToString()+"/"+TimeBoundMana.ToString()+"s";
     }
     private void Update()
     {
-        textCountMana.text = PlayerPrefs.GetInt("Mana_InGame").ToString();
+        textCountMana.text = PlayerPrefs.GetInt("Mana_InGame").ToString() +"/"+ManaMax;
     }
 
-
-    private void DelayedSum()
+    public void AddAndSaveMana(int value)
     {
         int nowMana = PlayerPrefs.GetInt("Mana_InGame");
-        PlayerPrefs.SetInt("Mana_InGame", nowMana+BounsMana);
+        int temp = nowMana + value;
+        if (temp >= ManaMax)
+        {
+            temp = ManaMax;
+        }
+        PlayerPrefs.SetInt("Mana_InGame", temp);
+    }
+    private void RepeatAddMana()
+    {
+        AddAndSaveMana(BounsMana);
     }
 }

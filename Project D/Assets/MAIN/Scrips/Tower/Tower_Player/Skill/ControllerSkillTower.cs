@@ -80,11 +80,7 @@ public class ControllerSkillTower : MonoBehaviour
                     break;
             }
         }
-        
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            E_StartSkill?.Invoke(this, EventArgs.Empty);
-        }
+
     }
 
 

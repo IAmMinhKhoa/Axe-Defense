@@ -39,8 +39,7 @@ public class Health : MonoBehaviour
             //add mana when enemy die
             if (gameObject.layer == LayerMask.NameToLayer("Enemy"))
             {
-                int nowMana = PlayerPrefs.GetInt("Mana_InGame");
-                PlayerPrefs.SetInt("Mana_InGame", nowMana + 2);
+                ControllerSummon.instance.AddAndSaveMana(2);
             }
             Destroy(gameObject, 1.5f);
         }

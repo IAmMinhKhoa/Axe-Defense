@@ -14,10 +14,16 @@ public class ObjectMovement : MonoBehaviour
     protected float screenBottom;
 
     private Vector3 lastPosition;
+
+
+    private void OnEnable()
+    {
+        this.transform.position =  Vector3.zero;
+    }
+
     private void OnMouseDown()
     {
         isDragging = true;
-      
     }
 
     private void OnMouseUp()
@@ -35,12 +41,10 @@ public class ObjectMovement : MonoBehaviour
     {
         if (isDragging && CanMoveOject)
         {
-
             Vector3 mousePosition = GetMouseWorldPosition();
-
             Vector3 newPosition = mousePosition;
 
-            if (mousePosition.x < screenLeft || mousePosition.x > screenRight || mousePosition.y < screenBottom || mousePosition.y > screenTop) //out screen
+            if (CheckCanDrag(mousePosition)) //out screen
             {
                 transform.position = lastPosition;
                 Debug.Log("out");
@@ -52,6 +56,11 @@ public class ObjectMovement : MonoBehaviour
                 lastPosition = newPosition;
             }
         }
+    }
+
+    protected bool CheckCanDrag(Vector3 mousePosition)
+    {
+        return mousePosition.x < screenLeft  || mousePosition.y < screenBottom || mousePosition.y > screenTop;
     }
 
     private Vector3 GetMouseWorldPosition()

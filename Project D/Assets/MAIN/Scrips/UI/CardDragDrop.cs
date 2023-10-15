@@ -68,7 +68,7 @@ public class CardDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = 0f;
-        if (mousePosition.x < screenLeft || mousePosition.x > screenRight || mousePosition.y < screenBottom || mousePosition.y > screenTop || mousePosition.x >leftHalfScreenLimit ||cost_To_Summon> PlayerPrefs.GetInt("Mana_InGame"))
+        if (CheckPositionCanDrop())
         {
             canDrop = false;
             controllerBoardCardUI.BrNotCanDrop.SetActive(true);
@@ -80,10 +80,15 @@ public class CardDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
             controllerBoardCardUI.BrCanDrop.SetActive(true);
             controllerBoardCardUI.BrNotCanDrop.SetActive(false);
         }
-        
-
     }
 
+    protected bool CheckPositionCanDrop()
+    {
+        return mousePosition.x < screenLeft || 
+            mousePosition.x > screenRight || mousePosition.y < screenBottom || 
+            mousePosition.y > screenTop || mousePosition.x > leftHalfScreenLimit ||
+            cost_To_Summon > PlayerPrefs.GetInt("Mana_InGame");
+    }
     public void OnEndDrag(PointerEventData eventData)
     {
         if (transform.parent == parentToReturnTo)
@@ -139,8 +144,6 @@ public class CardDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
         Quaternion startRotation = fromCard.transform.rotation;
         Quaternion endRotation = Quaternion.Euler(0f, 180f, 0f);
-
-      
 
         float elapsedTime = 0f;
 

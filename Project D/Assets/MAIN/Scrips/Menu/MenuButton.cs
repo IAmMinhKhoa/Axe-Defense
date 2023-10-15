@@ -9,5 +9,9 @@ public class MenuButton : MonoBehaviour
     {
         SceneManager.LoadScene("LevelMap");
     }
-
+    
+    public void changeMenuIdle()
+    {
+        MenuController.instance.setPhaseMenuIdle();
+    }
 }

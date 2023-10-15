@@ -2,12 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
     public static MenuController instance;
 
-    public event EventHandler OnPhaseChanged, OnShowSkip;
+    public event EventHandler OnPhaseChanged, OnShowSkip, OnShowSound;
 
     public Animator animator;
 
@@ -56,7 +57,7 @@ public class MenuController : MonoBehaviour
         }
         if (textDisplayed && Input.GetKeyDown(KeyCode.Space))
         {
-            setPhaseMenuIdle();
+            changeScenceMenu();
         }
         switch (currentPhase)
         {
@@ -66,6 +67,7 @@ public class MenuController : MonoBehaviour
                 {
                     currentPhase = MenuPhase.Animation;
                     OnPhaseChanged?.Invoke(this, new EventArgs());
+                    OnShowSound?.Invoke(this, new EventArgs());
                 }
                 break;
             case MenuPhase.Animation:
@@ -99,9 +101,9 @@ public class MenuController : MonoBehaviour
         return currentPhase == MenuPhase.Menu;
     }
 
-    public void setPhaseMenuIdle()
+    public void changeScenceMenu()
     {
-        currentPhase = MenuPhase.Menu;
+        SceneManager.LoadScene("MainMenu");
     }
 
 }

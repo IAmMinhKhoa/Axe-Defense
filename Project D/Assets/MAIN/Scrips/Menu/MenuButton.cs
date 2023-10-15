@@ -12,6 +12,6 @@ public class MenuButton : MonoBehaviour
     
     public void changeMenuIdle()
     {
-        MenuController.instance.setPhaseMenuIdle();
+        SceneManager.LoadScene("MainMenu");
     }
 }

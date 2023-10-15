@@ -113,12 +113,12 @@ public class GAMEPLAYmanager : MonoBehaviour
     {
         if(isX2Speed) {
             Time.timeScale = 1.5f;
-            Btn_SpeedGame.GetComponentInChildren<TextMeshProUGUI>().text = "X2 Speed";
+            Btn_SpeedGame.GetComponentInChildren<TextMeshProUGUI>().text = "Speed X2";
         }
         else
         {
             Time.timeScale = 1f;
-            Btn_SpeedGame.GetComponentInChildren<TextMeshProUGUI>().text = "X1 Speed";
+            Btn_SpeedGame.GetComponentInChildren<TextMeshProUGUI>().text = "Speed X1";
         }
         isX2Speed = !isX2Speed;
     }

@@ -47,7 +47,7 @@ public class LevelManager : MonoBehaviour
     }
     public void BackMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("Menu");
     }
 }
 

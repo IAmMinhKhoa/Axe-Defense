@@ -107,25 +107,7 @@ public class GAMEPLAYmanager : MonoBehaviour
     }
 
 
-    public void RestartScene()
-    {
-        /*if (SceneManager.instance==null){
-            Debug.LogWarning("Not have Sence manager don't destroy on load ?");
-            return;
-        }
-        SceneManager.instance.ReloadScene();*/
-
-    }
-    public void MoveToSence(int i)
-    {
-        /*if (SceneManager.instance == null)
-        {
-            Debug.LogWarning("Not have Sence manager don't destroy on load ?");
-            return;
-        }
-        SceneManager.instance.LoadScene(i);*/
-
-    }
+  
 
     public void UpSpeedGame()
     {

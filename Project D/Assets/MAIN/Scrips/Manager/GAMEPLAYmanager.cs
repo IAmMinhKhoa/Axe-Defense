@@ -26,6 +26,7 @@ public class GAMEPLAYmanager : MonoBehaviour
     protected bool isPaused = false;
     protected bool isX2Speed=false;
     public int DefaultMana = 3;
+    public TextMeshProUGUI[] textLevels;
     #endregion
 
     #region Sound
@@ -54,7 +55,6 @@ public class GAMEPLAYmanager : MonoBehaviour
 
     private void Start()
     {
-        
         stateGame = StateGame.Playing;
         Time.timeScale = 1f;
         soundButton.onClick.AddListener(ToggleSound);
@@ -62,6 +62,10 @@ public class GAMEPLAYmanager : MonoBehaviour
         E_OnWin += GAMEPLAYmanager_E_OnWin;
         E_OnPause += GAMEPLAYmanager_E_OnPause;
         Btn_SpeedGame.onClick.AddListener(UpSpeedGame);
+        foreach(TextMeshProUGUI textLevel in textLevels)
+        {
+            textLevel.text = getScenceName();
+        }
     }
 
     private void GAMEPLAYmanager_E_OnPause(object sender, EventArgs e)
@@ -133,6 +137,13 @@ public class GAMEPLAYmanager : MonoBehaviour
             audioSource.mute = true;
             soundButton.image.sprite = soundOffSprite;
         }
+    }
+
+    public string getScenceName()
+    {
+        Scene currentScene = SceneManager.GetActiveScene();
+
+        return currentScene.name;
     }
 
     protected IEnumerator DelayToChangeState(GameObject obj,float t)

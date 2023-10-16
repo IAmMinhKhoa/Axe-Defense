@@ -42,6 +42,11 @@ public class SkillTower : MonoBehaviour
                 }
             }
             EffectManager.instance.SpawmVFX("Effect Hit Mage", this.transform.position, ObjectPoolManager.Pooltyle.ParticleSystem);
+
+            //SOUND IMPAC SKILL OF TOWER
+
+            SoundManager.instance.PlaySound(SoundType.Impac_Skill_Tower);
+
             Destroy(this.gameObject);
             
         }

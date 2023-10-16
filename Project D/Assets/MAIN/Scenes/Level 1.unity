@@ -1577,12 +1577,11 @@ MonoBehaviour:
   UI_Tutorial: {fileID: 1380311889}
   Btn_SpeedGame: {fileID: 1086601415}
   animatorPanelSetting: {fileID: 750440038}
-  DefaultMana: 6
+  DefaultMana: 1
   textLevels:
   - {fileID: 1603519785}
   - {fileID: 1066041112}
   - {fileID: 1166503939}
-  audioSource: {fileID: 0}
   soundButton: {fileID: 216981999}
   soundOnSprite: {fileID: 21300000, guid: b9d90c26bdc777f49be6892e13c2a1d4, type: 3}
   soundOffSprite: {fileID: 21300000, guid: 50f2438f0b1377a43b0312b8befd03e2, type: 3}
@@ -3384,7 +3383,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textCountMana: {fileID: 228087209}
   textAddManaByTime: {fileID: 1453680693}
-  BounsMana: 2
+  BounsMana: 1
   ManaMax: 20
   TimeBoundMana: 5
 --- !u!1 &638414148

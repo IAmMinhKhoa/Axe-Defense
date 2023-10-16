@@ -31,11 +31,11 @@ public class GAMEPLAYmanager : MonoBehaviour
     #endregion
 
     #region Sound
-    public AudioSource audioSource;
+
     public Button soundButton;
     public Sprite soundOnSprite;
     public Sprite soundOffSprite;
-    private bool isSoundOn = true;
+    
     #endregion
 
 
@@ -68,6 +68,13 @@ public class GAMEPLAYmanager : MonoBehaviour
         {
             textLevel.text = getScenceName();
         }
+
+
+        //SOUND BACKGROUND SCENE MENU
+        SoundManager.instance.PlayBackGround(3);
+
+        //CHECK STATUS OF SOUND AND SET UP ICON (ON OR OFF ICON SOUND)
+        CheckStatusSoundAndSetIcon();
     }
 
     private void GAMEPLAYmanager_E_OnTutorial(object sender, EventArgs e)
@@ -102,13 +109,16 @@ public class GAMEPLAYmanager : MonoBehaviour
 
     private void GAMEPLAYmanager_E_OnWin(object sender, EventArgs e)
     {
-        StartCoroutine(DelayToChangeState(UI_Win, 2f));
- 
+        StartCoroutine(DelayToChangeState(UI_Win, 2f, SoundType.WinGame));
+
+  
+
     }
 
     private void GAMEPLAYmanager_E_OnLose(object sender, EventArgs e)
     {
-        StartCoroutine(DelayToChangeState(UI_Lose, 2f));
+        StartCoroutine(DelayToChangeState(UI_Lose, 2f,SoundType.LoseGame));
+    
     }
 
     private void Update()
@@ -138,6 +148,15 @@ public class GAMEPLAYmanager : MonoBehaviour
         isPaused = !isPaused;
         E_OnPause?.Invoke(this, EventArgs.Empty);
         Time.timeScale = isPaused ? 0f : 1f;
+
+        if (isPaused)
+        {
+            SoundManager.instance.PauseSound();
+        }
+        else
+        {
+            SoundManager.instance.SetAllVolumesToOriginal();
+        }
     }
 
     public void ToggleTutorial()
@@ -149,16 +168,18 @@ public class GAMEPLAYmanager : MonoBehaviour
 
     private void ToggleSound()
     {
-        isSoundOn = !isSoundOn;
-
-        if (isSoundOn)
+        bool statusSound = SoundManager.instance.ToggleSound();
+        CheckStatusSoundAndSetIcon();
+    }
+    private void CheckStatusSoundAndSetIcon()
+    {
+        bool temp = SoundManager.instance.activeSound;
+        if (temp)
         {
-            audioSource.mute = false;
             soundButton.image.sprite = soundOnSprite;
         }
         else
         {
-            audioSource.mute = true;
             soundButton.image.sprite = soundOffSprite;
         }
     }
@@ -170,10 +191,12 @@ public class GAMEPLAYmanager : MonoBehaviour
         return currentScene.name;
     }
 
-    protected IEnumerator DelayToChangeState(GameObject obj,float t)
+    protected IEnumerator DelayToChangeState(GameObject obj,float t, SoundType type)
     {
         yield return new WaitForSeconds(t);
         obj.SetActive(true);
+        //SOUND WHEN type 
+        SoundManager.instance.PlaySound(type);
         Time.timeScale = 0f;
     }
 

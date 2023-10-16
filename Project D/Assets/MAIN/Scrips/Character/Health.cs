@@ -31,6 +31,9 @@ public class Health : MonoBehaviour
 
         textMeshPro.text = value.ToString();
 
+        //SOUND WHEN BY HIT
+        SoundManager.instance.PlaySound(SoundType.Hit);
+
         if (maxHealt <= 0 && isDie==false)
         {
             EventDie();

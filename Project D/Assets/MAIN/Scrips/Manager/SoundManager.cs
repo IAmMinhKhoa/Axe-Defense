@@ -7,7 +7,13 @@ public enum SoundType
 {
     BackGround_Menu,
     BackGround_ChooseLevel,
-    BackGround_GamePlaying
+    BackGround_GamePlaying,
+
+    WinGame,
+    LoseGame,
+
+    Hit,
+    Impac_Skill_Tower
 }
 
 [System.Serializable]
@@ -53,6 +59,7 @@ public class SoundManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
+            PlayerPrefs.SetInt("Sound", 1);
         }
         else
         {
@@ -71,7 +78,7 @@ public class SoundManager : MonoBehaviour
             source.loop = sound.loop;
             audioSources.Add((SoundType)System.Enum.Parse(typeof(SoundType), sound.name), source);
         }
-        //activeSound = PlayerPrefs.GetInt("Sound") == 1 ? true : false;
+        activeSound = PlayerPrefs.GetInt("Sound") == 1 ? true : false;
         if (activeSound)
         {
             PlayBackGround(index_Sound_BR);
@@ -106,7 +113,6 @@ public class SoundManager : MonoBehaviour
     {
         if (audioSources.ContainsKey(soundType))
         {
-            Debug.Log("chay run");
             audioSources[soundType].Play();
         }
     }
@@ -135,7 +141,7 @@ public class SoundManager : MonoBehaviour
             Sound sound = sounds.Find(s => s.name == entry.Key.ToString());
             entry.Value.volume = sound.originalVolume;
         }
-        PlayBackGround(index_Sound_BR);
+        //PlayBackGround(index_Sound_BR);
     }
 
     public void StopAllMusicBackGround()
@@ -143,6 +149,26 @@ public class SoundManager : MonoBehaviour
         StopSound(SoundType.BackGround_Menu);
         StopSound(SoundType.BackGround_ChooseLevel);
         StopSound(SoundType.BackGround_GamePlaying);
+    }
+
+
+    public bool ToggleSound()
+    {
+        activeSound = !activeSound;
+
+        if (activeSound)
+        {
+            //TURN ON ALL SOUND
+            PlayerPrefs.SetInt("Sound", 1);
+            SetAllVolumesToOriginal();  
+        }
+        else
+        {
+            //TURN OFF ALL SÔUND
+            PlayerPrefs.SetInt("Sound", 0);
+            PauseSound(); 
+        }
+        return activeSound;
     }
 }
 

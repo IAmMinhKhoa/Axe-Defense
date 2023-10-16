@@ -18,4 +18,9 @@ public class SenceManager : MonoBehaviour
         // Tải lại scene hiện tại
         SceneManager.LoadScene(currentSceneName);
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }

@@ -13,17 +13,18 @@ public class GAMEPLAYmanager : MonoBehaviour
     #endregion
 
     #region Event
-    public event EventHandler E_OnWin, E_OnLose, E_OnPause;
+    public event EventHandler E_OnWin, E_OnLose, E_OnPause, E_OnTutorial;
     #endregion
 
     #region GameObject
-    [SerializeField] protected GameObject UI_Win, UI_Lose, UI_Pause;
+    [SerializeField] protected GameObject UI_Win, UI_Lose, UI_Pause, UI_Tutorial;
     [SerializeField] protected Button Btn_SpeedGame;
     [SerializeField] protected Animator animatorPanelSetting;
     #endregion
 
     #region Variable
     protected bool isPaused = false;
+    protected bool isTutorial = false;
     protected bool isX2Speed=false;
     public int DefaultMana = 3;
     public TextMeshProUGUI[] textLevels;
@@ -61,10 +62,26 @@ public class GAMEPLAYmanager : MonoBehaviour
         E_OnLose += GAMEPLAYmanager_E_OnLose;
         E_OnWin += GAMEPLAYmanager_E_OnWin;
         E_OnPause += GAMEPLAYmanager_E_OnPause;
+        E_OnTutorial += GAMEPLAYmanager_E_OnTutorial;
         Btn_SpeedGame.onClick.AddListener(UpSpeedGame);
         foreach(TextMeshProUGUI textLevel in textLevels)
         {
             textLevel.text = getScenceName();
+        }
+    }
+
+    private void GAMEPLAYmanager_E_OnTutorial(object sender, EventArgs e)
+    {
+        if (isTutorial)
+        {
+            UI_Tutorial.SetActive(true);
+            CameraDrag.instance.isDrag = false;
+        }
+        else
+        {
+            animatorPanelSetting.SetTrigger("Show");
+            UI_Tutorial.SetActive(false);
+            CameraDrag.instance.isDrag = true;
         }
     }
 
@@ -123,6 +140,13 @@ public class GAMEPLAYmanager : MonoBehaviour
         Time.timeScale = isPaused ? 0f : 1f;
     }
 
+    public void ToggleTutorial()
+    {
+        isTutorial = !isTutorial;
+        E_OnTutorial?.Invoke(this, EventArgs.Empty);
+        Time.timeScale = isTutorial ? 0f : 1f;
+    }
+
     private void ToggleSound()
     {
         isSoundOn = !isSoundOn;
@@ -158,21 +182,6 @@ public class GAMEPLAYmanager : MonoBehaviour
     {
         isX2Speed = !isX2Speed;
         if(isX2Speed) {
-            Time.timeScale = 2f;
-            Btn_SpeedGame.GetComponentInChildren<TextMeshProUGUI>().text = "X2";
-        }
-        else
-        {
-            Time.timeScale = 1f;
-            Btn_SpeedGame.GetComponentInChildren<TextMeshProUGUI>().text = "X1";
-        }
-    }
-
-    public void UpSpeedGame(string name)
-    {
-        isX2Speed = !isX2Speed;
-        if (isX2Speed)
-        {
             Time.timeScale = 2f;
             Btn_SpeedGame.GetComponentInChildren<TextMeshProUGUI>().text = "X2";
         }

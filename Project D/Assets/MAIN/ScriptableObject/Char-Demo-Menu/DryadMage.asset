@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e29d8d83cc1f3d4598f9a537127a89e, type: 3}
+  m_Name: DryadMage
+  m_EditorClassIdentifier: 
+  typeCharacter: 0
+  nameChar: 
+  Avatar: {fileID: 0}
+  HP: 9999
+  Damge: 70
+  CostSummon: 0
+  Prefab_Character: {fileID: 0}
+  RangedAttack: 6
+  SpeedMove: 1
+  CoolDown: 4
+  PrefabSkill: {fileID: 6630136655605506332, guid: 505b5ab27ce9acd41a43c8d358d22005, type: 3}

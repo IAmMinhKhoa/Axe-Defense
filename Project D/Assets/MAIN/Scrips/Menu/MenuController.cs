@@ -37,8 +37,14 @@ public class MenuController : MonoBehaviour
         currentPhase = MenuPhase.Logo;
 
         Time.timeScale = 1f;
+
     }
 
+    private void Start()
+    {
+        //SOUND BACKGROUND SCENE MENU
+        SoundManager.instance.PlayBackGround(1);
+    }
     private void Update()
     {
        

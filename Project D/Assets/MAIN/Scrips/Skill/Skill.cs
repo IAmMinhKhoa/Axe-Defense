@@ -5,35 +5,30 @@ using UnityEngine;
 public class Skill : MonoBehaviour
 {
     protected Transform target;
-    public float MaxSpeed = 5f;
-    public float accelerationRate = 1f;
- 
-
-
     protected int damage;
 
     protected string typeChar;
 
+
+    public float MaxSpeed = 5f;
+    public float accelerationRate = 1f;
+ 
     private float currentMoveSpeed;
-    private float elapsedTime;
 
-    private void Start()
+    private void OnEnable()
     {
-        currentMoveSpeed = 0;
-        elapsedTime = 0f;
-
-
+        currentMoveSpeed = 0f;
     }
+
+   
 
     private void Update()
     {
         if (target != null)
         {
-
-
             Vector3 direction = (target.position - transform.position).normalized;
-                 currentMoveSpeed = accelerationRate * elapsedTime;
-
+            currentMoveSpeed += accelerationRate * Time.deltaTime;
+           
             transform.position += direction * currentMoveSpeed * Time.deltaTime;
 
             float distanceThreshold = 0.1f; // Ng??ng kho?ng cách ?? xem ?ã ch?m ??n hay ch?a
@@ -44,13 +39,13 @@ public class Skill : MonoBehaviour
             {
                 MadeDamage();
             }
-            elapsedTime += Time.deltaTime;
+
+
         }
         else
         {
             Destroy(gameObject);
         }
-        
     }
 
     protected void MadeDamage()

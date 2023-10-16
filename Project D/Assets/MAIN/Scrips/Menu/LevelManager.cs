@@ -29,6 +29,10 @@ public class LevelManager : MonoBehaviour
             btnGameObjects[i].GetComponent<Button>().interactable = true;
             btnGameObjects[i].transform.GetChild(0).GetComponent<Image>().sprite = iconUnlock;
         }
+
+
+        //SOUND BACKGROUND SCENE LEVEL MAP
+        SoundManager.instance.PlayBackGround(2);
     }
     public void OpenLevel(int levelId)
     {

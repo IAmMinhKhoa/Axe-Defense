@@ -54,13 +54,13 @@ public class GAMEPLAYmanager : MonoBehaviour
 
     private void GAMEPLAYmanager_E_OnWin(object sender, EventArgs e)
     {
-        StartCoroutine(DelayToChangeState(UI_Win, 1f));
+        StartCoroutine(DelayToChangeState(UI_Win, 2f));
  
     }
 
     private void GAMEPLAYmanager_E_OnLose(object sender, EventArgs e)
     {
-        StartCoroutine(DelayToChangeState(UI_Lose, 1f));
+        StartCoroutine(DelayToChangeState(UI_Lose, 2f));
     }
 
     private void Update()

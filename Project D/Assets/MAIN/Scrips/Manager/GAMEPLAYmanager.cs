@@ -168,4 +168,18 @@ public class GAMEPLAYmanager : MonoBehaviour
         }
     }
 
+    public void UpSpeedGame(string name)
+    {
+        isX2Speed = !isX2Speed;
+        if (isX2Speed)
+        {
+            Time.timeScale = 2f;
+            Btn_SpeedGame.GetComponentInChildren<TextMeshProUGUI>().text = "X2";
+        }
+        else
+        {
+            Time.timeScale = 1f;
+            Btn_SpeedGame.GetComponentInChildren<TextMeshProUGUI>().text = "X1";
+        }
+    }
 }

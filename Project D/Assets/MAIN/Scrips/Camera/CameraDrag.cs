@@ -4,13 +4,24 @@ using UnityEngine;
 
 public class CameraDrag : MonoBehaviour
 {
+    public static CameraDrag instance;
+
     private Vector3 dragOrigin;
     public float dragSpeed = 2f;
     public float leftLimit = -10f; // Gi?i h?n di chuy?n camera sang trái
     public float rightLimit = 10f; // Gi?i h?n di chuy?n camera sang ph?i
+    public bool isDrag = true;
 
+    private void Awake()
+    {
+        instance = this;
+    }
     void LateUpdate()
     {
+        if (!isDrag)
+        {
+            return;
+        }
         if (Input.GetMouseButtonDown(0))
         {
             dragOrigin = Input.mousePosition;

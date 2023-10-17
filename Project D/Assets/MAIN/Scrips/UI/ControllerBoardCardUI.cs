@@ -6,11 +6,12 @@ public class ControllerBoardCardUI : MonoBehaviour
 {
     [SerializeField] protected List<SO_CharacterInforMantion> L_SO_Information_Characters = new List<SO_CharacterInforMantion>();
     [SerializeField] protected List<InforCard> L_Card_Default = new List<InforCard>();
+    [SerializeField] ControllerSummon CT_Summon;
+
     public GameObject BrCanDrop;
     public GameObject BrNotCanDrop;
 
     
-
 
     private void Start()
     {
@@ -73,8 +74,14 @@ public class ControllerBoardCardUI : MonoBehaviour
     public void SetEventSummon()
     {
         CreatRandomCard();
+
+        CT_Summon.SubtractionCountOfDeckSummon();
+
+
+
     }
 
+    
 
 }
 

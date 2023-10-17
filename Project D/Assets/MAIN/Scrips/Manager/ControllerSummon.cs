@@ -10,10 +10,16 @@ public class ControllerSummon : MonoBehaviour
 
     [SerializeField] protected TextMeshProUGUI textCountMana;
     [SerializeField] protected TextMeshProUGUI textAddManaByTime;
+    [SerializeField] protected TextMeshProUGUI textCountDeckCard;
+
+
     public int BounsMana;
-    protected int DefaultMana;
+    public int DefaultMana;
     public int ManaMax;
     public int TimeBoundMana;
+
+    public int MaxCardSummon = 10;
+    protected int tempCountCardSummon;
 
     private void Awake()
     {
@@ -21,10 +27,13 @@ public class ControllerSummon : MonoBehaviour
     }
     private void Start()
     {
-        DefaultMana = GAMEPLAYmanager.instance.DefaultMana;
+       
         PlayerPrefs.SetInt("Mana_InGame", DefaultMana);
         InvokeRepeating("RepeatAddMana", 1, TimeBoundMana);//first: function, second: time firt to run that function, third: time every second to recall that function
-        textAddManaByTime.text = "+" + BounsMana.ToString()+"/"+TimeBoundMana.ToString()+"s";
+        textAddManaByTime.text = "+" + BounsMana.ToString()+" Mana/"+TimeBoundMana.ToString()+"s";
+
+        tempCountCardSummon = MaxCardSummon;
+        SetTextCountCardOnDeck(MaxCardSummon);
     }
     private void Update()
     {
@@ -44,5 +53,27 @@ public class ControllerSummon : MonoBehaviour
     private void RepeatAddMana()
     {
         AddAndSaveMana(BounsMana);
+    }
+
+    public void SubtractionCountOfDeckSummon() //subtraction count of deck card
+    {
+        tempCountCardSummon--;
+        if (tempCountCardSummon <= 0)
+        {
+            GAMEPLAYmanager.instance.stateGame = GAMEPLAYmanager.StateGame.Lose;
+        }
+        SetTextCountCardOnDeck(tempCountCardSummon);
+    }
+
+    protected void SetTextCountCardOnDeck(int CurrentValueCount)
+    {
+        textCountDeckCard.text=CurrentValueCount.ToString()+"/"+MaxCardSummon;
+        if (CurrentValueCount <= 10 && CurrentValueCount>5)
+        {
+            textCountDeckCard.color = Color.yellow;
+        }else if(CurrentValueCount <= 5)
+        {
+            textCountDeckCard.color = Color.red;
+        }
     }
 }

@@ -26,7 +26,7 @@ public class GAMEPLAYmanager : MonoBehaviour
     protected bool isPaused = false;
     protected bool isTutorial = false;
     protected bool isX2Speed=false;
-    public int DefaultMana = 3;
+    
     public TextMeshProUGUI[] textLevels;
     #endregion
 

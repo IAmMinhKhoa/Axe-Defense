@@ -7,8 +7,8 @@ using static Unity.VisualScripting.FlowStateWidget;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] protected float maxHealt = 100;
-    private float DefaultHealth;
+    public float maxHealt = 100;
+    private float CurrentHealth;
     protected bool isAttacking;
     protected float delayStatusAttack = .5f;
     protected bool isDie = false;
@@ -23,7 +23,7 @@ public class Health : MonoBehaviour
 
         isAttacking = true;
 
-        maxHealt -= value;
+        CurrentHealth -= value;
 
         GameObject TextDamge = EffectManager.instance.SpawmVFX("FrefabTextDamge", new Vector3(this.transform.position.x, transform.position.y + 2f, transform.position.z), ObjectPoolManager.Pooltyle.Gameobject);
 
@@ -34,7 +34,7 @@ public class Health : MonoBehaviour
         //SOUND WHEN BY HIT
         SoundManager.instance.PlaySound(SoundType.Hit);
 
-        if (maxHealt <= 0 && isDie==false)
+        if (CurrentHealth <= 0 && isDie==false)
         {
             EventDie();
             isDie = true;
@@ -48,7 +48,7 @@ public class Health : MonoBehaviour
         }
         StartCoroutine(DelayATK());
 
-        textHealth.SetText(maxHealt.ToString() + "/"+ DefaultHealth);
+        textHealth.SetText(CurrentHealth.ToString() + "/"+ maxHealt);
     }
 
     protected virtual void EventDie() { }
@@ -67,8 +67,8 @@ public class Health : MonoBehaviour
     public void SetHealth(float value)
     {
         this.maxHealt = value;
-        DefaultHealth = maxHealt;
-        textHealth.SetText(maxHealt.ToString() + "/" + DefaultHealth);
+        CurrentHealth = maxHealt;
+        textHealth.SetText(CurrentHealth.ToString() + "/" + maxHealt);
     }
     public bool GetStatusIsDie()
     {

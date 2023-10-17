@@ -42,7 +42,7 @@ Transform:
   - {fileID: 3525008583000949307}
   - {fileID: 7794603376934229051}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3525008582599313894
 MonoBehaviour:
@@ -235,7 +235,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3525008583000949307}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}

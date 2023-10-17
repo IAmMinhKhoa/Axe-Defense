@@ -15,8 +15,8 @@ MonoBehaviour:
   typeCharacter: 0
   nameChar: 
   Avatar: {fileID: 0}
-  HP: 200
-  Damge: 15
+  HP: 220
+  Damge: 14
   CostSummon: 0
   Prefab_Character: {fileID: 0}
   RangedAttack: 1

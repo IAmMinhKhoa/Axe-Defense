@@ -58,7 +58,7 @@ public class ControllerSummon : MonoBehaviour
     public void SubtractionCountOfDeckSummon() //subtraction count of deck card
     {
         tempCountCardSummon--;
-        if (tempCountCardSummon <= 0)
+        if (tempCountCardSummon < 0)
         {
             GAMEPLAYmanager.instance.stateGame = GAMEPLAYmanager.StateGame.Lose;
         }
@@ -67,7 +67,7 @@ public class ControllerSummon : MonoBehaviour
 
     protected void SetTextCountCardOnDeck(int CurrentValueCount)
     {
-        textCountDeckCard.text=CurrentValueCount.ToString()+"/"+MaxCardSummon;
+        textCountDeckCard.text=CurrentValueCount.ToString()+"/"+MaxCardSummon +" Card";
         if (CurrentValueCount <= 10 && CurrentValueCount>5)
         {
             textCountDeckCard.color = Color.yellow;

@@ -334,8 +334,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1968884511}
-  logoDuration: 1
-  animationDuration: 1
+  logoDuration: 3
+  animationDuration: 14
 --- !u!1 &410650279
 GameObject:
   m_ObjectHideFlags: 0
@@ -550,7 +550,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: eb0b31bb27741554fb8deaf3579e058c, type: 3}
     volume: 0.6
     pitch: 1
-    loop: 1
+    loop: 0
     source: {fileID: 0}
     originalVolume: 0
   - name: Hit

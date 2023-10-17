@@ -5061,7 +5061,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CT_Collision: {fileID: 138088720558009196}
   moveSpeed: 2
-  Damgage: 50
+  Damgage: 100
 --- !u!114 &138088720558009196
 MonoBehaviour:
   m_ObjectHideFlags: 0

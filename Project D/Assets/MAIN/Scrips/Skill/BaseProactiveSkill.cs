@@ -24,6 +24,7 @@ public abstract class BaseProactiveSkill : MonoBehaviour
 
 
         TODOSKILL();
+      
     }
 
 

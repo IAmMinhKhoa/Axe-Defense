@@ -127,7 +127,7 @@ public class ControllerChacracrer : MonoBehaviour
         }
     }
 
-    public void OnCharacterDie()    //Catch event when character DIE
+    public void OnCharacterDie()    //Catch eve nt when character DIE
     {
         E_CharacterDie?.Invoke(this, EventArgs.Empty);
     }

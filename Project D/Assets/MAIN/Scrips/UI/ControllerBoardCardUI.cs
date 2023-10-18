@@ -57,7 +57,7 @@ public class ControllerBoardCardUI : MonoBehaviour
                 Sprite Img = SO_Infor.Avatar;
                 GameObject Prefab_Char = SO_Infor.Prefab_Character;
 
-                Gui_Card.SetDataToCard(Name, Cost, HP, Damage, Img, Prefab_Char);
+                //Gui_Card.SetDataToCard(Name, Cost, HP, Damage, Img, Prefab_Char);
 
                 return card;
             }

@@ -78,6 +78,10 @@ public class ControllerCharacterRanged : ControllerChacracrer
                 L_Collider = CT_Collision.Return_L_CollderTouching();
                 Attack();
             }
+            else if (isFreeze)
+            {
+                animatorChar.SetBool("Run", false);
+            }
         }
     }   
 

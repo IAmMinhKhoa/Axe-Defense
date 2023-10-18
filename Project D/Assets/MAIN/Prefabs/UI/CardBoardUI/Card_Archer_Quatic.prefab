@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 5376054904671274582}
   - component: {fileID: 1380001934963045166}
   - component: {fileID: 2203933757389000290}
-  - component: {fileID: 2014222858709418379}
+  - component: {fileID: -3086704290035794889}
   m_Layer: 5
-  m_Name: Card_Archer
+  m_Name: Card_Archer_Quatic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -106,7 +106,7 @@ MonoBehaviour:
   leftHalfScreenLimit: -1
   frontCard: {fileID: 7195604517775230776}
   endCard: {fileID: 1796966344351572174}
---- !u!114 &2014222858709418379
+--- !u!114 &-3086704290035794889
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,14 +115,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 573488725759175818}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1ac7b7ffb4585d47b4baecf918e2e6b, type: 3}
+  m_Script: {fileID: 11500000, guid: e2231daf2190ed347b870e7a83beb1d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textName: {fileID: 2208473554315182410}
   textCostSummon: {fileID: 3475262032732945215}
+  textName: {fileID: 2208473554315182410}
   textHP: {fileID: 5695706059215303372}
   textDamage: {fileID: 5173706309217464757}
   IMG_Avatar: {fileID: 7914810533071118191}
+  SO_Infor: {fileID: 11400000, guid: 4649b5e67751137488cf4dc91460cc5b, type: 2}
 --- !u!1 &1340196565657451111
 GameObject:
   m_ObjectHideFlags: 0

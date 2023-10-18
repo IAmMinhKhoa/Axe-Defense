@@ -7,8 +7,7 @@ public abstract class BaseProactiveSkill : MonoBehaviour
     public string targetLayerName = "YourLayerName"; // Tên c?a layer b?n mu?n tìm
 
     public List<GameObject> objectsWithLayer;
-
-    void Start()
+    private void OnEnable()
     {
         objectsWithLayer = new List<GameObject>();
 
@@ -26,6 +25,7 @@ public abstract class BaseProactiveSkill : MonoBehaviour
 
         TODOSKILL();
     }
+
 
 
     public virtual void TODOSKILL() { }

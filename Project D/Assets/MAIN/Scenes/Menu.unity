@@ -334,8 +334,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1968884511}
-  logoDuration: 3
-  animationDuration: 14
+  logoDuration: 1
+  animationDuration: 1
 --- !u!1 &410650279
 GameObject:
   m_ObjectHideFlags: 0

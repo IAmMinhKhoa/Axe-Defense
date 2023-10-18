@@ -20,7 +20,16 @@ public class ControllerCharacterMelee : ControllerChacracrer
 
         if (stateCharacter == StateCharacter.Start)
         {
-            isMoving = !CT_Collision.IsTouchingLayer();
+            /*if (!isFreeze)
+            {
+                isMoving = !CT_Collision.IsTouchingLayer();
+            }
+            else {
+                isMoving = false;
+            }*/
+
+            isMoving = !isFreeze ? !CT_Collision.IsTouchingLayer() : false;
+
             if (isMoving && CT_Health.GetIsAttacking() != true)//if not touch object && is being attack
             {
                 bool RightDirection = (typeMove == TypeMove.goRight) ? true : false;
@@ -28,7 +37,7 @@ public class ControllerCharacterMelee : ControllerChacracrer
                 animatorChar.SetBool("Run", true);
                
             }
-            else if (isMoving != true)
+            else if (isMoving != true && isFreeze != true)
             {
                 L_Collider = CT_Collision.Return_L_CollderTouching();
                 Attack();

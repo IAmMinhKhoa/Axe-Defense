@@ -31,7 +31,8 @@ public class ControllerChacracrer : MonoBehaviour
 
     #region Variable
     [SerializeField] protected float attackCooldown = 2f;
-    protected bool isMoving;
+    protected bool isMoving; //(update) => ( Alway check have any object front this object)
+    protected bool isFreeze=false;
     protected bool canAttack = true;
     [SerializeField] protected float WaitingToStart = 4.5f;
     protected float _TimeToStart;
@@ -133,5 +134,9 @@ public class ControllerChacracrer : MonoBehaviour
     public void OnCharacterHIT()    //Catch event when character by HIT
     {
         E_CharacterHit?.Invoke(this, EventArgs.Empty);
+    }
+    public void SetFreeze(bool temp)
+    {
+        isFreeze = temp;
     }
 }

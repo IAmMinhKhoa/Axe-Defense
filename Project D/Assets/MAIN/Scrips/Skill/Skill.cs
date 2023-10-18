@@ -73,7 +73,8 @@ public class Skill : MonoBehaviour
         {
             
             float coefficient = DEFAULT_VALUE.GetAttackCoefficient(typeChar,enemyTag);
-            healthComponent.TakeDamage(damage * Mathf.Round(coefficient));
+            //Debug.Log(damage+"/"+coefficient);
+            healthComponent.TakeDamage(Mathf.Round(damage * coefficient));
             EffectManager.instance.SpawmVFX("Effect Hit Mage", transform.position, ObjectPoolManager.Pooltyle.ParticleSystem);
             //Destroy(gameObject);
             ObjectPoolManager.ReturnOjectToPool(this.gameObject);

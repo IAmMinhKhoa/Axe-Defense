@@ -5,9 +5,9 @@ using UnityEngine;
 public static class DEFAULT_VALUE
 {
     public static float COEFICIENT_ATTACK_DEFAULT = 1f; //DEFAULT 
-    public static float COEFICIENT_ATTACK_MAGE_MELEE=1.2f; //MAGE COUNTER MELEE
-    public static float COEFICIENT_ATTACK_MELEE_ARCHER = 1.3f; //MELEE COUNTER ARCHER
-    public static float COEFICIENT_ATTACK_ARCHER_MAGE = 1.4f; //ARCHER COUNTER MAGE
+    public static float COEFICIENT_ATTACK_MAGE_MELEE=1.5f; //MAGE COUNTER MELEE
+    public static float COEFICIENT_ATTACK_MELEE_ARCHER = 2f; //MELEE COUNTER ARCHER
+    public static float COEFICIENT_ATTACK_ARCHER_MAGE = 1.5f; //ARCHER COUNTER MAGE
 
     private static Dictionary<string, float> attackCoefficients =new Dictionary<string, float>();
 
@@ -23,6 +23,7 @@ public static class DEFAULT_VALUE
         string key = playerTag + " - " + enemyTag;
         if (attackCoefficients.ContainsKey(key))
         {
+            
             return attackCoefficients[key];
         }
         else

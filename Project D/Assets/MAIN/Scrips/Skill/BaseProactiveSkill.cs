@@ -16,7 +16,7 @@ public abstract class BaseProactiveSkill : MonoBehaviour
         GameObject[] allObjects = FindObjectsOfType<GameObject>();
         foreach (GameObject obj in allObjects)
         {
-            if (obj.layer == targetLayer)
+            if (obj.layer == targetLayer && obj.tag!="Tower")
             {
                 objectsWithLayer.Add(obj);
             }

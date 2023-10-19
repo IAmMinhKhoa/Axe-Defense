@@ -30,7 +30,7 @@ public class CardDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     #endregion
 
     #region Variable_Position_Of_Screen
-    protected float screenLeft;
+        protected float screenLeft;
         protected float screenRight;
         protected float screenTop;
         protected float screenBottom;
@@ -72,21 +72,23 @@ public class CardDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = 0f;
-        if (CheckPositionCanDrop())
+        if (CheckPositionNotCanDrop())
         {
+            Debug.Log("ko drop");
             canDrop = false;
             CT_Summon.BrNotCanDrop.SetActive(true);
             CT_Summon.BrCanDrop.SetActive(false);
         }
         else
         {
+            Debug.Log(" drop");
             canDrop = true;
             CT_Summon.BrCanDrop.SetActive(true);
             CT_Summon.BrNotCanDrop.SetActive(false);
         }
     }
 
-    protected bool CheckPositionCanDrop()
+    protected bool CheckPositionNotCanDrop()
     {
         return mousePosition.x < screenLeft || 
             mousePosition.x > screenRight || mousePosition.y < screenBottom || 

@@ -6,7 +6,8 @@ using UnityEngine.UI;
 [CreateAssetMenu(fileName = "New Character", menuName = "Character/Melee")]
 public class SO_CharacterInforMantion : ScriptableObject
 {
-    
+
+    public bool ACTIVE;
     public  enum TypeChar{
         Melee,
         Mage,
@@ -15,17 +16,18 @@ public class SO_CharacterInforMantion : ScriptableObject
     [Header("VARIABLE DEFAULT")]
     [Space(20)]
     public  TypeChar typeCharacter;
-
     public string nameChar;
     public Sprite Avatar;
     public int HP;
-    public int Damge; //set truc tiep khi instance skill
+    public int Damge; 
     public int CostSummon;
     public GameObject Prefab_Character;
 
+    [Space(20)]
     public float RangedAttack;
     public int SpeedMove;
     public int CoolDown;
-    
 
+    [Space(20)]
+    public int PriceBuy;
 }

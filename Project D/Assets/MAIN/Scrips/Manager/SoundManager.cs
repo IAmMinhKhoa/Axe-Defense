@@ -13,7 +13,11 @@ public enum SoundType
     LoseGame,
 
     Hit,
-    Impac_Skill_Tower
+    Impac_Skill_Tower,
+
+    SFX_Health,
+    SFX_SkilDeadAll,
+    SFX_Freeze
 }
 
 [System.Serializable]

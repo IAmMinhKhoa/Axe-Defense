@@ -8,11 +8,13 @@ public class ControllerSummon : MonoBehaviour
 {
     public static ControllerSummon instance;
 
+    #region Entity-UI
     [SerializeField] protected TextMeshProUGUI textCountMana;
     [SerializeField] protected TextMeshProUGUI textAddManaByTime;
     [SerializeField] protected TextMeshProUGUI textCountDeckCard;
+    #endregion
 
-
+    #region Variable
     public int BounsMana;
     public int DefaultMana;
     public int ManaMax;
@@ -20,6 +22,15 @@ public class ControllerSummon : MonoBehaviour
 
     public int MaxCardSummon = 10;
     protected int tempCountCardSummon;
+    #endregion
+
+
+    [SerializeField] protected List<GameObject> L_Card_Character = new List<GameObject>();
+    public GameObject BrCanDrop;
+    public GameObject BrNotCanDrop;
+
+
+
 
     private void Awake()
     {
@@ -34,6 +45,9 @@ public class ControllerSummon : MonoBehaviour
 
         tempCountCardSummon = MaxCardSummon;
         SetTextCountCardOnDeck(MaxCardSummon);
+
+        TurnOffBR();
+        LoadCard();
     }
     private void Update()
     {
@@ -76,4 +90,29 @@ public class ControllerSummon : MonoBehaviour
             textCountDeckCard.color = Color.red;
         }
     }
+
+
+
+    public void TurnOffBR()
+    {
+        BrCanDrop.SetActive(false);
+        BrNotCanDrop.SetActive(false);
+    }
+    
+    protected void LoadCard()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            CreatRandomCard();
+        }
+    }
+
+    public void CreatRandomCard()
+    {
+        System.Random random = new System.Random();
+        int Random_Card = random.Next(0, L_Card_Character.Count);
+        GameObject Card = Instantiate(L_Card_Character[Random_Card]);
+        Card.transform.SetParent(this.transform, false);
+    }
+
 }

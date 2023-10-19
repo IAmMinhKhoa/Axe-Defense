@@ -567,6 +567,27 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
     originalVolume: 0
+  - name: SFX_Health
+    clip: {fileID: 8300000, guid: fcd05c5ad88c93443b2e10215683aebf, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    originalVolume: 0
+  - name: SFX_SkilDeadAll
+    clip: {fileID: 8300000, guid: 097a78998ada25647b4b8dd343a538a6, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    originalVolume: 0
+  - name: SFX_Freeze
+    clip: {fileID: 8300000, guid: 3283107fc59e4e7449b336ca9e0e5cd4, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    originalVolume: 0
   activeSound: 0
   index_Sound_BR: 1
 --- !u!1 &605746971

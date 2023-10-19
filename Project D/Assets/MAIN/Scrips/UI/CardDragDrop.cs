@@ -21,13 +21,16 @@ public class CardDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     #endregion
 
     #region Component
-        protected GUI_CardBoard Gui_Card;
-        protected ControllerBoardCardUI controllerBoardCardUI;
+    //   protected GUI_CardBoard Gui_Card;
+    //protected ControllerBoardCardUI controllerBoardCardUI;
+    protected GUI_Card Gui_Card;
+
+    protected ControllerSummon CT_Summon;   
         private Coroutine flipCoroutine;
     #endregion
 
     #region Variable_Position_Of_Screen
-    protected float screenLeft;
+        protected float screenLeft;
         protected float screenRight;
         protected float screenTop;
         protected float screenBottom;
@@ -47,8 +50,9 @@ public class CardDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     {
         scrollViewParent = transform.parent;
         scrollViewInitialPosition = scrollViewParent.position;
-        Gui_Card = GetComponent<GUI_CardBoard>();
-        controllerBoardCardUI = GetComponentInParent<ControllerBoardCardUI>();
+        Gui_Card = GetComponent<GUI_Card>();
+        //controllerBoardCardUI = GetComponentInParent<ControllerBoardCardUI>();
+        CT_Summon = GetComponentInParent<ControllerSummon>();
 
         cost_To_Summon = int.Parse(Gui_Card.textCostSummon.text.ToString()) ;
 
@@ -68,21 +72,23 @@ public class CardDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = 0f;
-        if (CheckPositionCanDrop())
+        if (CheckPositionNotCanDrop())
         {
+            Debug.Log("ko drop");
             canDrop = false;
-            controllerBoardCardUI.BrNotCanDrop.SetActive(true);
-            controllerBoardCardUI.BrCanDrop.SetActive(false);
+            CT_Summon.BrNotCanDrop.SetActive(true);
+            CT_Summon.BrCanDrop.SetActive(false);
         }
         else
         {
+            Debug.Log(" drop");
             canDrop = true;
-            controllerBoardCardUI.BrCanDrop.SetActive(true);
-            controllerBoardCardUI.BrNotCanDrop.SetActive(false);
+            CT_Summon.BrCanDrop.SetActive(true);
+            CT_Summon.BrNotCanDrop.SetActive(false);
         }
     }
 
-    protected bool CheckPositionCanDrop()
+    protected bool CheckPositionNotCanDrop()
     {
         return mousePosition.x < screenLeft || 
             mousePosition.x > screenRight || mousePosition.y < screenBottom || 
@@ -102,20 +108,21 @@ public class CardDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
                 //out area screen
                 transform.SetParent(scrollViewParent);
                 transform.position = scrollViewInitialPosition;
-                controllerBoardCardUI.TurnOffBR();
-            }   
+                CT_Summon.TurnOffBR();
+            }           
             else
             {
                 //Instantiate(prefab_Character_Of_Card, mousePosition, Quaternion.identity);
                 Gui_Card.SetEvent_SummonPrefab(mousePosition);
-                controllerBoardCardUI.SetEventSummon();
+                CT_Summon.CreatRandomCard();
 
                 //affter summon => sumCost = sumcost - cost_To_Summon => update new sumcost
                 int sumCost = PlayerPrefs.GetInt("Mana_InGame");
                 PlayerPrefs.SetInt("Mana_InGame", sumCost - cost_To_Summon);
 
+                CT_Summon.TurnOffBR();
                 Destroy(gameObject);
-                controllerBoardCardUI.TurnOffBR();
+                
             }
         }
     }
@@ -173,7 +180,8 @@ public class CardDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     }
     public void DestroyThisObject()
     {
-        controllerBoardCardUI.CreatRandomCard();
+        CT_Summon.CreatRandomCard();
+        CT_Summon.SubtractionCountOfDeckSummon();
         Destroy(this.gameObject);
     }
 

@@ -25,8 +25,13 @@ public class Skill_Freeze_All : BaseProactiveSkill
     private IEnumerator StartSkill(ControllerChacracrer CObject)
     {
         CObject.SetFreeze(true);
+        GameObject  FX_Freeze= EffectManager.instance.SpawmVFX("VFX_Freeze", CObject.gameObject.transform.position, ObjectPoolManager.Pooltyle.ParticleSystem);
+        SoundManager.instance.PlaySound(SoundType.SFX_Freeze);
+        
         yield return new WaitForSeconds(timeFreeze);
 
         CObject.SetFreeze(false);
+        FX_Freeze.SetActive(false);
+        Destroy(gameObject);
     }
 }

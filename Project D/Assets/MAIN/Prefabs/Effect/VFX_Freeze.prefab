@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1234916877013734224}
   - component: {fileID: 1592930473600044264}
   m_Layer: 0
-  m_Name: FX_Freeze
+  m_Name: VFX_Freeze
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

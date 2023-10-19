@@ -36,4 +36,6 @@ public class GUI_Card : MonoBehaviour
 
     protected virtual void LoadDatatoCard() { }
 
+
+    public virtual int GetCostSummon() { return 0; }
 }

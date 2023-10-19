@@ -32,12 +32,13 @@ public class EffectManager : MonoBehaviour
     {
         GameObject effect = Get(nameEffect);
         //GameObject newEffect = Instantiate(effect, position, Quaternion.identity);
+       // GameObject newEffect = ObjectPoolManager.SpawnOject(effect, position, Quaternion.identity, pooltyle);
         GameObject newEffect = ObjectPoolManager.SpawnOject(effect, position, Quaternion.identity, pooltyle);
         newEffect.gameObject.SetActive(true);
         return newEffect;
-
-
     }
+   
+
     protected GameObject Get(string nameEffect)
     {
         foreach (GameObject child in effects)

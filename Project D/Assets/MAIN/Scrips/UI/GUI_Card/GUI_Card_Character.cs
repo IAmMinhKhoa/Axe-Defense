@@ -34,4 +34,5 @@ public class GUI_Card_Character : GUI_Card
 
         G_Prefab_InCard = Prefab_Char;
     }
+    public override int GetCostSummon() { return SO_Infor.CostSummon; }
 }

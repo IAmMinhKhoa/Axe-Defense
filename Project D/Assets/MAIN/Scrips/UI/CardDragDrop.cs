@@ -15,17 +15,15 @@ public class CardDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     
         protected Vector3 mousePosition; //position of mouse
         public float leftHalfScreenLimit = -1f; //limit can drop object 
-        private const float FlipDuration = 0.25f;
-    //protected int SumMana = PlayerPrefs.GetInt("Mana_InGame");
+        private const float FlipDuration = 0.15f;
         protected int cost_To_Summon;
     #endregion
 
     #region Component
-    //   protected GUI_CardBoard Gui_Card;
-    //protected ControllerBoardCardUI controllerBoardCardUI;
-    protected GUI_Card Gui_Card;
+    
+        protected GUI_Card Gui_Card;
 
-    protected ControllerSummon CT_Summon;   
+        protected ControllerSummon CT_Summon;   
         private Coroutine flipCoroutine;
     #endregion
 
@@ -54,7 +52,7 @@ public class CardDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         //controllerBoardCardUI = GetComponentInParent<ControllerBoardCardUI>();
         CT_Summon = GetComponentInParent<ControllerSummon>();
 
-        cost_To_Summon = int.Parse(Gui_Card.textCostSummon.text.ToString()) ;
+        cost_To_Summon = Gui_Card.GetCostSummon();
 
         GetVaribleScreen();
     }
@@ -90,6 +88,8 @@ public class CardDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
     protected bool CheckPositionNotCanDrop()
     {
+        Debug.Log(cost_To_Summon + "/" + PlayerPrefs.GetInt("Mana_InGame"));
+
         return mousePosition.x < screenLeft || 
             mousePosition.x > screenRight || mousePosition.y < screenBottom || 
             mousePosition.y > screenTop || mousePosition.x > leftHalfScreenLimit ||
@@ -121,8 +121,9 @@ public class CardDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
                 PlayerPrefs.SetInt("Mana_InGame", sumCost - cost_To_Summon);
 
                 CT_Summon.TurnOffBR();
-                Destroy(gameObject);
-                
+                DestroyThisObject();
+
+
             }
         }
     }

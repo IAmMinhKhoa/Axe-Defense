@@ -27,4 +27,5 @@ public class GUI_Card_SkillActive : GUI_Card
         IMG_Avatar.sprite = Img;
         G_Prefab_InCard = Prefab_Char;
     }
+    public override int GetCostSummon() { return SO_Infor.CostSummon; }
 }

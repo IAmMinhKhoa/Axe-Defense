@@ -23,13 +23,30 @@ public class ScrollViewSystem : MonoBehaviour
         leftButton.onClick.AddListener(ScrollLeft);
         rightButton.onClick.AddListener(ScrollRight);
 
+        leftButton.gameObject.SetActive(false); // Ẩn nút trái ban đầu
+
         scrollRect.onValueChanged.AddListener(OnScrollValueChanged);
     }
 
     private void OnScrollValueChanged(Vector2 normalizedPosition)
     {
-        leftButton.gameObject.SetActive(CanScrollLeft());
-        rightButton.gameObject.SetActive(CanScrollRight());
+        if (!CanScrollLeft())
+        {
+            leftButton.gameObject.SetActive(false); // Ẩn nút trái khi không thể cuộn sang trái
+        }
+        else
+        {
+            leftButton.gameObject.SetActive(true); // Hiển thị nút trái khi có thể cuộn sang trái
+        }
+
+        if (!CanScrollRight())
+        {
+            rightButton.gameObject.SetActive(false); // Ẩn nút phải khi đã cuộn tới điểm cuối cùng
+        }
+        else
+        {
+            rightButton.gameObject.SetActive(true); // Hiển thị nút phải khi chưa cuộn tới điểm cuối cùng
+        }
     }
 
     private bool CanScrollLeft()
@@ -60,15 +77,7 @@ public class ScrollViewSystem : MonoBehaviour
                 scrollRect.horizontalNormalizedPosition = targetPosition / scrollRect.content.rect.width;
                 isScrolling = false;
 
-                // Kiểm tra vị trí cuối cùng của nút cuộn
-                if (!CanScrollLeft())
-                {
-                    leftButton.gameObject.SetActive(false);
-                }
-                if (!CanScrollRight())
-                {
-                    rightButton.gameObject.SetActive(false);
-                }
+                OnScrollValueChanged(scrollRect.normalizedPosition); // Gọi sự kiện khi di chuyển hoàn thành để kiểm tra lại trạng thái của nút
             }
         }
     }

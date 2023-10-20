@@ -41,6 +41,7 @@ public class GAMEPLAYmanager : MonoBehaviour
 
     public enum StateGame
     {
+        SetUpCard,
         Playing,
         Win,
         Lose,
@@ -126,6 +127,9 @@ public class GAMEPLAYmanager : MonoBehaviour
         
         switch (stateGame)
         {
+            case StateGame.SetUpCard:
+                break;
+
             case StateGame.Playing:
                 break;
 

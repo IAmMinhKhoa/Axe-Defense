@@ -9,35 +9,36 @@ public class ControllerTower_Enemy : ControllerTower
     protected ControllerCollision CT_Collision;
     protected Health_Tower CT_HealthTW;
     #endregion
+    [Space(20)]
 
-    #region
-
+    #region List
+    protected Collider2D[] L_Collider; //list collider object with layer
+    [SerializeField] protected List<GameObject> L_Enemy = new List<GameObject>();
     #endregion
+    [Space(20)]
 
-    #region
+    #region SO
+    [SerializeField] protected SO_CharacterInforMantionRANGER SO_Information;
     #endregion
+    [Space(20)]
 
-    #region
+    #region Variable
+    [SerializeField] protected Transform PointAttack;
+    protected bool canAttack = true;
+    [SerializeField] protected float attackCooldown;
     #endregion
+    [Space(20)]
 
-    #region BOSS (Set up befor game play)
+    #region BOSS (Set up befor game play) <When TW below 1/3HP --> Spam Boss>
     [Header("BOSS (Set up befor game play)")]
     public bool UNCLOCK_FUNCTION_BOSS;
     [SerializeField] protected GameObject F_Boss;
     protected bool checkSpamBoss=false;
     #endregion
-    [Space(20)]
+    
 
 
 
-    protected Collider2D[] L_Collider; //list collider object with layer
-    [SerializeField] protected SO_CharacterInforMantionRANGER SO_Information;
-    [SerializeField] protected Transform PointAttack;
-
-    protected bool canAttack = true;
-    [SerializeField] protected float attackCooldown;
-
-    [SerializeField] protected List<GameObject> L_Enemy =new List<GameObject> ();
     private void Start()
     {
         CT_Collision=GetComponent<ControllerCollision>();
@@ -56,7 +57,7 @@ public class ControllerTower_Enemy : ControllerTower
             Attack();
         }
 
-        if (CT_HealthTW.GetCurrentHealth() < (CT_HealthTW.maxHealt / 4.0) && checkSpamBoss==false) // tru cua ke dich duoi 40% HP la se spam ra boss
+        if (UNCLOCK_FUNCTION_BOSS&& CT_HealthTW.GetCurrentHealth() < (CT_HealthTW.maxHealt / 3.0) && checkSpamBoss==false) // tru cua ke dich duoi 1/3 HP la se spam ra boss
         {
             checkSpamBoss = true;
             SummonBoss();
@@ -75,7 +76,6 @@ public class ControllerTower_Enemy : ControllerTower
 
     protected void SetUpSkill()
     {
-        // GameObject BallSkill = Instantiate(SO_Information.PrefabSkill, PointAttack.position, Quaternion.identity);
         GameObject BallSkill = ObjectPoolManager.SpawnOject(SO_Information.PrefabSkill, PointAttack.transform.position, Quaternion.identity, ObjectPoolManager.Pooltyle.Skill);
         Skill Skill = BallSkill.GetComponent<Skill>();
 

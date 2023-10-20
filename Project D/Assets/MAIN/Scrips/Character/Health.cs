@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -68,6 +69,10 @@ public class Health : MonoBehaviour
         this.maxHealt = value;
         CurrentHealth = maxHealt;
         textHealth.SetText(CurrentHealth.ToString() + "/" + maxHealt);
+    }
+    public float GetCurrentHealth()
+    {
+        return CurrentHealth;
     }
     public bool GetStatusIsDie()
     {

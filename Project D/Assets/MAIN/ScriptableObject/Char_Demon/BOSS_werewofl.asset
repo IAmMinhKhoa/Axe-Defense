@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec7b20182af1e3a43b72eb07666f35e3, type: 3}
+  m_Name: BOSS_werewofl
+  m_EditorClassIdentifier: 
+  ACTIVE: 0
+  typeCharacter: 0
+  nameChar: 
+  Avatar: {fileID: 0}
+  HP: 1000
+  Damge: 20
+  CostSummon: 0
+  Prefab_Character: {fileID: 0}
+  RangedAttack: 1
+  SpeedMove: 1
+  CoolDown: 4
+  PriceBuy: 0

@@ -7,7 +7,12 @@ public class Health_Melee : Health
     protected ControllerChacracrer controllerChacracrer;
     private void Start()
     {
-        controllerChacracrer = GetComponent<ControllerChacracrer>();
+        if (!(controllerChacracrer = GetComponent<ControllerChacracrer>()))
+        {
+            Debug.LogWarning("Can't Getcomponet" + this.gameObject.name);
+        }
+        
+        
        
     }
     public override void TakeDamage(float value)

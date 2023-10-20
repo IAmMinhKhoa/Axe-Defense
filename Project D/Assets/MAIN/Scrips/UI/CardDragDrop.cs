@@ -49,9 +49,7 @@ public class CardDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         scrollViewParent = transform.parent;
         scrollViewInitialPosition = scrollViewParent.position;
         Gui_Card = GetComponent<GUI_Card>();
-        //controllerBoardCardUI = GetComponentInParent<ControllerBoardCardUI>();
         CT_Summon = GetComponentInParent<ControllerSummon>();
-
         cost_To_Summon = Gui_Card.GetCostSummon();
 
         GetVaribleScreen();
@@ -112,7 +110,6 @@ public class CardDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
             }           
             else
             {
-                //Instantiate(prefab_Character_Of_Card, mousePosition, Quaternion.identity);
                 Gui_Card.SetEvent_SummonPrefab(mousePosition);
                 CT_Summon.CreatRandomCard();
 
@@ -121,8 +118,8 @@ public class CardDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
                 PlayerPrefs.SetInt("Mana_InGame", sumCost - cost_To_Summon);
 
                 CT_Summon.TurnOffBR();
-                DestroyThisObject();
-
+                //DestroyThisObject();
+                Destroy(this.gameObject);
 
             }
         }

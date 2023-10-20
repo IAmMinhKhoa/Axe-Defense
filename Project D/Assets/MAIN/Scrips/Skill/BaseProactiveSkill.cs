@@ -7,7 +7,7 @@ public abstract class BaseProactiveSkill : MonoBehaviour
     public string targetLayerName = "YourLayerName"; // Tên c?a layer b?n mu?n tìm
 
     public List<GameObject> objectsWithLayer;
-    private void OnEnable()
+    private void Start()
     {
         objectsWithLayer = new List<GameObject>();
 
@@ -16,7 +16,7 @@ public abstract class BaseProactiveSkill : MonoBehaviour
         GameObject[] allObjects = FindObjectsOfType<GameObject>();
         foreach (GameObject obj in allObjects)
         {
-            if (obj.layer == targetLayer && obj.tag!="Tower")
+            if (obj.layer == targetLayer && obj.tag!="Tower" )
             {
                 objectsWithLayer.Add(obj);
             }

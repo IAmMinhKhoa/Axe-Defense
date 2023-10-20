@@ -31,7 +31,7 @@ public class SkillTower : MonoBehaviour
                         healthEnemy.TakeDamage(Damgage);
                     }
                 }
-                else if (enemy.gameObject.tag == "CharacterMelee")
+                else if (enemy.gameObject.tag == "CharacterMelee" || enemy.gameObject.tag == "Boss")
                 {
                     Health_Melee healthMelee = enemy.GetComponent<Health_Melee>();
                     if (healthMelee != null)

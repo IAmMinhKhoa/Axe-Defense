@@ -142,7 +142,7 @@ public class ControllerSummon : MonoBehaviour
     
     protected void LoadCard()
     {
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 4; i++)
         {
             CreatRandomCard();
         }

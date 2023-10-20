@@ -69,6 +69,13 @@ public class ControllerCharacterMelee : ControllerChacracrer
         else if (enemyTag == "Tower")
         {
             healthEnemy = L_Collider[0].GetComponent<Health_Tower>();
+        }else if(enemyTag == "Boss")
+        {
+            healthEnemy = L_Collider[0].GetComponent<Health_Melee>();
+        }
+        else
+        {
+            Debug.LogWarning("Can't Find tag :" + enemyTag + " Of +" + L_Collider[0].name);
         }
 
         if (healthEnemy != null)

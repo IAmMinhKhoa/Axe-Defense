@@ -69,6 +69,16 @@ public class Skill : MonoBehaviour
         {
             healthComponent = target.gameObject.GetComponent<Health_Tower>();
         }
+        else if (enemyTag == "Boss")
+        {
+            healthComponent = target.GetComponent<Health_Melee>();
+        }
+        else
+        {
+            Debug.LogWarning("Can't Find tag :" + enemyTag + " Of +" + target.name);
+        }
+
+
         if (healthComponent != null)
         {
             

@@ -11,7 +11,7 @@ public class Skill_Damage_All : BaseProactiveSkill
         foreach (GameObject obejct in objectsWithLayer)
         {
             Health H_Object = obejct.GetComponent<Health>();
-            if (H_Object != null)
+            if (H_Object != null && obejct.tag != "Boss")
             {
                 GameObject FX_BrokenHeart = EffectManager.instance.SpawmVFX("VFX_BrokenHeart", H_Object.gameObject.transform.position, ObjectPoolManager.Pooltyle.ParticleSystem);
                 H_Object.TakeDamage(damage);

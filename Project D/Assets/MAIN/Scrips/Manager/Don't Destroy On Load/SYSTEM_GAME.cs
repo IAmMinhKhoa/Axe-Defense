@@ -8,6 +8,8 @@ public class SYSTEM_GAME : MonoBehaviour
 
     protected bool FirstRunIntro=true;
 
+    protected int CurrencyCoin;
+
     public static SYSTEM_GAME Instance
     {
         get
@@ -39,6 +41,9 @@ public class SYSTEM_GAME : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        CurrencyCoin = PlayerPrefs.GetInt("Coin");
+        PlayerPrefs.SetInt("Coin", CurrencyCoin);
     }
 
 
@@ -49,5 +54,16 @@ public class SYSTEM_GAME : MonoBehaviour
     public bool GetBoolFirstPlayIntro()
     {
         return FirstRunIntro;
+    }
+
+    public void SetCoin(int Value)
+    {
+        //update new coin
+        PlayerPrefs.SetInt("Coin", Value);
+    }
+
+    public int GetCoin()
+    {
+        return PlayerPrefs.GetInt("Coin");
     }
 }

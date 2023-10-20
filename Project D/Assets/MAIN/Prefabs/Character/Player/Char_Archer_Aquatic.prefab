@@ -153,7 +153,7 @@ GameObject:
   - component: {fileID: 7946095806828966535}
   - component: {fileID: 2005187668286031038}
   m_Layer: 6
-  m_Name: Char_Archer
+  m_Name: Char_Archer_Aquatic
   m_TagString: CharacterArcher
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

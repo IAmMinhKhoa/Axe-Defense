@@ -100,6 +100,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5080161836964192680, guid: 305672976984b394b91e3f7137056cc6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5381205337451325701, guid: 305672976984b394b91e3f7137056cc6, type: 3}
       propertyPath: m_text
       value: 'Melee
@@ -150,7 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a6da26c733f93f49b58347cca3d1e0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sO_CharacterInforMantion: {fileID: 0}
+  axieSO: {fileID: 0}
   imageAxie: {fileID: 4068388853942710489}
   typeAxieText: {fileID: 1391775600792544637}
   nameAxieText: {fileID: 5083487709514369507}

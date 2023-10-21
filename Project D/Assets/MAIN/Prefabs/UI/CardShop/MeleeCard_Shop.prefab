@@ -102,7 +102,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5381205337451325701, guid: 305672976984b394b91e3f7137056cc6, type: 3}
       propertyPath: m_text
-      value: Mage
+      value: 'Melee
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 6603566926284026225, guid: 305672976984b394b91e3f7137056cc6, type: 3}
       propertyPath: m_Name

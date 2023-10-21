@@ -287,7 +287,7 @@ GameObject:
   - component: {fileID: 8335421818274721569}
   - component: {fileID: 3767480302687780940}
   m_Layer: 6
-  m_Name: Char_Malee
+  m_Name: Char_Malee_Olek
   m_TagString: CharacterMelee
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

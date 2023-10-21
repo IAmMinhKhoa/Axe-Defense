@@ -108,10 +108,73 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6603566926284026225, guid: 305672976984b394b91e3f7137056cc6, type: 3}
       propertyPath: m_Name
-      value: MageCard_Shop
+      value: MeleeCard_Shop
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6603566926284026225, guid: 305672976984b394b91e3f7137056cc6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8532821474438067509}
   m_SourcePrefab: {fileID: 100100000, guid: 305672976984b394b91e3f7137056cc6, type: 3}
+--- !u!1 &1391775600792544637 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7900750627022402572, guid: 305672976984b394b91e3f7137056cc6, type: 3}
+  m_PrefabInstance: {fileID: 9148374748740637041}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1445796017426063271 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7702828323273707222, guid: 305672976984b394b91e3f7137056cc6, type: 3}
+  m_PrefabInstance: {fileID: 9148374748740637041}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1921772051081823365 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7232234693508683252, guid: 305672976984b394b91e3f7137056cc6, type: 3}
+  m_PrefabInstance: {fileID: 9148374748740637041}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2688960676092420096 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6603566926284026225, guid: 305672976984b394b91e3f7137056cc6, type: 3}
+  m_PrefabInstance: {fileID: 9148374748740637041}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8532821474438067509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2688960676092420096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a6da26c733f93f49b58347cca3d1e0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sO_CharacterInforMantion: {fileID: 0}
+  imageAxie: {fileID: 4068388853942710489}
+  typeAxieText: {fileID: 1391775600792544637}
+  nameAxieText: {fileID: 5083487709514369507}
+  manaAxieText: {fileID: 7587813314242703869}
+  healthAxieText: {fileID: 1921772051081823365}
+  acttackAxieText: {fileID: 1445796017426063271}
+  coinText: {fileID: 8695707872107852096}
+--- !u!1 &4068388853942710489 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5080161836964192680, guid: 305672976984b394b91e3f7137056cc6, type: 3}
+  m_PrefabInstance: {fileID: 9148374748740637041}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5083487709514369507 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4069463501133699218, guid: 305672976984b394b91e3f7137056cc6, type: 3}
+  m_PrefabInstance: {fileID: 9148374748740637041}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7587813314242703869 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1709356150542868620, guid: 305672976984b394b91e3f7137056cc6, type: 3}
+  m_PrefabInstance: {fileID: 9148374748740637041}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8695707872107852096 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 457346679475576881, guid: 305672976984b394b91e3f7137056cc6, type: 3}
+  m_PrefabInstance: {fileID: 9148374748740637041}
+  m_PrefabAsset: {fileID: 0}

@@ -5,6 +5,7 @@ using UnityEngine;
 
 public enum ShopTab
 {
+    Skill,
     Melee,
     Mage,
     Archer
@@ -13,7 +14,7 @@ public class TabController : MonoBehaviour
 {
     public static TabController instance;
 
-    public event EventHandler OnAddCardMelee, OnAddCardMage, OnAddCardArcher;
+    public event EventHandler OnAddCard;
 
     public ShopTab currentTab;
 
@@ -29,36 +30,24 @@ public class TabController : MonoBehaviour
 
     private void Update()
     {
-        // Xử lý giao diện cửa hàng dựa trên tab hiện tại
-        switch (currentTab)
-        {
-            case ShopTab.Melee:
-                // Hiển thị nội dung cho tab Mage
-                OnAddCardMelee?.Invoke(this, EventArgs.Empty);
-                break;
-            case ShopTab.Mage:
-                // Hiển thị nội dung cho tab Melee
-                OnAddCardMage?.Invoke(this, EventArgs.Empty);
-                break;
-            case ShopTab.Archer:
-                // Hiển thị nội dung cho tab Archer
-                OnAddCardArcher?.Invoke(this, EventArgs.Empty);
-                break;
-        }
+
     }
 
     public void ChangeMeleeTab()
     {
         currentTab = ShopTab.Melee;
+        OnAddCard?.Invoke(this, EventArgs.Empty);
     }
 
     public void ChangeMageTab()
     {
         currentTab = ShopTab.Mage;
+        OnAddCard?.Invoke(this, EventArgs.Empty);
     }
 
     public void ChangeArcherTab()
     {
         currentTab = ShopTab.Archer;
+        OnAddCard?.Invoke(this, EventArgs.Empty);
     }
 }

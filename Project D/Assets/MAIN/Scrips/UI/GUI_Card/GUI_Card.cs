@@ -20,7 +20,7 @@ public class GUI_Card : MonoBehaviour
     private void Start()
     {
         E_Summon_Prefab += GUI_CardBoard_E_Summon_Prefab;
-        LoadDatatoCard();
+        //LoadDatatoCard();
     }
 
     private void GUI_CardBoard_E_Summon_Prefab(object sender, EventArgs e)
@@ -34,7 +34,7 @@ public class GUI_Card : MonoBehaviour
         E_Summon_Prefab?.Invoke(this, EventArgs.Empty);
     }
 
-    protected virtual void LoadDatatoCard() { }
+    public virtual void LoadDatatoCard() { }
 
 
     public virtual int GetCostSummon() { return 0; }

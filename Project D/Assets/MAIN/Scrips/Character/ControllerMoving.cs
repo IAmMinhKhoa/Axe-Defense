@@ -17,7 +17,7 @@ public class ControllerMoving : MonoBehaviour
         rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
     }
 
-    public void SetSpeed(int value)
+    public void SetSpeed(float value)
     {
         this.speed = value;
     }

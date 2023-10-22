@@ -29,7 +29,7 @@ public class ControllerTower_Enemy : ControllerTower
     #endregion
     [Space(20)]
 
-    #region BOSS (Set up befor game play) <When TW below 1/3HP --> Spam Boss>
+    #region BOSS (Set up befor game play) <When TW below 1/2HP --> Spam Boss>
     [Header("BOSS (Set up befor game play)")]
     public bool UNCLOCK_FUNCTION_BOSS;
     [SerializeField] protected GameObject F_Boss;
@@ -57,7 +57,7 @@ public class ControllerTower_Enemy : ControllerTower
             Attack();
         }
 
-        if (UNCLOCK_FUNCTION_BOSS&& CT_HealthTW.GetCurrentHealth() < (CT_HealthTW.maxHealt / 3.0) && checkSpamBoss==false) // tru cua ke dich duoi 1/3 HP la se spam ra boss
+        if (UNCLOCK_FUNCTION_BOSS&& CT_HealthTW.GetCurrentHealth() < (CT_HealthTW.maxHealt / 2.0) && checkSpamBoss==false) // tru cua ke dich duoi 1/2 HP la se spam ra boss
         {
             checkSpamBoss = true;
             SummonBoss();

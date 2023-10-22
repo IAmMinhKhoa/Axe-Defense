@@ -47,7 +47,12 @@ public class ControllerSummon : MonoBehaviour
 
     #region List
     [Header("Entity-UI")]
-    [SerializeField] protected List<GameObject> L_Card_Character = new List<GameObject>();
+   // [SerializeField] protected List<GameObject> L_Card_Character = new List<GameObject>();
+
+
+
+    [SerializeField] protected SO_DeskCard SO_CardOnDeck;
+    [SerializeField] protected List<InforCard> L_Card_Default = new List<InforCard>();
     #endregion
 
 
@@ -151,9 +156,60 @@ public class ControllerSummon : MonoBehaviour
     public void CreatRandomCard()
     {
         System.Random random = new System.Random();
-        int Random_Card = random.Next(0, L_Card_Character.Count);
-        GameObject Card = Instantiate(L_Card_Character[Random_Card]);
-        Card.transform.SetParent(this.transform, false);
+        //CoutCardOnDeck=7
+        //randomc-card : 0 1 2 3 4 5 6                  
+
+        int Random_Card = random.Next(0, SO_CardOnDeck.CoutCardOnDeck);
+   
+        if (Random_Card< SO_CardOnDeck.ListCardAxie.Count)  
+        {
+            foreach (InforCard inforCard in L_Card_Default)
+            {
+                if (inforCard.name_Type == SO_CardOnDeck.ListCardAxie[Random_Card].typeCharacter.ToString())
+                {
+                    GameObject Card = Instantiate(inforCard.card);
+
+                    GUI_Card_Character gui_card = Card.GetComponent<GUI_Card_Character>();
+                    gui_card.SO_Infor = SO_CardOnDeck.ListCardAxie[Random_Card];
+                    gui_card.LoadDatatoCard();
+
+                    Card.transform.SetParent(this.transform, false);
+                }
+            }
+        }
+        else
+        {
+            int index_In_ListCardSkill = SO_CardOnDeck.CoutCardOnDeck-Random_Card-1;
+            foreach (InforCard inforCard in L_Card_Default)
+            {
+                if (inforCard.name_Type == "Skill")
+                {
+                    GameObject Card = Instantiate(inforCard.card);
+
+                    GUI_Card_SkillActive gui_card = Card.GetComponent<GUI_Card_SkillActive>();
+                    gui_card.SO_Infor = SO_CardOnDeck.ListCardSkill[index_In_ListCardSkill];
+                    gui_card.LoadDatatoCard();
+
+                    Card.transform.SetParent(this.transform, false);
+                }
+            }
+        }
+
+
+
+
+
+
+
+        
     }
 
+}
+
+
+[System.Serializable]
+public class InforCard
+{
+    public string name_Type;
+    public GameObject card;
 }

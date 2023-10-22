@@ -17,10 +17,10 @@ MonoBehaviour:
   nameChar: 
   Avatar: {fileID: 0}
   HP: 1000
-  Damge: 20
+  Damge: 25
   CostSummon: 0
   Prefab_Character: {fileID: 0}
   RangedAttack: 1
-  SpeedMove: 1
+  SpeedMove: 0.5
   CoolDown: 4
   PriceBuy: 0

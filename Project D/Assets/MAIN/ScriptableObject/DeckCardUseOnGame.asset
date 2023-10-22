@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cddbf5e7445c6f4ebf30f272d2d5f09, type: 3}
+  m_Name: DeckCardUseOnGame
+  m_EditorClassIdentifier: 
+  ListCardAxie:
+  - {fileID: 11400000, guid: ac1f03d532de1c94d80eeec8e8903d46, type: 2}
+  - {fileID: 11400000, guid: 996884ad050bfb046856dfa96b6470d2, type: 2}
+  - {fileID: 11400000, guid: 72b8b5e880bbe5f4aa763c220cc4d5bd, type: 2}
+  - {fileID: 11400000, guid: 4649b5e67751137488cf4dc91460cc5b, type: 2}
+  - {fileID: 11400000, guid: fcf5e0ed750f8ac4ead94e15b97ed4db, type: 2}
+  ListCardSkill:
+  - {fileID: 11400000, guid: 94953b2a6c7814a4099d530df74680b1, type: 2}
+  - {fileID: 11400000, guid: c639cfccc59165a42857987ea587a356, type: 2}
+  - {fileID: 11400000, guid: ebaa3700befc7104ebdedaf2af84a3b0, type: 2}

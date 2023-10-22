@@ -8,7 +8,7 @@ public class Health_Tower : Health
     private void Start()
     {
         controllerTower = GetComponent<ControllerTower>();
-        SetHealth(100); 
+        SetHealth(maxHealt); 
     }
     public override void TakeDamage(float value)
     {

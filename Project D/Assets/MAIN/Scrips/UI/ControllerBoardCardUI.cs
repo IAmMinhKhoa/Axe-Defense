@@ -85,9 +85,9 @@ public class ControllerBoardCardUI : MonoBehaviour
 
 }
 
-[System.Serializable]
+/*[System.Serializable]
 public class InforCard
 {
     public string name_Type;
     public GameObject card;
-}
+}*/

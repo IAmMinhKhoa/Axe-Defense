@@ -12,10 +12,10 @@ public class GUI_Card_SkillActive : GUI_Card
     #endregion
 
     #region Component
-    [SerializeField] protected SO_Active_Skill SO_Infor;
+    public SO_Active_Skill SO_Infor;
     #endregion
 
-    protected override void LoadDatatoCard()
+    public override void LoadDatatoCard()
     {
         string Cost = SO_Infor.CostSummon.ToString();
         string Scrip = SO_Infor.InforSkill.ToString();

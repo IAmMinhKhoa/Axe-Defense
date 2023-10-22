@@ -25,7 +25,7 @@ public class SO_CharacterInforMantion : ScriptableObject
 
     [Space(20)]
     public float RangedAttack;
-    public int SpeedMove;
+    public float SpeedMove;
     public int CoolDown;
 
     [Space(20)]

@@ -14,10 +14,10 @@ public class GUI_Card_Character : GUI_Card
     #endregion
 
     #region Component
-    [SerializeField] protected SO_CharacterInforMantion SO_Infor;
+    public SO_CharacterInforMantion SO_Infor;
     #endregion
 
-    protected override void LoadDatatoCard()
+    public override void LoadDatatoCard()
     {
         string Name = SO_Infor.nameChar.ToString();
         string Cost = SO_Infor.CostSummon.ToString();
@@ -25,6 +25,7 @@ public class GUI_Card_Character : GUI_Card
         string Damage = SO_Infor.Damge.ToString();
         Sprite Img = SO_Infor.Avatar;
         GameObject Prefab_Char = SO_Infor.Prefab_Character;
+
 
         textCostSummon.text = Cost;
         textName.text = Name;

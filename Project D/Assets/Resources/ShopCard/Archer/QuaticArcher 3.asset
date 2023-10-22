@@ -12,14 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e29d8d83cc1f3d4598f9a537127a89e, type: 3}
   m_Name: QuaticArcher 3
   m_EditorClassIdentifier: 
+  ACTIVE: 0
   typeCharacter: 2
   nameChar: Aquatic
   Avatar: {fileID: 21300000, guid: 430f83e8714119a4f929599e5bcfed3a, type: 3}
-  HP: 80
-  Damge: 15
+  HP: 250
+  Damge: 20
   CostSummon: 4
   Prefab_Character: {fileID: 4088087033786030313, guid: e37e2b22c1dab7d4cbf153ec6e6ec73f, type: 3}
   RangedAttack: 5
   SpeedMove: 1
   CoolDown: 3
+  PriceBuy: 350
   PrefabSkill: {fileID: 8660094175212884607, guid: cff7a8dbc7ad4d94891106f524f222cf, type: 3}

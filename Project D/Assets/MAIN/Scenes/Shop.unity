@@ -6052,7 +6052,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2078318488
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6093,21 +6093,21 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8d1bf3b1cf31e3449b353d61aafa2d0c, type: 2}
   - {fileID: 11400000, guid: 2b86aa5f8e17a0f4191964ce4eb7365f, type: 2}
   archerSOList:
-  - {fileID: 11400000, guid: f4219b1a41a70fe4cbe424f129aa4b02, type: 2}
-  - {fileID: 11400000, guid: 192f3177ee0797147b01b4aa6a299402, type: 2}
-  - {fileID: 11400000, guid: 15cb2a412a512824ca272b170fe8bf5c, type: 2}
-  - {fileID: 11400000, guid: f0c9a532b142a484b93be123d6acc3f0, type: 2}
-  - {fileID: 11400000, guid: 030e9798ad74bf04c8636ff63369d4cb, type: 2}
-  - {fileID: 11400000, guid: 55a11fe290e20854e90cf8773b895cf1, type: 2}
+  - {fileID: 11400000, guid: 4649b5e67751137488cf4dc91460cc5b, type: 2}
+  - {fileID: 11400000, guid: 9814ad9664255c249b4b5a380f234a14, type: 2}
+  - {fileID: 11400000, guid: 9257a413ace99cd42be6b3aa85efe96e, type: 2}
+  - {fileID: 11400000, guid: 38109ab280e695c4ca40fb2e44c37086, type: 2}
+  - {fileID: 11400000, guid: bf879ec067dbf844fb3faeab9bf35a37, type: 2}
+  - {fileID: 11400000, guid: 6b898297494d44949aaff651a9f95961, type: 2}
   mageSOList:
-  - {fileID: 11400000, guid: abc4577cd5f815844a35fb564ef7978f, type: 2}
-  - {fileID: 11400000, guid: ebcf3e8873dc540409f4ec13b5d69350, type: 2}
-  - {fileID: 11400000, guid: 14cfc2e2418065e4aa00246c2091b2d4, type: 2}
-  - {fileID: 11400000, guid: 4845f19a32dd6b041937bb8d5d29fb86, type: 2}
-  - {fileID: 11400000, guid: c494ab8ed1f2b9146ab585bbee42e4d8, type: 2}
-  - {fileID: 11400000, guid: b9009dfb7c93c594ba8a3fd2f638e88b, type: 2}
-  - {fileID: 11400000, guid: bbd82308345e1774f8a39297a0f15ae0, type: 2}
+  - {fileID: 11400000, guid: ac1f03d532de1c94d80eeec8e8903d46, type: 2}
+  - {fileID: 11400000, guid: f00eedd633bb0b049a896757c21852d3, type: 2}
+  - {fileID: 11400000, guid: cf73cb86d593f6f4099b5cb08e66d42d, type: 2}
+  - {fileID: 11400000, guid: 2b898729526cd77459cd2bcb98779ab6, type: 2}
+  - {fileID: 11400000, guid: bc56d45c8fc207e4fac842069b380221, type: 2}
+  - {fileID: 11400000, guid: 7c62046f6fc552e4a8e49a13030877ee, type: 2}
+  - {fileID: 11400000, guid: 41f267f6924feed458d7e2a16efe02e6, type: 2}
   skillSOList:
-  - {fileID: 11400000, guid: 06f0d9a57e510f049a9d7c9db101ac7a, type: 2}
-  - {fileID: 11400000, guid: b49b1a5ae7b67ba4c9bdd701e4b840f9, type: 2}
-  - {fileID: 11400000, guid: 0baf2718ddf30754eab6796d88e3b00e, type: 2}
+  - {fileID: 11400000, guid: ebaa3700befc7104ebdedaf2af84a3b0, type: 2}
+  - {fileID: 11400000, guid: c639cfccc59165a42857987ea587a356, type: 2}
+  - {fileID: 11400000, guid: 94953b2a6c7814a4099d530df74680b1, type: 2}

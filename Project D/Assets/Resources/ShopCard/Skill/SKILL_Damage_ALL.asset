@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8846c56dbd506c946aa46831fa235024, type: 3}
   m_Name: SKILL_Damage_ALL
   m_EditorClassIdentifier: 
-  ACTIVE: 0
+  ACTIVE: 1
   InforSkill: Immediately defeat all enemies (except towers and the boss)
   CostSummon: 7
   PriceBuy: 0

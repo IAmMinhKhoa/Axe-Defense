@@ -21,7 +21,15 @@ public class AddValue_Melee : MonoBehaviour
     [SerializeField]
     private GameObject acttackAxieText;
     [SerializeField]
+    private GameObject buttonBuy;
+    [SerializeField]
+    private GameObject coinImage;
+    [SerializeField]
     private GameObject coinText;
+    [SerializeField]
+    private GameObject purchasedText;
+    [SerializeField]
+    private Sprite purchasedSprite;
 
 
     private void Start()
@@ -32,7 +40,18 @@ public class AddValue_Melee : MonoBehaviour
         manaAxieText.GetComponent<TextMeshProUGUI>().text = axieSO.CostSummon.ToString();
         healthAxieText.GetComponent<TextMeshProUGUI>().text = axieSO.HP.ToString();
         acttackAxieText.GetComponent<TextMeshProUGUI>().text = axieSO.Damge.ToString();
-        coinText.GetComponent<TextMeshProUGUI>().text = axieSO.PriceBuy.ToString();
+        if(!axieSO.ACTIVE)
+        {
+            coinText.GetComponent<TextMeshProUGUI>().text = axieSO.PriceBuy.ToString();
+        } 
+        else
+        {
+            buttonBuy.GetComponent<Button>().enabled = false;
+            buttonBuy.GetComponent<Image>().sprite = purchasedSprite;
+            coinImage.SetActive(false);
+            coinText.SetActive(false);
+            purchasedText.SetActive(true);
+        }
     }
 
 }

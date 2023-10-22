@@ -21,7 +21,13 @@ public class AddValue_ArcherOrMelee : MonoBehaviour
     [SerializeField]
     private GameObject acttackAxieText;
     [SerializeField]
+    private GameObject buttonBuy;
+    [SerializeField]
+    private GameObject coinImage;
+    [SerializeField]
     private GameObject coinText;
+    [SerializeField]
+    private GameObject purchasedText;
 
 
     private void Start()
@@ -32,6 +38,16 @@ public class AddValue_ArcherOrMelee : MonoBehaviour
         manaAxieText.GetComponent<TextMeshProUGUI>().text = axieRANGERSO.CostSummon.ToString();
         healthAxieText.GetComponent<TextMeshProUGUI>().text = axieRANGERSO.HP.ToString();
         acttackAxieText.GetComponent<TextMeshProUGUI>().text = axieRANGERSO.Damge.ToString();
-        coinText.GetComponent<TextMeshProUGUI>().text = axieRANGERSO.PriceBuy.ToString();
+        if (!axieRANGERSO.ACTIVE)
+        {
+            coinText.GetComponent<TextMeshProUGUI>().text = axieRANGERSO.PriceBuy.ToString();
+        }
+        else
+        {
+            buttonBuy.GetComponent<Button>().enabled = false;
+            coinImage.SetActive(false);
+            coinText.SetActive(false);
+            purchasedText.SetActive(true);
+        }
     }
 }

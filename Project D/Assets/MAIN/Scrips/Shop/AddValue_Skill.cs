@@ -17,7 +17,13 @@ public class AddValue_Skill : MonoBehaviour
     [SerializeField]
     private GameObject manaSkillText;
     [SerializeField]
+    private GameObject buttonBuy;
+    [SerializeField]
+    private GameObject coinImage;
+    [SerializeField]
     private GameObject coinText;
+    [SerializeField]
+    private GameObject purchasedText;
 
 
     private void Start()
@@ -25,6 +31,16 @@ public class AddValue_Skill : MonoBehaviour
         imageSkill.GetComponent<Image>().sprite = skillSO.Avatar;
         infoSkillText.GetComponent<TextMeshProUGUI>().text = skillSO.InforSkill;
         manaSkillText.GetComponent<TextMeshProUGUI>().text = skillSO.CostSummon.ToString();
-        coinText.GetComponent<TextMeshProUGUI>().text = skillSO.PriceBuy.ToString();
+        if (!skillSO.ACTIVE)
+        {
+            coinText.GetComponent<TextMeshProUGUI>().text = skillSO.PriceBuy.ToString();
+        }
+        else
+        {
+            buttonBuy.GetComponent<Button>().enabled = false;
+            coinImage.SetActive(false);
+            coinText.SetActive(false);
+            purchasedText.SetActive(true);
+        }
     }
 }

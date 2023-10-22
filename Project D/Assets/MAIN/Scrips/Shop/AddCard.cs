@@ -31,14 +31,18 @@ public class AddCard : MonoBehaviour
         archerCards = new List<GameObject>();
         skillCards = new List<GameObject>();
 
-        meleeSOList = new List<SO_CharacterInforMantion>(Resources.LoadAll<SO_CharacterInforMantion>("SO_Shop/Melee"));
-        mageSOList = new List<SO_CharacterInforMantionRANGER>(Resources.LoadAll<SO_CharacterInforMantionRANGER>("SO_Shop/Mage"));
-        archerSOList = new List<SO_CharacterInforMantionRANGER>(Resources.LoadAll<SO_CharacterInforMantionRANGER>("SO_Shop/Archer"));
-        skillSOList = new List<SO_Active_Skill>(Resources.LoadAll<SO_Active_Skill>("SO_Shop/Skill"));
+        meleeSOList = CardManager.instance.meleeSOList;
+        mageSOList = CardManager.instance.mageSOList;
+        archerSOList = CardManager.instance.archerSOList;
+        skillSOList = CardManager.instance.skillSOList;
     }
 
     private void Start()
     {
+        meleeSOList.Sort(new SortSOByPrice());
+        archerSOList.Sort(new SortSOByPrice());
+        mageSOList.Sort(new SortSOByPrice());
+        skillSOList.Sort(new SortSOByPrice());
         AddCardByTab();
     }
 

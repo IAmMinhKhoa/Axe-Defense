@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8846c56dbd506c946aa46831fa235024, type: 3}
   m_Name: SKILL_Healt_All
   m_EditorClassIdentifier: 
-  ACTIVE: 0
+  ACTIVE: 1
   InforSkill: "Ngay l\u1EB7p t\u1EE9c h\u1ED3i \u0111\u1EA7y m\xE1u t\u1EA5t c\u1EA3
     Axie \u0111\u1ED3ng minh"
   CostSummon: 2

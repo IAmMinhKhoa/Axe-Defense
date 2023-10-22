@@ -6,7 +6,6 @@ public class CardManager : MonoBehaviour
 {
     public static CardManager instance;
 
-
     public List<SO_CharacterInforMantion> meleeSOList;
 
     public List<SO_CharacterInforMantionRANGER> archerSOList;
@@ -22,9 +21,5 @@ public class CardManager : MonoBehaviour
 
     private void Start()
     {
-        meleeSOList = new List<SO_CharacterInforMantion> ();
-        archerSOList = new List<SO_CharacterInforMantionRANGER> ();
-        mageSOList = new List<SO_CharacterInforMantionRANGER>();
-        skillSOList = new List<SO_Active_Skill>();
     }
 }

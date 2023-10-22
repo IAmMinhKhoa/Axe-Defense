@@ -28,8 +28,11 @@ public class AddValue_ArcherOrMelee : MonoBehaviour
     private GameObject coinText;
     [SerializeField]
     private GameObject purchasedText;
+    [SerializeField]
+    private Sprite purchasedSprite;
 
-
+    private int coinCurrent;
+    private int coinCard;
     private void Start()
     {
         imageAxie.GetComponent<Image>().sprite = axieRANGERSO.Avatar;
@@ -44,10 +47,31 @@ public class AddValue_ArcherOrMelee : MonoBehaviour
         }
         else
         {
-            buttonBuy.GetComponent<Button>().enabled = false;
-            coinImage.SetActive(false);
-            coinText.SetActive(false);
-            purchasedText.SetActive(true);
+            setButtonPurchased();
         }
+
+        buttonBuy.GetComponent<Button>().onClick.AddListener(SetCoin);
+    }
+
+    private void SetCoin()
+    {
+        coinCurrent = SYSTEM_GAME.Instance.GetCoin();
+        coinCard = int.Parse(coinText.GetComponent<TextMeshProUGUI>().text);
+        coinCurrent -= coinCard;
+        if (coinCurrent > 0)
+        {
+            axieRANGERSO.ACTIVE = true;
+            CoinUI.instance.SetCoinUI(coinCurrent);
+            setButtonPurchased();
+        }
+    }
+
+    private void setButtonPurchased()
+    {
+        buttonBuy.GetComponent<Button>().enabled = false;
+        buttonBuy.GetComponent<Image>().sprite = purchasedSprite;
+        coinImage.SetActive(false);
+        coinText.SetActive(false);
+        purchasedText.SetActive(true);
     }
 }

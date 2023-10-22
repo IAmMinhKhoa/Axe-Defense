@@ -3840,6 +3840,7 @@ GameObject:
   - component: {fileID: 1440403350}
   - component: {fileID: 1440403352}
   - component: {fileID: 1440403351}
+  - component: {fileID: 1440403353}
   m_Layer: 5
   m_Name: Coin_UI
   m_TagString: Untagged
@@ -3866,7 +3867,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -171.11224, y: -71.399994}
+  m_AnchoredPosition: {x: -171.11224, y: -72}
   m_SizeDelta: {x: 319.6618, y: 107.2122}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1440403351
@@ -3907,6 +3908,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1440403349}
   m_CullTransparentMesh: 1
+--- !u!114 &1440403353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1440403349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1b14cafa102f8545b3ad33539b25a35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinText: {fileID: 1954986613}
 --- !u!1 &1480870764
 GameObject:
   m_ObjectHideFlags: 0
@@ -6072,11 +6086,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meleeSOList:
-  - {fileID: 11400000, guid: 752a0e02517face46b19afb7db72793a, type: 2}
-  - {fileID: 11400000, guid: 13254917511283d4c8dd4d2ba9e98252, type: 2}
-  - {fileID: 11400000, guid: 8d8de8d7f77612147b0017cd06717502, type: 2}
-  - {fileID: 11400000, guid: 6a715a9a39897a440ba0ebdf0bc2463e, type: 2}
-  - {fileID: 11400000, guid: a418cd5b4a8e7664b8bc00ebffa0cf1d, type: 2}
+  - {fileID: 11400000, guid: fcf5e0ed750f8ac4ead94e15b97ed4db, type: 2}
+  - {fileID: 11400000, guid: a0101e67a86f7364da4613c958c71f36, type: 2}
+  - {fileID: 11400000, guid: 264d1b5de67a8334198c394b91beef13, type: 2}
+  - {fileID: 11400000, guid: 2e76f9f9587bb2a4f85fa67165adf8bd, type: 2}
+  - {fileID: 11400000, guid: 8d1bf3b1cf31e3449b353d61aafa2d0c, type: 2}
+  - {fileID: 11400000, guid: 2b86aa5f8e17a0f4191964ce4eb7365f, type: 2}
   archerSOList:
   - {fileID: 11400000, guid: f4219b1a41a70fe4cbe424f129aa4b02, type: 2}
   - {fileID: 11400000, guid: 192f3177ee0797147b01b4aa6a299402, type: 2}

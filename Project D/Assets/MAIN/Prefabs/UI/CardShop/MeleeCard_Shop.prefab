@@ -114,6 +114,22 @@ PrefabInstance:
 
 '
       objectReference: {fileID: 0}
+    - target: {fileID: 5690791821617054114, guid: 305672976984b394b91e3f7137056cc6, type: 3}
+      propertyPath: CoinText
+      value: 
+      objectReference: {fileID: 8695707872107852096}
+    - target: {fileID: 5690791821617054114, guid: 305672976984b394b91e3f7137056cc6, type: 3}
+      propertyPath: CoinImage
+      value: 
+      objectReference: {fileID: 1393635917345326066}
+    - target: {fileID: 5690791821617054114, guid: 305672976984b394b91e3f7137056cc6, type: 3}
+      propertyPath: PurchasedText
+      value: 
+      objectReference: {fileID: 6578323019604631189}
+    - target: {fileID: 5690791821617054114, guid: 305672976984b394b91e3f7137056cc6, type: 3}
+      propertyPath: buttonPurchasedImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 8383fa28be809304595e4db09e1ffe23, type: 3}
     - target: {fileID: 6603566926284026225, guid: 305672976984b394b91e3f7137056cc6, type: 3}
       propertyPath: m_Name
       value: MeleeCard_Shop

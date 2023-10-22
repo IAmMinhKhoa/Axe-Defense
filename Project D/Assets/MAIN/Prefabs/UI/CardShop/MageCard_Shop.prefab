@@ -165,6 +165,7 @@ MonoBehaviour:
   coinImage: {fileID: 963832327549855616}
   coinText: {fileID: 7393314245279208754}
   purchasedText: {fileID: 5007419976902163175}
+  purchasedSprite: {fileID: 21300000, guid: 8383fa28be809304595e4db09e1ffe23, type: 3}
 --- !u!1 &5007419976902163175 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2720011120585330660, guid: 305672976984b394b91e3f7137056cc6, type: 3}

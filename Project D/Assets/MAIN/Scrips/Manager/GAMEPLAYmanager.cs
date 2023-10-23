@@ -110,10 +110,8 @@ public class GAMEPLAYmanager : MonoBehaviour
 
     private void GAMEPLAYmanager_E_OnWin(object sender, EventArgs e)
     {
+        UnlockNextLevel();
         StartCoroutine(DelayToChangeState(UI_Win, 2f, SoundType.WinGame));
-
-  
-
     }
 
     private void GAMEPLAYmanager_E_OnLose(object sender, EventArgs e)
@@ -217,5 +215,15 @@ public class GAMEPLAYmanager : MonoBehaviour
             Time.timeScale = 1f;
             Btn_SpeedGame.GetComponentInChildren<TextMeshProUGUI>().text = "X1";
         }
+    }
+
+    private void UnlockNextLevel()
+    {
+        if (SceneManager.GetActiveScene().buildIndex >= PlayerPrefs.GetInt("ReachedIndex"))
+        {
+            PlayerPrefs.SetInt("ReachedIndex", SceneManager.GetActiveScene().buildIndex + 1);
+            PlayerPrefs.SetInt("UnlockedLevel", PlayerPrefs.GetInt("UnlockedLevel", 1) + 1);
+            PlayerPrefs.Save();
+        }    
     }
 }

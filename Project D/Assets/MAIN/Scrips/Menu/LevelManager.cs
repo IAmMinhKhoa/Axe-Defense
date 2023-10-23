@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -18,8 +19,8 @@ public class LevelManager : MonoBehaviour
     private void Awake()
     {
         ButtonsToArray();
-        PlayerPrefs.SetInt("UnlockedLevel", 2);
-        PlayerPrefs.SetInt("ReachedIndex", 2);
+        PlayerPrefs.SetInt("UnlockedLevel", 3);
+        PlayerPrefs.SetInt("ReachedIndex", 3);
 
         int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1);
         for(int i = 0; i < btnGameObjects.Length; i++)
@@ -40,7 +41,23 @@ public class LevelManager : MonoBehaviour
     public void OpenLevel(int levelId)
     {
         string levelName = "Level " + levelId;
-        SceneManager.LoadScene(levelName);
+
+        // Kiểm tra xem scene có trong danh sách build hay không
+        bool sceneExistsInBuild = false;
+        EditorBuildSettingsScene[] buildScenes = EditorBuildSettings.scenes;
+        foreach (EditorBuildSettingsScene buildScene in buildScenes)
+        {
+            if (buildScene.path.Contains(levelName))
+            {
+                sceneExistsInBuild = true;
+                break;
+            }
+        }
+
+        if (sceneExistsInBuild)
+        {
+            SceneManager.LoadScene(levelName);
+        }
     }
 
     void ButtonsToArray()

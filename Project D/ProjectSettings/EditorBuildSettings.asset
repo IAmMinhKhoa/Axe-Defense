@@ -12,9 +12,12 @@ EditorBuildSettings:
     path: Assets/MAIN/Scenes/LevelMap.unity
     guid: 797586d6e50ae30458c57db181f31138
   - enabled: 1
+    path: Assets/MAIN/Scenes/Shop.unity
+    guid: af121872dae99d84492f5a8dbf931185
+  - enabled: 1
     path: Assets/MAIN/Scenes/Level 1.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/MAIN/Scenes/Shop.unity
-    guid: af121872dae99d84492f5a8dbf931185
+    path: Assets/MAIN/Scenes/Level 2.unity
+    guid: 0194b1f63d864aa4484f0eb5eaed1f26
   m_configObjects: {}

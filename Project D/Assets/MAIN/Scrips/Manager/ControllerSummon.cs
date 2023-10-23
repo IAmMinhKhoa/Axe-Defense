@@ -115,7 +115,7 @@ public class ControllerSummon : MonoBehaviour
         if (UNCLOCK_FUNCTION_LIMIT_CARD)
         {
             tempCountCardSummon--;
-            if (tempCountCardSummon < 0)
+            if (tempCountCardSummon <= 0)
             {
                 GAMEPLAYmanager.instance.stateGame = GAMEPLAYmanager.StateGame.Lose;
             }

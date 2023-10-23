@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SYSTEM_GAME : MonoBehaviour
 {
@@ -32,6 +33,7 @@ public class SYSTEM_GAME : MonoBehaviour
 
     void Awake()
     {
+         
         if (instance == null)
         {
             instance = this;

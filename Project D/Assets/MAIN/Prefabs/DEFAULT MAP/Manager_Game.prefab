@@ -2713,7 +2713,7 @@ Transform:
   - {fileID: 665158212588531198}
   - {fileID: 7641332481833735767}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4193391889605283046
 GameObject:
@@ -4381,9 +4381,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7822500073586298186}
-        m_TargetAssemblyTypeName: GAMEPLAYmanager, Assembly-CSharp
-        m_MethodName: UnlockNextLevel
+      - m_Target: {fileID: 3893326973969912392}
+        m_TargetAssemblyTypeName: SenceManager, Assembly-CSharp
+        m_MethodName: NextSenceLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

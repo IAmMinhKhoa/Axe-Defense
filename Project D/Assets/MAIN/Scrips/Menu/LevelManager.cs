@@ -19,8 +19,8 @@ public class LevelManager : MonoBehaviour
     private void Awake()
     {
         ButtonsToArray();
-        PlayerPrefs.SetInt("UnlockedLevel", 3);
-        PlayerPrefs.SetInt("ReachedIndex", 3);
+        /*PlayerPrefs.SetInt("UnlockedLevel", 1);
+        PlayerPrefs.SetInt("ReachedIndex", 1);*/
 
         int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1);
         for(int i = 0; i < btnGameObjects.Length; i++)

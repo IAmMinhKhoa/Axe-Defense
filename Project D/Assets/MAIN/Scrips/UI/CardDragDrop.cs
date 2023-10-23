@@ -118,7 +118,7 @@ public class CardDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
                 PlayerPrefs.SetInt("Mana_InGame", sumCost - cost_To_Summon);
 
                 CT_Summon.TurnOffBR();
-                //DestroyThisObject();
+                CT_Summon.SubtractionCountOfDeckSummon();
                 Destroy(this.gameObject);
 
             }
@@ -179,7 +179,7 @@ public class CardDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     public void DestroyThisObject()
     {
         CT_Summon.CreatRandomCard();
-        CT_Summon.SubtractionCountOfDeckSummon();
+        //CT_Summon.SubtractionCountOfDeckSummon();
         Destroy(this.gameObject);
     }
 

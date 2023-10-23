@@ -23,4 +23,9 @@ public class SenceManager : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void NextSenceLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
 }

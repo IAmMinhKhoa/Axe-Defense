@@ -255,7 +255,16 @@ MonoBehaviour:
   typeSkillText: {fileID: 3142811632785183509}
   infoSkillText: {fileID: 9097617785747472267}
   manaSkillText: {fileID: 5872766543280048021}
+  buttonBuy: {fileID: 5718341220905968237}
+  coinImage: {fileID: 3141865969902941594}
   coinText: {fileID: 4638789200435840808}
+  purchasedText: {fileID: 7171969081403566333}
+  purchasedSprite: {fileID: 21300000, guid: 8383fa28be809304595e4db09e1ffe23, type: 3}
+--- !u!1 &3141865969902941594 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7900085769015841411, guid: 305672976984b394b91e3f7137056cc6, type: 3}
+  m_PrefabInstance: {fileID: 5059961661700253465}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3142811632785183509 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7900750627022402572, guid: 305672976984b394b91e3f7137056cc6, type: 3}
@@ -266,9 +275,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 457346679475576881, guid: 305672976984b394b91e3f7137056cc6, type: 3}
   m_PrefabInstance: {fileID: 5059961661700253465}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5718341220905968237 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 676447425970292084, guid: 305672976984b394b91e3f7137056cc6, type: 3}
+  m_PrefabInstance: {fileID: 5059961661700253465}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5872766543280048021 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1709356150542868620, guid: 305672976984b394b91e3f7137056cc6, type: 3}
+  m_PrefabInstance: {fileID: 5059961661700253465}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7171969081403566333 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2720011120585330660, guid: 305672976984b394b91e3f7137056cc6, type: 3}
   m_PrefabInstance: {fileID: 5059961661700253465}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &9097617785747472267 stripped

@@ -23,6 +23,11 @@ public class AddCard : MonoBehaviour
     public List<SO_CharacterInforMantionRANGER> mageSOList;
     public List<SO_Active_Skill> skillSOList;
 
+    SO_CharacterInforMantion[] loadedMelee;
+    SO_CharacterInforMantionRANGER[] loadedArchers;
+    SO_CharacterInforMantionRANGER[] loadedMages;
+    SO_Active_Skill[] loadedSkills;
+
     private void Awake()
     {
         Instance = this;
@@ -31,14 +36,27 @@ public class AddCard : MonoBehaviour
         archerCards = new List<GameObject>();
         skillCards = new List<GameObject>();
 
-        meleeSOList = new List<SO_CharacterInforMantion>(Resources.LoadAll<SO_CharacterInforMantion>("SO_Shop/Melee"));
-        mageSOList = new List<SO_CharacterInforMantionRANGER>(Resources.LoadAll<SO_CharacterInforMantionRANGER>("SO_Shop/Mage"));
-        archerSOList = new List<SO_CharacterInforMantionRANGER>(Resources.LoadAll<SO_CharacterInforMantionRANGER>("SO_Shop/Archer"));
-        skillSOList = new List<SO_Active_Skill>(Resources.LoadAll<SO_Active_Skill>("SO_Shop/Skill"));
+        loadedMelee = Resources.LoadAll<SO_CharacterInforMantion>("ShopCard/Melee");
+        loadedArchers = Resources.LoadAll<SO_CharacterInforMantionRANGER>("ShopCard/Archer");
+        loadedMages = Resources.LoadAll<SO_CharacterInforMantionRANGER>("ShopCard/Mage");
+        loadedSkills = Resources.LoadAll<SO_Active_Skill>("ShopCard/Skill");
     }
 
     private void Start()
     {
+        //meleeSOList = CardManager.instance.meleeSOList;
+        //mageSOList = CardManager.instance.mageSOList;
+        //archerSOList = CardManager.instance.archerSOList;
+        //skillSOList = CardManager.instance.skillSOList;
+
+        meleeSOList = new List<SO_CharacterInforMantion>(loadedMelee);
+        mageSOList = new List<SO_CharacterInforMantionRANGER>(loadedMages);
+        archerSOList = new List<SO_CharacterInforMantionRANGER>(loadedArchers);
+        skillSOList = new List<SO_Active_Skill>(loadedSkills);
+        meleeSOList.Sort(new SortSOByPrice());
+        archerSOList.Sort(new SortSOByPrice());
+        mageSOList.Sort(new SortSOByPrice());
+        skillSOList.Sort(new SortSOByPrice());
         AddCardByTab();
     }
 

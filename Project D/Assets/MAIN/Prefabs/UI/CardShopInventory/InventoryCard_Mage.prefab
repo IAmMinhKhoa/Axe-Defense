@@ -108,6 +108,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryCard_Mage
       objectReference: {fileID: 0}
+    - target: {fileID: 7159921379058006511, guid: d030ca85c4159cb49b845bc5fc38e663, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7783481790528638161, guid: d030ca85c4159cb49b845bc5fc38e663, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 9
@@ -116,7 +120,8 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -32.7
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4597809821013929040, guid: d030ca85c4159cb49b845bc5fc38e663, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:

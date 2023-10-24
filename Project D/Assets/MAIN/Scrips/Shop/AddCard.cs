@@ -8,8 +8,6 @@ using UnityEngine.UI;
 
 public class AddCard : MonoBehaviour
 {
-    public static AddCard Instance { get; private set; }
-
     public List<GameObject> meleeCards, mageCards, archerCards, skillCards;
 
     [SerializeField]
@@ -30,7 +28,6 @@ public class AddCard : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;
         meleeCards = new List<GameObject>();
         mageCards = new List<GameObject>();
         archerCards = new List<GameObject>();
@@ -102,4 +99,5 @@ public class AddCard : MonoBehaviour
             skillCards.Add(cardButton);
         }
     }
+
 }

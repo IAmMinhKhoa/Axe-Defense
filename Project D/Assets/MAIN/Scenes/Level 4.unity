@@ -348,7 +348,7 @@ GameObject:
   - component: {fileID: 1302056420}
   - component: {fileID: 1302056419}
   m_Layer: 5
-  m_Name: cc3m
+  m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -394,10 +394,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'THANKS '
+  m_text: THANKS
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: af57f719829255f4cb1f0df88f9f0a09, type: 2}
-  m_sharedMaterial: {fileID: 1476761064331474165, guid: af57f719829255f4cb1f0df88f9f0a09, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8d60c31f44224e44b8fcbe02f48c7e77, type: 2}
+  m_sharedMaterial: {fileID: 5264164097162144058, guid: 8d60c31f44224e44b8fcbe02f48c7e77, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

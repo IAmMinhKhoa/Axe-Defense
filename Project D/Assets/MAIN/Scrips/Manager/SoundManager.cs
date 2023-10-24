@@ -17,7 +17,13 @@ public enum SoundType
 
     SFX_Health,
     SFX_SkilDeadAll,
-    SFX_Freeze
+    SFX_Freeze,
+
+
+    SFX_HowerCard,
+    SFX_SummonCard
+
+
 }
 
 [System.Serializable]

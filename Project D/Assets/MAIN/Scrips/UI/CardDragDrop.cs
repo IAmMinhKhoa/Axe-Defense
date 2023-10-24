@@ -22,7 +22,7 @@ public class CardDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     #region Component
     
         protected GUI_Card Gui_Card;
-
+        protected Animator animatorCard;
         protected ControllerSummon CT_Summon;   
         private Coroutine flipCoroutine;
     #endregion
@@ -50,7 +50,11 @@ public class CardDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         scrollViewInitialPosition = scrollViewParent.position;
         Gui_Card = GetComponent<GUI_Card>();
         CT_Summon = GetComponentInParent<ControllerSummon>();
+
+        animatorCard =GetComponent<Animator>();
+      
         cost_To_Summon = Gui_Card.GetCostSummon();
+
 
         GetVaribleScreen();
     }
@@ -70,14 +74,14 @@ public class CardDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         mousePosition.z = 0f;
         if (CheckPositionNotCanDrop())
         {
-            Debug.Log("ko drop");
+            //Debug.Log("ko drop");
             canDrop = false;
             CT_Summon.BrNotCanDrop.SetActive(true);
             CT_Summon.BrCanDrop.SetActive(false);
         }
         else
         {
-            Debug.Log(" drop");
+            //Debug.Log(" drop");
             canDrop = true;
             CT_Summon.BrCanDrop.SetActive(true);
             CT_Summon.BrNotCanDrop.SetActive(false);
@@ -86,7 +90,7 @@ public class CardDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
     protected bool CheckPositionNotCanDrop()
     {
-        Debug.Log(cost_To_Summon + "/" + PlayerPrefs.GetInt("Mana_InGame"));
+        //Debug.Log(cost_To_Summon + "/" + PlayerPrefs.GetInt("Mana_InGame"));
 
         return mousePosition.x < screenLeft || 
             mousePosition.x > screenRight || mousePosition.y < screenBottom || 
@@ -110,6 +114,8 @@ public class CardDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
             }           
             else
             {
+                SoundManager.instance.PlaySound(SoundType.SFX_SummonCard);
+
                 Gui_Card.SetEvent_SummonPrefab(mousePosition);
                 CT_Summon.CreatRandomCard();
 
@@ -141,6 +147,17 @@ public class CardDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
             isFlipped = !isFlipped;
         }
+    }
+
+    public void OnPointerEnter()
+    {
+        SoundManager.instance.PlaySound(SoundType.SFX_HowerCard);
+        animatorCard.SetBool("Hower", true);
+    }
+
+    public void OnPointerExit()
+    {
+        animatorCard.SetBool("Hower", false);
     }
 
     private IEnumerator FlipCard(GameObject fromCard, GameObject toCard)
@@ -182,5 +199,7 @@ public class CardDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         //CT_Summon.SubtractionCountOfDeckSummon();
         Destroy(this.gameObject);
     }
+
+  
 
 }

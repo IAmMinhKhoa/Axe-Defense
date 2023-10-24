@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 1380001934963045166}
   - component: {fileID: 2203933757389000290}
   - component: {fileID: 7385314992472818642}
+  - component: {fileID: 9127986728494497614}
   m_Layer: 5
-  m_Name: Card_Mage_Dust
+  m_Name: Card_Mage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -91,6 +92,38 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2203933757389000290}
+          m_TargetAssemblyTypeName: CardDragDrop, Assembly-CSharp
+          m_MethodName: OnPointerEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2203933757389000290}
+          m_TargetAssemblyTypeName: CardDragDrop, Assembly-CSharp
+          m_MethodName: OnPointerExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &2203933757389000290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,7 +156,28 @@ MonoBehaviour:
   textHP: {fileID: 5695706059215303372}
   textDamage: {fileID: 5173706309217464757}
   IMG_Avatar: {fileID: 7914810533071118191}
-  SO_Infor: {fileID: 11400000, guid: 996884ad050bfb046856dfa96b6470d2, type: 2}
+  SO_Infor: {fileID: 11400000, guid: ac1f03d532de1c94d80eeec8e8903d46, type: 2}
+--- !u!95 &9127986728494497614
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573488725759175818}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6069f3674b35a6e409e96b444491539c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1340196565657451111
 GameObject:
   m_ObjectHideFlags: 0

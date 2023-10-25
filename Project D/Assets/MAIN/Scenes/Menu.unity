@@ -856,6 +856,13 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
     originalVolume: 0
+  - name: SwitchTab
+    clip: {fileID: 8300000, guid: ac549e380f5149d4dbdc7619f44b3d10, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    originalVolume: 0
   activeSound: 0
   index_Sound_BR: 1
 --- !u!1 &605746971

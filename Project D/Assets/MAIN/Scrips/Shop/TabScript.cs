@@ -13,5 +13,6 @@ public class TabScript : MonoBehaviour
             tabs[i].SetActive(false);
         }
         tabs[tab - 1].SetActive(true);
+        SoundManager.instance.PlaySound(SoundType.SwitchTab);
     }
 }

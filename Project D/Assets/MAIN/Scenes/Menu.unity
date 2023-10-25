@@ -560,8 +560,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1968884511}
-  logoDuration: 1
-  animationDuration: 1
+  logoDuration: 2
+  animationDuration: 10
 --- !u!1 &378359896 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9034376611552921419, guid: 8dfcaa63bf7eb784999e855e782b58ee, type: 3}

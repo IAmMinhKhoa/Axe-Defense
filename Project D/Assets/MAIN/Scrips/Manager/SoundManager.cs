@@ -176,7 +176,8 @@ public class SoundManager : MonoBehaviour
         {
             //TURN OFF ALL SÔUND
             PlayerPrefs.SetInt("Sound", 0);
-            PauseSound(); 
+            PauseSound();
+            Debug.Log("tat");
         }
         return activeSound;
     }

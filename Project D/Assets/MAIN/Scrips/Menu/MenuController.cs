@@ -44,6 +44,8 @@ public class MenuController : MonoBehaviour
     {
         //SOUND BACKGROUND SCENE MENU
         SoundManager.instance.PlayBackGround(1);
+
+        SoundManager.instance.SetAllVolumesToOriginal();
     }
     private void Update()
     {

@@ -2797,10 +2797,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 354b5a97517dea446beee973e67f8c9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meleeCards: []
-  mageCards: []
-  archerCards: []
-  skillCards: []
   inventoryContent: {fileID: 517875428}
   meleeCardPrefab: {fileID: 7247251814021890340, guid: 725aed2c6b2ec4248a170f69d27a0dd4, type: 3}
   mageCardPrefab: {fileID: 933505102334399233, guid: c8571525a046c144aace2fa55a515a9e, type: 3}
@@ -2814,7 +2810,7 @@ MonoBehaviour:
   contentInventory: {fileID: 517875428}
   SO_DeckCard: {fileID: 11400000, guid: cdef5af105891f04ea81e57a939c55cd, type: 2}
   TextCountCardInDeck: {fileID: 1914360546}
-  PickCardFull: 0
+  CountCardOnDeck: 0
 --- !u!114 &593186838
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e29d8d83cc1f3d4598f9a537127a89e, type: 3}
+  m_Name: BeastArcher
+  m_EditorClassIdentifier: 
+  ACTIVE: 1
+  typeCharacter: 2
+  nameChar: Beast
+  Avatar: {fileID: 21300000, guid: fc8169972d622dd419e0af86a6ef9763, type: 3}
+  HP: 100
+  Damge: 14
+  CostSummon: 3
+  Prefab_Character: {fileID: 8454085576905610854, guid: 396e28fb740136546a594131492c54aa, type: 3}
+  RangedAttack: 5
+  SpeedMove: 1
+  CoolDown: 2
+  PriceBuy: 150
+  PrefabSkill: {fileID: 8660094175212884607, guid: cff7a8dbc7ad4d94891106f524f222cf, type: 3}

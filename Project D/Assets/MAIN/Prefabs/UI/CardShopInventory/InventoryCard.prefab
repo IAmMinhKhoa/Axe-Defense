@@ -439,6 +439,7 @@ GameObject:
   - component: {fileID: 953622213828506682}
   - component: {fileID: 7159921379058006511}
   - component: {fileID: 785148032098630650}
+  - component: {fileID: 4347613904570315119}
   m_Layer: 5
   m_Name: InventoryCard
   m_TagString: Untagged
@@ -511,9 +512,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4347613904570315119}
         m_TargetAssemblyTypeName: SetUpCardToDeck, Assembly-CSharp
-        m_MethodName: cc
+        m_MethodName: eventClickCard
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -531,6 +532,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4972006139660737634}
   m_CullTransparentMesh: 1
+--- !u!114 &4347613904570315119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4972006139660737634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 269ecd1f7ab1767418d2c51e79556e93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contentPickCard: {fileID: 0}
+  contentInventory: {fileID: 0}
+  SO_DeckCard: {fileID: 0}
 --- !u!1 &7248560378613793145
 GameObject:
   m_ObjectHideFlags: 0

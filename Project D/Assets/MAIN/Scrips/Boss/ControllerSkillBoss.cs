@@ -11,6 +11,7 @@ public class ControllerSkillBoss : MonoBehaviour
 
     private void Start()
     {
+        InstantiateSkill();
         StartCoroutine(CountdownAndFill());
     }
 

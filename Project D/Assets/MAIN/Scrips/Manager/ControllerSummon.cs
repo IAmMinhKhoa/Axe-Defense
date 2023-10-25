@@ -194,14 +194,6 @@ public class ControllerSummon : MonoBehaviour
                 }
             }
         }
-
-
-
-
-
-
-
-        
     }
 
 }

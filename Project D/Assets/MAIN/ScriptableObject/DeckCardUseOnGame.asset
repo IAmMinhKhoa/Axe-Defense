@@ -13,28 +13,5 @@ MonoBehaviour:
   m_Name: DeckCardUseOnGame
   m_EditorClassIdentifier: 
   ListCardAxie:
-  - {fileID: 11400000, guid: 4649b5e67751137488cf4dc91460cc5b, type: 2}
-  - {fileID: 11400000, guid: ac1f03d532de1c94d80eeec8e8903d46, type: 2}
-  - {fileID: 11400000, guid: fcf5e0ed750f8ac4ead94e15b97ed4db, type: 2}
-  - {fileID: 11400000, guid: fcf5e0ed750f8ac4ead94e15b97ed4db, type: 2}
-  - {fileID: 11400000, guid: 4649b5e67751137488cf4dc91460cc5b, type: 2}
-  - {fileID: 11400000, guid: 4649b5e67751137488cf4dc91460cc5b, type: 2}
-  - {fileID: 11400000, guid: 4649b5e67751137488cf4dc91460cc5b, type: 2}
-  - {fileID: 11400000, guid: 4649b5e67751137488cf4dc91460cc5b, type: 2}
-  - {fileID: 11400000, guid: 4649b5e67751137488cf4dc91460cc5b, type: 2}
-  - {fileID: 11400000, guid: 4649b5e67751137488cf4dc91460cc5b, type: 2}
-  - {fileID: 11400000, guid: 4649b5e67751137488cf4dc91460cc5b, type: 2}
-  - {fileID: 11400000, guid: 4649b5e67751137488cf4dc91460cc5b, type: 2}
-  - {fileID: 11400000, guid: ac1f03d532de1c94d80eeec8e8903d46, type: 2}
-  - {fileID: 11400000, guid: ac1f03d532de1c94d80eeec8e8903d46, type: 2}
-  - {fileID: 11400000, guid: ac1f03d532de1c94d80eeec8e8903d46, type: 2}
-  - {fileID: 11400000, guid: fcf5e0ed750f8ac4ead94e15b97ed4db, type: 2}
-  - {fileID: 11400000, guid: fcf5e0ed750f8ac4ead94e15b97ed4db, type: 2}
-  - {fileID: 11400000, guid: fcf5e0ed750f8ac4ead94e15b97ed4db, type: 2}
-  - {fileID: 11400000, guid: ac1f03d532de1c94d80eeec8e8903d46, type: 2}
-  - {fileID: 11400000, guid: 4649b5e67751137488cf4dc91460cc5b, type: 2}
-  - {fileID: 11400000, guid: ac1f03d532de1c94d80eeec8e8903d46, type: 2}
-  - {fileID: 11400000, guid: fcf5e0ed750f8ac4ead94e15b97ed4db, type: 2}
-  - {fileID: 11400000, guid: 4649b5e67751137488cf4dc91460cc5b, type: 2}
-  - {fileID: 11400000, guid: fcf5e0ed750f8ac4ead94e15b97ed4db, type: 2}
+  - {fileID: 11400000, guid: 72b8b5e880bbe5f4aa763c220cc4d5bd, type: 2}
   ListCardSkill: []

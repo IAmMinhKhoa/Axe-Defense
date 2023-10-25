@@ -23,5 +23,5 @@ MonoBehaviour:
   RangedAttack: 5
   SpeedMove: 1
   CoolDown: 3
-  PriceBuy: 0
+  PriceBuy: 100
   PrefabSkill: {fileID: 8660094175212884607, guid: cff7a8dbc7ad4d94891106f524f222cf, type: 3}

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SetUpCardToDeckAXIE : SetUpCardToDeck
+public class SetUpCardToDeckAXIE : MonoBehaviour
 {
     protected AddValueAxie add;
     void Start()

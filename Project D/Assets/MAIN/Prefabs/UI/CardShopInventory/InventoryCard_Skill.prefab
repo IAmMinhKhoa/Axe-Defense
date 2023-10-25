@@ -184,6 +184,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryCard_Skill
       objectReference: {fileID: 0}
+    - target: {fileID: 7159921379058006511, guid: d030ca85c4159cb49b845bc5fc38e663, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: eventClickCard
+      objectReference: {fileID: 0}
     - target: {fileID: 7783481790528638161, guid: d030ca85c4159cb49b845bc5fc38e663, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 9.7

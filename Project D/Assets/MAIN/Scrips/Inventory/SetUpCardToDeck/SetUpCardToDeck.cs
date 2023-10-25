@@ -12,7 +12,7 @@ public class SetUpCardToDeck : MonoBehaviour
 
     private void Start()
     {
-        add = GetComponent<AddValueAxie>();
+       // add = GetComponent<AddValueAxie>();
     }
     public virtual void cc()
     {

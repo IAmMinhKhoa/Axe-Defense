@@ -21,8 +21,9 @@ public enum SoundType
 
 
     SFX_HowerCard,
-    SFX_SummonCard
+    SFX_SummonCard,
 
+    SwitchTab,
 
 }
 

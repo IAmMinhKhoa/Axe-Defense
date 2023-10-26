@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,6 +11,8 @@ public class SYSTEM_GAME : MonoBehaviour
     protected bool FirstRunIntro=true;
 
     protected int CurrencyCoin;
+
+    [SerializeField] protected Animator A_Transtion;
 
     public static SYSTEM_GAME Instance
     {
@@ -67,5 +70,46 @@ public class SYSTEM_GAME : MonoBehaviour
     public int GetCoin()
     {
         return PlayerPrefs.GetInt("Coin");
+    }
+
+    public void LoadSenceWithStringName(string input)
+    {
+        //StartCoroutine(LoadSenceWithFX(nameSence));
+
+        if (int.TryParse(input, out int buildIndex))
+        {
+            StartCoroutine(LoadSceneWithFXByBuildIndex(buildIndex));
+        }
+        else
+        {
+            StartCoroutine(LoadSceneWithFXByName(input));
+        }
+    }
+
+    IEnumerator LoadSceneWithFXByBuildIndex(int buildIndex)
+    {
+        A_Transtion.SetTrigger("End");
+
+        yield return new WaitForSeconds(1f);
+
+        if (buildIndex >= 0 && buildIndex < SceneManager.sceneCountInBuildSettings)
+        {
+            SceneManager.LoadScene(buildIndex);
+            A_Transtion.SetTrigger("Start");
+        }
+        else
+        {
+            Debug.LogError("Invalid build index: " + buildIndex);
+        }
+    }
+
+    IEnumerator LoadSceneWithFXByName(string sceneName)
+    {
+        A_Transtion.SetTrigger("End");
+
+        yield return new WaitForSeconds(1f);
+
+        SceneManager.LoadScene(sceneName);
+        A_Transtion.SetTrigger("Start");
     }
 }

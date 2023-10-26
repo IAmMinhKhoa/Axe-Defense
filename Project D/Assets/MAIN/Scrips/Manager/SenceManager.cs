@@ -5,9 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class SenceManager : MonoBehaviour
 {
+
     public void loadScence(string Scene)    
     {
-        SceneManager.LoadScene(Scene);
+        //SceneManager.LoadScene(Scene);
+        Time.timeScale = 1f;
+        SYSTEM_GAME.Instance.LoadSenceWithStringName(Scene);
     }
 
     public void RestartGame()
@@ -16,7 +19,10 @@ public class SenceManager : MonoBehaviour
         string currentSceneName = SceneManager.GetActiveScene().name;
 
         // Tải lại scene hiện tại
-        SceneManager.LoadScene(currentSceneName);
+
+        SYSTEM_GAME.Instance.LoadSenceWithStringName(currentSceneName);
+
+        GAMEPLAYmanager.instance.TogglePause();
     }
 
     public void QuitGame()
@@ -26,6 +32,11 @@ public class SenceManager : MonoBehaviour
 
     public void NextSenceLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        Time.timeScale = 1f;
+        int buildIndex = SceneManager.GetActiveScene().buildIndex + 1;
+
+
+        SYSTEM_GAME.Instance.LoadSenceWithStringName(buildIndex.ToString());
+
     }
 }

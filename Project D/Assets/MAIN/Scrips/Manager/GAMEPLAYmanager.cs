@@ -97,12 +97,14 @@ public class GAMEPLAYmanager : MonoBehaviour
     {
         if(isPaused)
         {
+        
             animatorPanelSetting.SetTrigger("Show");
             UI_Pause.SetActive(true);
             CameraDrag.instance.isDrag = false;
         } 
         else
         {
+           
             UI_Pause.SetActive(false);
             CameraDrag.instance.isDrag = true;
         }
@@ -151,12 +153,19 @@ public class GAMEPLAYmanager : MonoBehaviour
         E_OnPause?.Invoke(this, EventArgs.Empty);
         Time.timeScale = isPaused ? 0f : 1f;
 
+        CheckSound();
+    }
+
+    public void CheckSound()
+    {
         if (isPaused)
         {
+            Debug.Log("stop");
             SoundManager.instance.PauseSound();
         }
         else
         {
+            Debug.Log("chay");
             SoundManager.instance.SetAllVolumesToOriginal();
         }
     }

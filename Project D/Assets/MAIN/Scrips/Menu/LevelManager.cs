@@ -56,7 +56,8 @@ public class LevelManager : MonoBehaviour
 
         if (sceneExistsInBuild)
         {
-            SceneManager.LoadScene(levelName);
+            //SceneManager.LoadScene(levelName);
+            SYSTEM_GAME.Instance.LoadSenceWithStringName(levelName);
         }
     }
 
@@ -71,7 +72,8 @@ public class LevelManager : MonoBehaviour
     }
     public void BackMenu()
     {
-        SceneManager.LoadScene("Menu");
+        //SceneManager.LoadScene("Menu");
+        SYSTEM_GAME.Instance.LoadSenceWithStringName("Menu");
     }
 }
 

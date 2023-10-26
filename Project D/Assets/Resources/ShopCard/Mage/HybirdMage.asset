@@ -24,4 +24,4 @@ MonoBehaviour:
   SpeedMove: 1
   CoolDown: 3
   PriceBuy: 0
-  PrefabSkill: {fileID: 6630136655605506332, guid: 8ce03e5602aa6c942a2947147efb7d45, type: 3}
+  PrefabSkill: {fileID: 7400280440771507340, guid: a028a30798f24794eb4accb2b5bbefd6, type: 3}

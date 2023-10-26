@@ -26,21 +26,19 @@ public class Skill : MonoBehaviour
     {
         if (target != null)
         {
-            Vector3 direction = (target.position - transform.position).normalized;
+            Vector3 direction = (new Vector3(target.position.x, target.position.y+1f, target.position.z) - transform.position).normalized;
             currentMoveSpeed += accelerationRate * Time.deltaTime;
            
             transform.position += direction * currentMoveSpeed * Time.deltaTime;
 
-            float distanceThreshold = 0.1f; // Ng??ng kho?ng cách ?? xem ?ã ch?m ??n hay ch?a
+            float distanceThreshold = 1f; // Ng??ng kho?ng cách ?? xem ?ã ch?m ??n hay ch?a
 
-            float distanceToTarget = Vector3.Distance(transform.position, target.position);
+            float distanceToTarget = Vector3.Distance(new Vector3(transform.position.x, transform.position.y,transform.position.z), target.position);
 
             if (distanceToTarget <= distanceThreshold)
             {
                 MadeDamage();
             }
-
-
         }
         else
         {

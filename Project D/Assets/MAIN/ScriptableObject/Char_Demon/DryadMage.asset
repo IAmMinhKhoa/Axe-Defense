@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e29d8d83cc1f3d4598f9a537127a89e, type: 3}
   m_Name: DryadMage
   m_EditorClassIdentifier: 
+  ACTIVE: 0
   typeCharacter: 0
   nameChar: 
   Avatar: {fileID: 0}
@@ -22,4 +23,5 @@ MonoBehaviour:
   RangedAttack: 5
   SpeedMove: 1
   CoolDown: 3
-  PrefabSkill: {fileID: 6630136655605506332, guid: 505b5ab27ce9acd41a43c8d358d22005, type: 3}
+  PriceBuy: 0
+  PrefabSkill: {fileID: 7400280440771507340, guid: 11d2eaef1df6a6d4290b353e6613d863, type: 3}

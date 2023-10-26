@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e29d8d83cc1f3d4598f9a537127a89e, type: 3}
   m_Name: DustMage
   m_EditorClassIdentifier: 
-  ACTIVE: 1
+  ACTIVE: 0
   typeCharacter: 1
   nameChar: Dust
   Avatar: {fileID: 21300000, guid: f6807b5e8787bae4aa3b14c24a4b47a9, type: 3}

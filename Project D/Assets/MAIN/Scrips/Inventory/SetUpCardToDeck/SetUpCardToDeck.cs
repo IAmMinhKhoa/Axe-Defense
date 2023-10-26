@@ -16,6 +16,9 @@ public class SetUpCardToDeck : MonoBehaviour
     }
     public  void eventClickCard()
     {
+
+        SoundManager.instance.PlaySound(SoundType.SFX_HowerCard);
+
         if (!isPickCard && Inventory_AddCard.instance.CountCardOnDeck<4)
         {
             isPickCard = true;

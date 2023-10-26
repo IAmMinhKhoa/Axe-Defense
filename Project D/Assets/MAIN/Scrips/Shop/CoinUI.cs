@@ -15,13 +15,14 @@ public class CoinUI : MonoBehaviour
         instance = this;
     }
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         //CHỈ ĐỂ TEST THÔI 
-        SYSTEM_GAME.Instance.SetCoin(999999);
+        //SYSTEM_GAME.Instance.SetCoin(999999); //TEST CAI CC
 
         coinText.GetComponent<TextMeshProUGUI>().text = SYSTEM_GAME.Instance.GetCoin().ToString();    
     }
+   
 
     // Update is called once per frame
     void Update()

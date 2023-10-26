@@ -112,6 +112,12 @@ public class GAMEPLAYmanager : MonoBehaviour
 
     private void GAMEPLAYmanager_E_OnWin(object sender, EventArgs e)
     {
+
+        //add coin
+        int currentCoin = SYSTEM_GAME.Instance.GetCoin();
+        int newCoin = currentCoin + 1000;
+        SYSTEM_GAME.Instance.SetCoin(newCoin);
+
         UnlockNextLevel();
         StartCoroutine(DelayToChangeState(UI_Win, 2f, SoundType.WinGame));
     }

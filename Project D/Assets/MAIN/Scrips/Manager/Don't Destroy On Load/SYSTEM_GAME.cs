@@ -47,6 +47,8 @@ public class SYSTEM_GAME : MonoBehaviour
             Destroy(gameObject);
         }
 
+        
+
         CurrencyCoin = PlayerPrefs.GetInt("Coin");
         PlayerPrefs.SetInt("Coin", CurrencyCoin);
     }
@@ -59,7 +61,7 @@ public class SYSTEM_GAME : MonoBehaviour
     public bool GetBoolFirstPlayIntro()
     {
         return FirstRunIntro;
-    }
+    }   
 
     public void SetCoin(int Value)
     {
@@ -78,10 +80,12 @@ public class SYSTEM_GAME : MonoBehaviour
 
         if (int.TryParse(input, out int buildIndex))
         {
+            SoundManager.instance.PlaySound(SoundType.Transtion_Sence);
             StartCoroutine(LoadSceneWithFXByBuildIndex(buildIndex));
         }
         else
         {
+            SoundManager.instance.PlaySound(SoundType.Transtion_Sence);
             StartCoroutine(LoadSceneWithFXByName(input));
         }
     }

@@ -8,13 +8,16 @@ public class SenceManager : MonoBehaviour
 
     public void loadScence(string Scene)    
     {
-        //SceneManager.LoadScene(Scene);
+        SoundManager.instance.PlaySound(SoundType.SFX_HowerCard);
+
         Time.timeScale = 1f;
         SYSTEM_GAME.Instance.LoadSenceWithStringName(Scene);
     }
 
     public void RestartGame()
     {
+        SoundManager.instance.PlaySound(SoundType.SFX_HowerCard);
+
         // Lấy tên scene hiện tại
         string currentSceneName = SceneManager.GetActiveScene().name;
 
@@ -32,6 +35,8 @@ public class SenceManager : MonoBehaviour
 
     public void NextSenceLevel()
     {
+        SoundManager.instance.PlaySound(SoundType.SFX_HowerCard);
+
         Time.timeScale = 1f;
         int buildIndex = SceneManager.GetActiveScene().buildIndex + 1;
 

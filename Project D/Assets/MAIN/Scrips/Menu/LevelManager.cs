@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
@@ -42,23 +42,9 @@ public class LevelManager : MonoBehaviour
     {
         string levelName = "Level " + levelId;
 
-        // Kiểm tra xem scene có trong danh sách build hay không
-        bool sceneExistsInBuild = false;
-        EditorBuildSettingsScene[] buildScenes = EditorBuildSettings.scenes;
-        foreach (EditorBuildSettingsScene buildScene in buildScenes)
-        {
-            if (buildScene.path.Contains(levelName))
-            {
-                sceneExistsInBuild = true;
-                break;
-            }
-        }
-
-        if (sceneExistsInBuild)
-        {
-            //SceneManager.LoadScene(levelName);
-            SYSTEM_GAME.Instance.LoadSenceWithStringName(levelName);
-        }
+        //SceneManager.LoadScene(levelName);
+        SYSTEM_GAME.Instance.LoadSenceWithStringName(levelName);
+        
     }
 
     void ButtonsToArray()

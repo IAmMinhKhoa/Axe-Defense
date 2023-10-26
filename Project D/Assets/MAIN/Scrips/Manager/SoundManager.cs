@@ -24,6 +24,7 @@ public enum SoundType
     SFX_SummonCard,
 
     SwitchTab,
+    Transtion_Sence
 
 }
 

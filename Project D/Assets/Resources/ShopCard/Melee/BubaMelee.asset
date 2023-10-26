@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec7b20182af1e3a43b72eb07666f35e3, type: 3}
   m_Name: BubaMelee
   m_EditorClassIdentifier: 
-  ACTIVE: 1
+  ACTIVE: 0
   typeCharacter: 0
   nameChar: BuBa
   Avatar: {fileID: 21300000, guid: be20f276391e934489a1a9d84a3f7ac5, type: 3}
@@ -23,4 +23,4 @@ MonoBehaviour:
   RangedAttack: 1
   SpeedMove: 1
   CoolDown: 2
-  PriceBuy: 0
+  PriceBuy: 250

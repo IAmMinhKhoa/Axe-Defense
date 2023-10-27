@@ -12,6 +12,8 @@ public class SYSTEM_GAME : MonoBehaviour
 
     protected int CurrencyCoin;
 
+    protected bool CheckLoadingSence = false;
+
     [SerializeField] protected Animator A_Transtion;
 
     public static SYSTEM_GAME Instance
@@ -92,28 +94,42 @@ public class SYSTEM_GAME : MonoBehaviour
 
     IEnumerator LoadSceneWithFXByBuildIndex(int buildIndex)
     {
-        A_Transtion.SetTrigger("End");
-
-        yield return new WaitForSeconds(1f);
-
-        if (buildIndex >= 0 && buildIndex < SceneManager.sceneCountInBuildSettings)
+        if (!CheckLoadingSence)
         {
-            SceneManager.LoadScene(buildIndex);
-            A_Transtion.SetTrigger("Start");
+            A_Transtion.SetTrigger("End");
+            CheckLoadingSence = true;
+            yield return new WaitForSeconds(1f);
+            CheckLoadingSence = false;
+
+            if (buildIndex >= 0 && buildIndex < SceneManager.sceneCountInBuildSettings)
+            {
+                SceneManager.LoadScene(buildIndex);
+             
+                A_Transtion.SetTrigger("Start");
+            }
+            else
+            {
+                Debug.LogError("Invalid build index: " + buildIndex);
+            }
         }
-        else
-        {
-            Debug.LogError("Invalid build index: " + buildIndex);
-        }
+        
+        
     }
 
     IEnumerator LoadSceneWithFXByName(string sceneName)
     {
-        A_Transtion.SetTrigger("End");
 
-        yield return new WaitForSeconds(1f);
+        if (!CheckLoadingSence)
+        {
+            A_Transtion.SetTrigger("End");
+            CheckLoadingSence = true;
+            yield return new WaitForSeconds(1f);
 
-        SceneManager.LoadScene(sceneName);
-        A_Transtion.SetTrigger("Start");
+            CheckLoadingSence = false;
+            SceneManager.LoadScene(sceneName);
+            A_Transtion.SetTrigger("Start");
+        }
+
+        
     }
 }

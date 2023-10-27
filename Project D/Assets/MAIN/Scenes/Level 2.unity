@@ -987,6 +987,22 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4748535242130263022, guid: 61ab8837281989b44912d9989b1935dd, type: 3}
+      propertyPath: ManaMax
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4748535242130263022, guid: 61ab8837281989b44912d9989b1935dd, type: 3}
+      propertyPath: BounsMana
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4748535242130263022, guid: 61ab8837281989b44912d9989b1935dd, type: 3}
+      propertyPath: DefaultMana
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4748535242130263022, guid: 61ab8837281989b44912d9989b1935dd, type: 3}
+      propertyPath: TimeBoundMana
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4748535242130263022, guid: 61ab8837281989b44912d9989b1935dd, type: 3}
       propertyPath: UNCLOCK_FUNCTION_LIMIT_CARD
       value: 1
       objectReference: {fileID: 0}
@@ -1133,6 +1149,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1543839718992142576, guid: efcd2dea4682bd648a177c259132d5b9, type: 3}
+      propertyPath: CDSkillTower
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 3033741245051187094, guid: efcd2dea4682bd648a177c259132d5b9, type: 3}
       propertyPath: maxHealt
       value: 200

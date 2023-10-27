@@ -61,6 +61,8 @@ public class LevelManager : MonoBehaviour
         //SceneManager.LoadScene("Menu");
         SYSTEM_GAME.Instance.LoadSenceWithStringName("Menu");
     }
+
+
 }
 
 

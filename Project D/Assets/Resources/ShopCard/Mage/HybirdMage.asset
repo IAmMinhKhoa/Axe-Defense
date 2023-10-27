@@ -20,7 +20,7 @@ MonoBehaviour:
   Damge: 10
   CostSummon: 5
   Prefab_Character: {fileID: 588952512292439609, guid: 8c43df2ebc2a4404c98fb2322af73231, type: 3}
-  RangedAttack: 4
+  RangedAttack: 6
   SpeedMove: 1
   CoolDown: 3
   PriceBuy: 0

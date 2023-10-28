@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec7b20182af1e3a43b72eb07666f35e3, type: 3}
   m_Name: WolfMele
   m_EditorClassIdentifier: 
+  ACTIVE: 0
   typeCharacter: 0
   nameChar: 
   Avatar: {fileID: 0}
-  HP: 220
-  Damge: 14
+  HP: 280
+  Damge: 10
   CostSummon: 0
   Prefab_Character: {fileID: 0}
   RangedAttack: 1
   SpeedMove: 1
   CoolDown: 2
+  PriceBuy: 0

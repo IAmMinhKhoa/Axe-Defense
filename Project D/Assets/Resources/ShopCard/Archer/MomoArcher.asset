@@ -16,9 +16,9 @@ MonoBehaviour:
   typeCharacter: 2
   nameChar: Momo
   Avatar: {fileID: 21300000, guid: 1e7f94c3cd1a9dd4ab54040fd1b6b9a7, type: 3}
-  HP: 80
-  Damge: 15
-  CostSummon: 4
+  HP: 140
+  Damge: 14
+  CostSummon: 5
   Prefab_Character: {fileID: 2705463840942563379, guid: cfd27b33ed1b99642a77fea35db14fab, type: 3}
   RangedAttack: 5
   SpeedMove: 1

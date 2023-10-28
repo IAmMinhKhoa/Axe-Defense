@@ -18,7 +18,7 @@ MonoBehaviour:
   Avatar: {fileID: 21300000, guid: 583774ed95c13c74489eadb014ce83ff, type: 3}
   HP: 180
   Damge: 19
-  CostSummon: 7
+  CostSummon: 8
   Prefab_Character: {fileID: 1814692682873669961, guid: c60ca641ad7d3b9458af61d346ba7706, type: 3}
   RangedAttack: 4
   SpeedMove: 1

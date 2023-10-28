@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ACTIVE: 0
   InforSkill: Instantly freeze all enemies for 5 seconds
-  CostSummon: 4
+  CostSummon: 5
   PriceBuy: 150
   Avatar: {fileID: 21300000, guid: 09ff94f1da0b84bb6972798ae8ddb983, type: 3}
   G_Skill: {fileID: 2005293285450152078, guid: 1675ef761fabf4540a69516b713c5314, type: 3}

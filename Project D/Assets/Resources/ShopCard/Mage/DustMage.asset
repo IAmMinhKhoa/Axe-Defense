@@ -16,9 +16,9 @@ MonoBehaviour:
   typeCharacter: 1
   nameChar: Dust
   Avatar: {fileID: 21300000, guid: f6807b5e8787bae4aa3b14c24a4b47a9, type: 3}
-  HP: 150
-  Damge: 17
-  CostSummon: 5
+  HP: 160
+  Damge: 16
+  CostSummon: 6
   Prefab_Character: {fileID: 5898058092457238886, guid: 39119e58380af6b41966011d03227c2e, type: 3}
   RangedAttack: 4
   SpeedMove: 1

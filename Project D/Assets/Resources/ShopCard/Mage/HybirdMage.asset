@@ -16,9 +16,9 @@ MonoBehaviour:
   typeCharacter: 1
   nameChar: Hybird
   Avatar: {fileID: 21300000, guid: bd487ac6cbd79da44beb697636eb1cfe, type: 3}
-  HP: 100
-  Damge: 10
-  CostSummon: 5
+  HP: 150
+  Damge: 13
+  CostSummon: 6
   Prefab_Character: {fileID: 588952512292439609, guid: 8c43df2ebc2a4404c98fb2322af73231, type: 3}
   RangedAttack: 6
   SpeedMove: 1

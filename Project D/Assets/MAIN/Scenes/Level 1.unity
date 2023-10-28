@@ -1476,7 +1476,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1543839718992142576, guid: efcd2dea4682bd648a177c259132d5b9, type: 3}
       propertyPath: CDSkillTower
-      value: 20
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 3369579965340221131, guid: efcd2dea4682bd648a177c259132d5b9, type: 3}
       propertyPath: m_Name
@@ -1963,8 +1963,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4748535242130263022, guid: 61ab8837281989b44912d9989b1935dd, type: 3}
+      propertyPath: BounsMana
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4748535242130263022, guid: 61ab8837281989b44912d9989b1935dd, type: 3}
       propertyPath: TimeBoundMana
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5206485765092238326, guid: 61ab8837281989b44912d9989b1935dd, type: 3}
       propertyPath: m_AnchoredPosition.y

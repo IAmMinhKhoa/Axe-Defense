@@ -16,9 +16,9 @@ MonoBehaviour:
   typeCharacter: 0
   nameChar: BuBa
   Avatar: {fileID: 21300000, guid: be20f276391e934489a1a9d84a3f7ac5, type: 3}
-  HP: 210
-  Damge: 5
-  CostSummon: 4
+  HP: 140
+  Damge: 7
+  CostSummon: 6
   Prefab_Character: {fileID: 5865982858464819053, guid: c7f6fc8ef9708fd43a674c83b2f714a4, type: 3}
   RangedAttack: 1
   SpeedMove: 1

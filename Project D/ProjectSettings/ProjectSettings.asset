@@ -133,7 +133,7 @@ PlayerSettings:
   vulkanEnableLateAcquireNextImage: 0
   vulkanEnableCommandBufferRecycling: 1
   loadStoreDebugModeEnabled: 0
-  bundleVersion: 1.0
+  bundleVersion: 2.0
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -279,7 +279,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 4941705eb07e8a541be06fbeceaebc61, type: 3}
+      m_Icon: {fileID: 2800000, guid: 59e75b00962c16843bd9d87c980ddecc, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0

@@ -16,9 +16,9 @@ MonoBehaviour:
   typeCharacter: 0
   nameChar: Pomodoro
   Avatar: {fileID: 21300000, guid: bd7332257c6b78549933ed61561f9444, type: 3}
-  HP: 220
-  Damge: 8
-  CostSummon: 5
+  HP: 210
+  Damge: 9
+  CostSummon: 4
   Prefab_Character: {fileID: 4934714773420583851, guid: 845710cac95eae34681689fadda51ce7, type: 3}
   RangedAttack: 1
   SpeedMove: 1

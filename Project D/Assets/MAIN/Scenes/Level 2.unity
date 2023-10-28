@@ -1126,7 +1126,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4748535242130263022, guid: 61ab8837281989b44912d9989b1935dd, type: 3}
       propertyPath: BounsMana
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4748535242130263022, guid: 61ab8837281989b44912d9989b1935dd, type: 3}
       propertyPath: DefaultMana
@@ -1134,7 +1134,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4748535242130263022, guid: 61ab8837281989b44912d9989b1935dd, type: 3}
       propertyPath: TimeBoundMana
-      value: 10
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 4748535242130263022, guid: 61ab8837281989b44912d9989b1935dd, type: 3}
       propertyPath: UNCLOCK_FUNCTION_LIMIT_CARD

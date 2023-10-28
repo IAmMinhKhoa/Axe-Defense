@@ -1065,11 +1065,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4748535242130263022, guid: 61ab8837281989b44912d9989b1935dd, type: 3}
       propertyPath: BounsMana
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4748535242130263022, guid: 61ab8837281989b44912d9989b1935dd, type: 3}
       propertyPath: TimeBoundMana
-      value: 10
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 5546726605545388340, guid: 61ab8837281989b44912d9989b1935dd, type: 3}
       propertyPath: m_Name

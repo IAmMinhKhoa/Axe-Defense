@@ -1964,11 +1964,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4748535242130263022, guid: 61ab8837281989b44912d9989b1935dd, type: 3}
       propertyPath: BounsMana
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4748535242130263022, guid: 61ab8837281989b44912d9989b1935dd, type: 3}
       propertyPath: TimeBoundMana
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5206485765092238326, guid: 61ab8837281989b44912d9989b1935dd, type: 3}
       propertyPath: m_AnchoredPosition.y

@@ -49,7 +49,9 @@ public class SYSTEM_GAME : MonoBehaviour
             Destroy(gameObject);
         }
 
-        
+
+        //SET COIN CHO NGTA CH?I CHO D?
+        SetCoin(6969);
 
         CurrencyCoin = PlayerPrefs.GetInt("Coin");
         PlayerPrefs.SetInt("Coin", CurrencyCoin);

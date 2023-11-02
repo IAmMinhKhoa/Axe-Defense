@@ -51,12 +51,18 @@ public class SYSTEM_GAME : MonoBehaviour
 
 
         //SET COIN CHO NGTA CH?I CHO D?
-        SetCoin(6969);
+        //SetCoin(6969);
 
         CurrencyCoin = PlayerPrefs.GetInt("Coin");
         PlayerPrefs.SetInt("Coin", CurrencyCoin);
     }
 
+
+    private void Update()
+    {
+        //CurrencyCoin = PlayerPrefs.GetInt("Coin");
+        Debug.Log(CurrencyCoin);
+    }
 
     public void SetBoolFirstPlayIntro(bool temp)
     {
@@ -67,15 +73,21 @@ public class SYSTEM_GAME : MonoBehaviour
         return FirstRunIntro;
     }   
 
-    public void SetCoin(int Value)
+    public void SetCoin(int NewValue)
     {
         //update new coin
-        PlayerPrefs.SetInt("Coin", Value);
+        CurrencyCoin = NewValue;
+        
     }
 
     public int GetCoin()
     {
-        return PlayerPrefs.GetInt("Coin");
+        return CurrencyCoin;
+    }
+
+    private void OnDestroy()
+    {
+        PlayerPrefs.SetInt("Coin", CurrencyCoin);
     }
 
     public void LoadSenceWithStringName(string input)

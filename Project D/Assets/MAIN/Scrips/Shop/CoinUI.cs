@@ -27,7 +27,7 @@ public class CoinUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        coinText.GetComponent<TextMeshProUGUI>().text = SYSTEM_GAME.Instance.GetCoin().ToString();
     }
 
     public void SetCoinUI(int value)

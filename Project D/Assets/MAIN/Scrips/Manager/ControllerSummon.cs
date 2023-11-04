@@ -85,6 +85,7 @@ public class ControllerSummon : MonoBehaviour
     private void Update()
     {
         textCountMana.text = PlayerPrefs.GetInt("Mana_InGame").ToString() +"/"+ManaMax;
+        Debug.Log(PlayerPrefs.GetInt("Mana_InGame"));
     }
 
     public void AddAndSaveMana(int value)

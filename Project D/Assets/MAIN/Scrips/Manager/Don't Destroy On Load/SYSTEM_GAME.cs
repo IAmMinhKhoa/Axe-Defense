@@ -61,7 +61,7 @@ public class SYSTEM_GAME : MonoBehaviour
     private void Update()
     {
         //CurrencyCoin = PlayerPrefs.GetInt("Coin");
-        Debug.Log(CurrencyCoin);
+      // Debug.Log(CurrencyCoin);
     }
 
     public void SetBoolFirstPlayIntro(bool temp)

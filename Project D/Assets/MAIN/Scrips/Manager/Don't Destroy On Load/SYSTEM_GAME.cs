@@ -16,6 +16,8 @@ public class SYSTEM_GAME : MonoBehaviour
 
     [SerializeField] protected Animator A_Transtion;
 
+
+    protected string encryptedValue;
     public static SYSTEM_GAME Instance
     {
         get
@@ -51,10 +53,12 @@ public class SYSTEM_GAME : MonoBehaviour
 
 
         //SET COIN CHO NGTA CH?I CHO D?
-        //SetCoin(6969);
+        
 
         CurrencyCoin = PlayerPrefs.GetInt("Coin");
-        PlayerPrefs.SetInt("Coin", CurrencyCoin);
+        encryptedValue = SecurityManager.Instance.Encrypt(CurrencyCoin.ToString());
+        SetCoin(6969);
+        //PlayerPrefs.SetInt("Coin", CurrencyCoin);
     }
 
 
@@ -76,13 +80,27 @@ public class SYSTEM_GAME : MonoBehaviour
     public void SetCoin(int NewValue)
     {
         //update new coin
+
         CurrencyCoin = NewValue;
-        
+
+        // Mã hóa giá tr? m?i c?a coin
+        encryptedValue = SecurityManager.Instance.Encrypt(CurrencyCoin.ToString());
+        Debug.Log(encryptedValue);
+        // L?u giá tr? ?ã mã hóa
+
     }
 
     public int GetCoin()
     {
-        return CurrencyCoin;
+        Debug.Log(encryptedValue);
+        string temp= SecurityManager.Instance.Decrypt(encryptedValue);
+        int afterDecry = int.Parse(temp);
+        if (afterDecry != CurrencyCoin)
+        {
+            Debug.Log("?????????????? HACK CDMMM");
+            CurrencyCoin = afterDecry;
+        }
+        return afterDecry;
     }
 
     private void OnDestroy()

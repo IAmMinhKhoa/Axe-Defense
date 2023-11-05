@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Timeline;
 
 public class SYSTEM_GAME : MonoBehaviour
 {
@@ -18,6 +20,8 @@ public class SYSTEM_GAME : MonoBehaviour
 
 
     protected string encryptedValue;
+
+    float temp = 0;
     public static SYSTEM_GAME Instance
     {
         get
@@ -59,13 +63,30 @@ public class SYSTEM_GAME : MonoBehaviour
         encryptedValue = SecurityManager.Instance.Encrypt(CurrencyCoin.ToString());
         SetCoin(6969);
         //PlayerPrefs.SetInt("Coin", CurrencyCoin);
+        
     }
 
 
     private void Update()
     {
         //CurrencyCoin = PlayerPrefs.GetInt("Coin");
-      // Debug.Log(CurrencyCoin);
+        // Debug.Log(CurrencyCoin);
+        // Debug.Log(System.DateTime.Now.Second)
+
+        // Time.maximumDeltaTime = 77f;
+        //Debug.Log(Time.frameCount);
+        // Time.timeScale = 1;
+        //Debug.Log(Time.realtimeSinceStartup); //sp up
+        // Debug.Log(Time.fixedTime); //sd up
+       /* double timeSystem = System.DateTime.Now.Second-2;
+        double timeCurrent= Math.Round(Time.time);
+        double timeTemp = timeCurrent - timeSystem;
+        if (timeTemp>10)
+        {
+            Debug.Log("HACK SPEED CON GAI ME MAY");
+            Time.timeScale = 0;
+        }*/
+       // Debug.Log(timeSystem + "  /  "+ timeCurrent);
     }
 
     public void SetBoolFirstPlayIntro(bool temp)

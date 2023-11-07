@@ -76,7 +76,7 @@ public class MenuController : MonoBehaviour
                     break;
             }
 
-        Debug.Log(currentPhase);
+       //    Debug.Log(currentPhase);
     }
 
     public bool isLogoIntro()

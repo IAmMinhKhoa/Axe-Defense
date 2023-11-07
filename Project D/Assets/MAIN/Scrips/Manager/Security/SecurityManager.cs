@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class SecurityManager :MonoBehaviour
 {
-    private static SecurityManager instance;
+     private static SecurityManager instance;
     private RSACryptoServiceProvider rsaProvider;
 
     public static SecurityManager Instance
@@ -16,13 +16,13 @@ public class SecurityManager :MonoBehaviour
             if (instance == null)
             {
                 instance = FindObjectOfType<SecurityManager>();
-                if (instance == null)
+                /*if (instance == null)
                 {
                     GameObject singletonObject = new GameObject();
                     instance = singletonObject.AddComponent<SecurityManager>();
                     singletonObject.name = "RSAEncryptionManager";
                     DontDestroyOnLoad(singletonObject);
-                }
+                }*/
             }
             return instance;
         }
@@ -31,6 +31,10 @@ public class SecurityManager :MonoBehaviour
     private void Awake()
     {
         rsaProvider = new RSACryptoServiceProvider();
+
+     /*   // Thay th? dòng sau v?i mã key c?a b?n
+        string publicKey = "MINHKHOA";
+        rsaProvider.FromXmlString(publicKey);*/
     }
 
     public string Encrypt(string plainText)

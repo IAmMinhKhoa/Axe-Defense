@@ -22,6 +22,15 @@ public class SYSTEM_GAME : MonoBehaviour
     protected string encryptedValue;
 
     float temp = 0;
+    double prvioustime=0;
+    double gametime;
+    double realtime=0;
+    double timeDiff;
+
+    public SO_ValueSystem SO_system;
+
+    public GameObject canvasHacking;
+
     public static SYSTEM_GAME Instance
     {
         get
@@ -57,15 +66,29 @@ public class SYSTEM_GAME : MonoBehaviour
 
 
         //SET COIN CHO NGTA CH?I CHO D?
-        
 
-        CurrencyCoin = PlayerPrefs.GetInt("Coin");
-        encryptedValue = SecurityManager.Instance.Encrypt(CurrencyCoin.ToString());
-        SetCoin(6969);
+
+        //CurrencyCoin = PlayerPrefs.GetInt("Coin");
+        // SO_system.coin = SecurityManager.Instance.Encrypt("800");
+        /* Debug.Log(SO_system.coin);
+         CurrencyCoin = int.Parse( SecurityManager.Instance.Decrypt(SO_system.coin));
+         Debug.Log(CurrencyCoin);
+         encryptedValue = SecurityManager.Instance.Encrypt(CurrencyCoin.ToString());*/
+        // SetCoin(6969);
         //PlayerPrefs.SetInt("Coin", CurrencyCoin);
-        
+      
+       // SetCoin(SO_system.coin);
     }
 
+    private void Start()
+    {
+        prvioustime = System.DateTime.Now.Second;
+        gametime = 1;
+
+
+       
+        SetCoin(SO_system.coin);
+    }
 
     private void Update()
     {
@@ -78,16 +101,40 @@ public class SYSTEM_GAME : MonoBehaviour
         // Time.timeScale = 1;
         //Debug.Log(Time.realtimeSinceStartup); //sp up
         // Debug.Log(Time.fixedTime); //sd up
-       /* double timeSystem = System.DateTime.Now.Second-2;
-        double timeCurrent= Math.Round(Time.time);
-        double timeTemp = timeCurrent - timeSystem;
-        if (timeTemp>10)
+        /* double timeSystem = System.DateTime.Now.Second-2;
+         double timeCurrent= Math.Round(Time.time);
+         double timeTemp = timeCurrent - timeSystem;
+         if (timeTemp>10)
+         {
+             Debug.Log("HACK SPEED CON GAI ME MAY");
+             Time.timeScale = 0;
+         }*/
+        // Debug.Log(timeSystem + "  /  "+ timeCurrent);
+
+        //Debug.Log(System.Environment.TickCount);
+
+        //double a = System.Environment.TickCount;
+        //Debug.Log(a + "   " + b);
+        //b = System.Environment.TickCount;
+
+        if (prvioustime != DateTime.Now.Second)
         {
-            Debug.Log("HACK SPEED CON GAI ME MAY");
-            Time.timeScale = 0;
-        }*/
-       // Debug.Log(timeSystem + "  /  "+ timeCurrent);
+            realtime++;
+            prvioustime = DateTime.Now.Second;
+            timeDiff = (int)gametime - realtime;
+            if (timeDiff > 4)
+            {
+                canvasHacking.SetActive(true);
+                Time.timeScale = 0;
+            }
+        }
+        gametime += Time.deltaTime;
+        Debug.Log(realtime + " /" + gametime);
+       
+
     }
+
+   
 
     public void SetBoolFirstPlayIntro(bool temp)
     {
@@ -101,24 +148,20 @@ public class SYSTEM_GAME : MonoBehaviour
     public void SetCoin(int NewValue)
     {
         //update new coin
-
         CurrencyCoin = NewValue;
-
-        // Mã hóa giá tr? m?i c?a coin
         encryptedValue = SecurityManager.Instance.Encrypt(CurrencyCoin.ToString());
-        Debug.Log(encryptedValue);
-        // L?u giá tr? ?ã mã hóa
+      //  Debug.Log(encryptedValue);
 
     }
 
     public int GetCoin()
     {
-        Debug.Log(encryptedValue);
+      //  Debug.Log(encryptedValue);
         string temp= SecurityManager.Instance.Decrypt(encryptedValue);
         int afterDecry = int.Parse(temp);
         if (afterDecry != CurrencyCoin)
         {
-            Debug.Log("?????????????? HACK CDMMM");
+            Debug.Log("?????????????? CHEAT GI DO BRO");
             CurrencyCoin = afterDecry;
         }
         return afterDecry;
@@ -126,7 +169,12 @@ public class SYSTEM_GAME : MonoBehaviour
 
     private void OnDestroy()
     {
-        PlayerPrefs.SetInt("Coin", CurrencyCoin);
+        //se thay doi luu PlayerPrefs -> scriptable Object
+        //PlayerPrefs.SetInt("Coin", CurrencyCoin);
+       // string temp = SecurityManager.Instance.Decrypt(encryptedValue);
+       // int afterDecry = int.Parse(temp);
+
+        SO_system.coin = CurrencyCoin;
     }
 
     public void LoadSenceWithStringName(string input)

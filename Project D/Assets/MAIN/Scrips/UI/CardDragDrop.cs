@@ -95,7 +95,7 @@ public class CardDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         return mousePosition.x < screenLeft || 
             mousePosition.x > screenRight || mousePosition.y < screenBottom || 
             mousePosition.y > screenTop || mousePosition.x > leftHalfScreenLimit ||
-            cost_To_Summon > PlayerPrefs.GetInt("Mana_InGame");
+            cost_To_Summon > ControllerSummon.instance.DefaultMana;
     }
     public void OnEndDrag(PointerEventData eventData)
     {
@@ -120,8 +120,10 @@ public class CardDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
                 CT_Summon.CreatRandomCard();
 
                 //affter summon => sumCost = sumcost - cost_To_Summon => update new sumcost
-                int sumCost = PlayerPrefs.GetInt("Mana_InGame");
-                PlayerPrefs.SetInt("Mana_InGame", sumCost - cost_To_Summon);
+                int sumCost = ControllerSummon.instance.DefaultMana;
+                ControllerSummon.instance.DefaultMana = sumCost - cost_To_Summon;
+
+               // PlayerPrefs.SetInt("Mana_InGame", sumCost - cost_To_Summon);
 
                 CT_Summon.TurnOffBR();
                 CT_Summon.SubtractionCountOfDeckSummon();

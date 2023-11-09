@@ -66,7 +66,7 @@ public class ControllerSummon : MonoBehaviour
     private void Start()
     {
        
-        PlayerPrefs.SetInt("Mana_InGame", DefaultMana);
+        //PlayerPrefs.SetInt("Mana_InGame", DefaultMana);
         InvokeRepeating("RepeatAddMana", 1, TimeBoundMana);//first: function, second: time firt to run that function, third: time every second to recall that function
         textAddManaByTime.text = "+" + BounsMana.ToString()+" Mana/"+TimeBoundMana.ToString()+"s";
 
@@ -84,19 +84,22 @@ public class ControllerSummon : MonoBehaviour
     }
     private void Update()
     {
-        textCountMana.text = PlayerPrefs.GetInt("Mana_InGame").ToString() +"/"+ManaMax;
-        Debug.Log(PlayerPrefs.GetInt("Mana_InGame"));
+        //textCountMana.text = PlayerPrefs.GetInt("Mana_InGame").ToString() +"/"+ManaMax;
+        textCountMana.text = DefaultMana+ "/" + ManaMax;
+        //Debug.Log(PlayerPrefs.GetInt("Mana_InGame"));
+        Debug.Log(DefaultMana);
     }
 
     public void AddAndSaveMana(int value)
     {
-        int nowMana = PlayerPrefs.GetInt("Mana_InGame");
+        int nowMana = DefaultMana;
         int temp = nowMana + value;
         if (temp >= ManaMax)
         {
             temp = ManaMax;
         }
-        PlayerPrefs.SetInt("Mana_InGame", temp);
+        //PlayerPrefs.SetInt("Mana_InGame", temp);
+        DefaultMana = temp;
     }
     private void RepeatAddMana()
     {

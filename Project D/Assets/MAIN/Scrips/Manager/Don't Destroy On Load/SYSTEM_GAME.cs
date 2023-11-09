@@ -129,7 +129,7 @@ public class SYSTEM_GAME : MonoBehaviour
             }
         }
         gametime += Time.deltaTime;
-        Debug.Log(realtime + " /" + gametime);
+       // Debug.Log(realtime + " /" + gametime);
        
 
     }

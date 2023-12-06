@@ -154,7 +154,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Standalone: com.TamThaiTu.Axie-Battle-Defend
+    Standalone: com.TamThaiTu.Axie-Batlle-Defense
   buildNumber:
     Bratwurst: 0
     Standalone: 0
@@ -870,4 +870,4 @@ PlayerSettings:
   hmiLoadingImage: {fileID: 0}
   platformRequiresReadableAssets: 0
   virtualTexturingSupportEnabled: 0
-  insecureHttpOption: 0
+  insecureHttpOption: 2

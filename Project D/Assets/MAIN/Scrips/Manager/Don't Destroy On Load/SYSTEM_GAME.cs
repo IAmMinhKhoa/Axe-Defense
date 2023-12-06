@@ -1,10 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections.LowLevel.Unsafe;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Timeline;
+
+
 
 public class SYSTEM_GAME : MonoBehaviour
 {
@@ -30,6 +32,9 @@ public class SYSTEM_GAME : MonoBehaviour
     public SO_ValueSystem SO_system;
 
     public GameObject canvasHacking;
+
+
+    private float lastGameTime = 0f;
 
     public static SYSTEM_GAME Instance
     {
@@ -88,53 +93,54 @@ public class SYSTEM_GAME : MonoBehaviour
 
        
         SetCoin(SO_system.coin);
+
+
     }
 
     private void Update()
     {
-        //CurrencyCoin = PlayerPrefs.GetInt("Coin");
-        // Debug.Log(CurrencyCoin);
-        // Debug.Log(System.DateTime.Now.Second)
+        Checking_Timer_Local();
+        //Checking_Timer_API();
 
-        // Time.maximumDeltaTime = 77f;
-        //Debug.Log(Time.frameCount);
-        // Time.timeScale = 1;
-        //Debug.Log(Time.realtimeSinceStartup); //sp up
-        // Debug.Log(Time.fixedTime); //sd up
-        /* double timeSystem = System.DateTime.Now.Second-2;
-         double timeCurrent= Math.Round(Time.time);
-         double timeTemp = timeCurrent - timeSystem;
-         if (timeTemp>10)
-         {
-             Debug.Log("HACK SPEED CON GAI ME MAY");
-             Time.timeScale = 0;
-         }*/
-        // Debug.Log(timeSystem + "  /  "+ timeCurrent);
-
-        //Debug.Log(System.Environment.TickCount);
-
-        //double a = System.Environment.TickCount;
-        //Debug.Log(a + "   " + b);
-        //b = System.Environment.TickCount;
-
+        Debug.Log(gametime + "/" + realtime);
+    }
+    #region CHECKING TIMER WITH MENTOD 1 : TIMER LOCAL
+    protected void Checking_Timer_Local()
+    {
         if (prvioustime != DateTime.Now.Second)
         {
             realtime++;
             prvioustime = DateTime.Now.Second;
             timeDiff = (int)gametime - realtime;
-            if (timeDiff > 4)
+            if (timeDiff > 5)
             {
                 canvasHacking.SetActive(true);
+                Debug.Log("HACKING TIMER !!!!!!");
                 Time.timeScale = 0;
             }
         }
         gametime += Time.deltaTime;
-       // Debug.Log(realtime + " /" + gametime);
-       
-
     }
 
-   
+    #endregion
+
+    protected void Checking_Timer_API()
+    {
+        float currentGameTime = WorldTimeAPI.Instance.GetCurrentDateTime().Second;
+        if (prvioustime != currentGameTime)
+        {
+            realtime++;
+            prvioustime = currentGameTime;
+            timeDiff = (int)gametime - realtime;
+            if (timeDiff > 5)
+            {
+                canvasHacking.SetActive(true);
+                Debug.Log("cc3");
+                Time.timeScale = 0;
+            }
+        }
+        gametime += Time.deltaTime;
+    }
 
     public void SetBoolFirstPlayIntro(bool temp)
     {
@@ -169,11 +175,6 @@ public class SYSTEM_GAME : MonoBehaviour
 
     private void OnDestroy()
     {
-        //se thay doi luu PlayerPrefs -> scriptable Object
-        //PlayerPrefs.SetInt("Coin", CurrencyCoin);
-       // string temp = SecurityManager.Instance.Decrypt(encryptedValue);
-       // int afterDecry = int.Parse(temp);
-
         SO_system.coin = CurrencyCoin;
     }
 
@@ -230,7 +231,11 @@ public class SYSTEM_GAME : MonoBehaviour
             SceneManager.LoadScene(sceneName);
             A_Transtion.SetTrigger("Start");
         }
+    }
 
-        
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }

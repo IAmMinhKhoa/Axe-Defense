@@ -102,7 +102,7 @@ public class SYSTEM_GAME : MonoBehaviour
         Checking_Timer_Local();
         //Checking_Timer_API();
 
-        Debug.Log(gametime + "/" + realtime);
+       // Debug.Log(gametime + "/" + realtime);
     }
     #region CHECKING TIMER WITH MENTOD 1 : TIMER LOCAL
     protected void Checking_Timer_Local()
@@ -135,7 +135,7 @@ public class SYSTEM_GAME : MonoBehaviour
             if (timeDiff > 5)
             {
                 canvasHacking.SetActive(true);
-                Debug.Log("cc3");
+                Debug.Log("HACKING TIMER !!!!!!");
                 Time.timeScale = 0;
             }
         }

@@ -5,4 +5,5 @@ using UnityEngine;
 public class SO_ValueSystem : ScriptableObject
 {
     public int coin;
+    public int mana;
 }

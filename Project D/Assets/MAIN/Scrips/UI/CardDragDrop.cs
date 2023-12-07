@@ -120,9 +120,9 @@ public class CardDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
                 CT_Summon.CreatRandomCard();
 
                 //affter summon => sumCost = sumcost - cost_To_Summon => update new sumcost
-                int sumCost = ControllerSummon.instance.DefaultMana;
+                int sumCost = ControllerSummon.instance.GetMana();
                 int CostAfter = sumCost - cost_To_Summon;
-                ControllerSummon.instance.DefaultMana = CostAfter;
+                ControllerSummon.instance.SetMana(CostAfter);
 
           
 

@@ -56,12 +56,12 @@ public class ControllerSummon : MonoBehaviour
     #endregion
 
 
-
-
+    string encryptedValue;
 
     private void Awake()
     {
-        instance = this;    
+        instance = this;
+        SetMana(DefaultMana);
     }
     private void Start()
     {
@@ -84,26 +84,31 @@ public class ControllerSummon : MonoBehaviour
     }
     private void Update()
     {
-        //textCountMana.text = PlayerPrefs.GetInt("Mana_InGame").ToString() +"/"+ManaMax;
-        textCountMana.text = DefaultMana+ "/" + ManaMax;
+      
+        textCountMana.text = GetMana()+ "/" + ManaMax;
         //Debug.Log(PlayerPrefs.GetInt("Mana_InGame"));
-        Debug.Log(DefaultMana);
+        //Debug.Log(GetMana());
     }
 
+    //con 1 cho chua fix
     public void AddAndSaveMana(int value)
     {
-        int nowMana = DefaultMana;
-        int temp = nowMana + value;
-        if (temp >= ManaMax)
+        int nowMana = GetMana();
+       // int temp = nowMana + value;
+        /*if (temp >= ManaMax  )
         {
-            temp = ManaMax;
-        }
-        //PlayerPrefs.SetInt("Mana_InGame", temp);
-        DefaultMana = temp;
+            temp = GetMana();
+            
+        }*/
+
+        //DefaultMana = temp;
+        //SetMana(temp);
+        //Debug.Log(nowMana+"/"+temp + "/"+GetMana());
     }
     private void RepeatAddMana()
     {
-        AddAndSaveMana(BounsMana);
+        //AddAndSaveMana(BounsMana);
+        SetMana(BounsMana + GetMana());
     }
 
 
@@ -200,6 +205,28 @@ public class ControllerSummon : MonoBehaviour
         }
     }
 
+    public void SetMana(int NewValue)
+    {
+        //update new coin
+        DefaultMana = NewValue;
+        encryptedValue = SecurityManager.Instance.Encrypt(DefaultMana.ToString());
+        //  Debug.Log(encryptedValue);
+
+    }
+
+
+    public int GetMana()
+    {
+        //  Debug.Log(encryptedValue);
+        string temp = SecurityManager.Instance.Decrypt(encryptedValue);
+        int afterDecry = int.Parse(temp);
+        if (afterDecry != DefaultMana)
+        {
+            Debug.Log("?????????????? CHEAT GI DO BRO");
+            DefaultMana = afterDecry;
+        }
+        return afterDecry;
+    }
 }
 
 

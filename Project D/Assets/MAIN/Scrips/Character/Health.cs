@@ -42,7 +42,7 @@ public class Health : MonoBehaviour
             //add mana when enemy die
             if (gameObject.layer == LayerMask.NameToLayer("Enemy"))
             {
-                ControllerSummon.instance.AddAndSaveMana(2);
+                ControllerSummon.instance.SetMana(ControllerSummon.instance.GetMana()+2);
             }
             Destroy(gameObject, 1.5f);
         }

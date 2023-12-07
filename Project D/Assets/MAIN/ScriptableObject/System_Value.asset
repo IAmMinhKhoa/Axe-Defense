@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1eeab60b598bddf4baac2866c7c40bbc, type: 3}
   m_Name: System_Value
   m_EditorClassIdentifier: 
-  coin: 1000
+  coin: 8000
+  mana: 0

@@ -95,7 +95,7 @@ public class CardDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         return mousePosition.x < screenLeft || 
             mousePosition.x > screenRight || mousePosition.y < screenBottom || 
             mousePosition.y > screenTop || mousePosition.x > leftHalfScreenLimit ||
-            cost_To_Summon > ControllerSummon.instance.DefaultMana;
+            cost_To_Summon > ControllerSummon.instance.GetMana();
     }
     public void OnEndDrag(PointerEventData eventData)
     {

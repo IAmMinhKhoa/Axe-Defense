@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -86,25 +87,12 @@ public class ControllerSummon : MonoBehaviour
     {
       
         textCountMana.text = GetMana()+ "/" + ManaMax;
-        //Debug.Log(PlayerPrefs.GetInt("Mana_InGame"));
-        //Debug.Log(GetMana());
+
+        //Debug.Log(encryptedValue);
     }
 
     //con 1 cho chua fix
-    public void AddAndSaveMana(int value)
-    {
-        int nowMana = GetMana();
-       // int temp = nowMana + value;
-        /*if (temp >= ManaMax  )
-        {
-            temp = GetMana();
-            
-        }*/
-
-        //DefaultMana = temp;
-        //SetMana(temp);
-        //Debug.Log(nowMana+"/"+temp + "/"+GetMana());
-    }
+  
     private void RepeatAddMana()
     {
         //AddAndSaveMana(BounsMana);
@@ -208,9 +196,9 @@ public class ControllerSummon : MonoBehaviour
     public void SetMana(int NewValue)
     {
         //update new coin
-        DefaultMana = NewValue;
-        encryptedValue = SecurityManager.Instance.Encrypt(DefaultMana.ToString());
-        //  Debug.Log(encryptedValue);
+        SYSTEM_GAME.Instance.SO_system.mana = NewValue;
+        encryptedValue = SecurityManager.Instance.Encrypt(SYSTEM_GAME.Instance.SO_system.mana.ToString());
+        
 
     }
 
@@ -220,10 +208,10 @@ public class ControllerSummon : MonoBehaviour
         //  Debug.Log(encryptedValue);
         string temp = SecurityManager.Instance.Decrypt(encryptedValue);
         int afterDecry = int.Parse(temp);
-        if (afterDecry != DefaultMana)
+        if (afterDecry != SYSTEM_GAME.Instance.SO_system.mana)
         {
             Debug.Log("?????????????? CHEAT GI DO BRO");
-            DefaultMana = afterDecry;
+            SYSTEM_GAME.Instance.SO_system.mana = afterDecry;
         }
         return afterDecry;
     }

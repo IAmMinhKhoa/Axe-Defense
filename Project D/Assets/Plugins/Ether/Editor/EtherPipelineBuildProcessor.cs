@@ -15,27 +15,22 @@ using UnityEditor;
 using UnityEditor.Build;
 using UnityEditor.Build.Content;
 using UnityEditor.Build.Reporting;
-using UnityEditor.Rendering;
 using UnityEditor.UnityLinker;
 using UnityEngine;
 
-public class EtherPipelineBuildProcessor : IPreprocessBuildWithReport, IFilterBuildAssemblies, IPostBuildPlayerScriptDLLs, IUnityLinkerProcessor, IPostprocessBuildWithReport, IPreprocessShaders
+public class EtherPipelineBuildProcessor : IPreprocessBuildWithReport, IFilterBuildAssemblies, IPostBuildPlayerScriptDLLs, IUnityLinkerProcessor, IPostprocessBuildWithReport
 {
     static bool hasObfuscated = false;
-    static bool hasPostAsset = false;
     Dictionary<TypeKey, TypeKey> monoSwapMaps = new Dictionary<TypeKey, TypeKey>();
-    static BuildReport buildReport;
     public int callbackOrder
     {
         get { return 0; }
     }
     public void OnPreprocessBuild(BuildReport _Report)
     {
-        buildReport = _Report;
         EtherConfig _Config = AssetDatabase.LoadAssetAtPath<EtherConfig>("Assets/Plugins/Ether/Config.asset");
         hasObfuscated = false;
-        hasPostAsset = false;
-        if (_Config.Enable_Il2CPP && PlayerSettings.GetScriptingBackend(BuildResolver.GetBuildTargetGroupByBuildTarget(EditorUserBuildSettings.activeBuildTarget)) == ScriptingImplementation.IL2CPP)
+        if(_Config.Enable_Il2CPP && PlayerSettings.GetScriptingBackend(BuildResolver.GetBuildTargetGroupByBuildTarget(EditorUserBuildSettings.activeBuildTarget)) == ScriptingImplementation.IL2CPP)
         {
             EtherIl2cppConfig config = new EtherIl2cppConfig();
             config.UnityVersion = _Config.il2cpp.UnityVersion;
@@ -59,45 +54,6 @@ public class EtherPipelineBuildProcessor : IPreprocessBuildWithReport, IFilterBu
             ComponentResolver.ProcessComponentsInAllPrefabs();
             ComponentResolver.ProcessAllAssetFiles();
 
-        }
-    }
-    public void OnProcessShader(Shader shader, ShaderSnippetData snippet, IList<ShaderCompilerData> data)
-    {
-        if (!hasPostAsset)
-        {
-            Log("Building Shader...", LogType.Info);
-            EtherConfig _Config = AssetDatabase.LoadAssetAtPath<EtherConfig>("Assets/Plugins/Ether/Config.asset");
-            if (hasObfuscated && _Config.Obfus.Keyfunc.ObfusType)
-            {
-                //if (!OverwriteAssetCheck(buildReport))
-                //return;
-                if (buildReport.summary.platform == BuildTarget.StandaloneWindows || buildReport.summary.platform == BuildTarget.StandaloneWindows64 ||
-                    buildReport.summary.platform == BuildTarget.StandaloneLinux64 || buildReport.summary.platform == BuildTarget.StandaloneOSX)
-                    return;
-                string TempGameManger = BuildResolver.GetGameManagersAssetFromTemp();
-                if (!File.Exists(TempGameManger))
-                {
-                    Log("NOT Found Temp Gamemanager Asset:" + TempGameManger, LogType.Warning);
-                }
-                else
-                {
-                    Log("Found Temp Gamemanager Asset:" + TempGameManger, LogType.Info);
-                    ReplaceGamemanagerAsset(TempGameManger, monoSwapMaps);
-                    hasPostAsset = true;
-                }
-
-                string CacheGameManagerPath = BuildResolver.GetGameManagerAssetFromCache(EditorUserBuildSettings.activeBuildTarget);
-                if (!File.Exists(CacheGameManagerPath))
-                {
-                    Log("NOT Found Cache Gamemanager Asset:" + CacheGameManagerPath, LogType.Warning);
-                }
-                else
-                {
-                    Log("Found Cache Gamemanager Asset:" + CacheGameManagerPath, LogType.Info);
-                    ReplaceGamemanagerAsset(CacheGameManagerPath, monoSwapMaps);
-                    hasPostAsset = true;
-                }
-            }
         }
     }
     public void OnPostBuildPlayerScriptDLLs(BuildReport _Report)
@@ -194,51 +150,39 @@ public class EtherPipelineBuildProcessor : IPreprocessBuildWithReport, IFilterBu
     }
     public string GenerateAdditionalLinkXmlFile(BuildReport _Report, UnityLinkerBuildPipelineData _Data)
     {
-        Log("GenerateAdditionalLinkXmlFile...", LogType.Info);
-        /*
+        AssetsFile assets;
         EtherConfig _Config = AssetDatabase.LoadAssetAtPath<EtherConfig>("Assets/Plugins/Ether/Config.asset");
-        if (hasObfuscated && _Config.Obfus.Keyfunc.ObfusType)
+        if (hasObfuscated && _Config.Obfus.Obfuscations.Obfusfunc)
         {
-            if (!OverwriteAssetCheck(_Report))
-                return null;
-            if (_Report.summary.platform == BuildTarget.StandaloneWindows || _Report.summary.platform == BuildTarget.StandaloneWindows64 ||
-                _Report.summary.platform == BuildTarget.StandaloneLinux64 || _Report.summary.platform == BuildTarget.StandaloneOSX)
-                return null;
             string TempGameManger = BuildResolver.GetGameManagersAssetFromTemp();
-            if (!File.Exists(TempGameManger))
-            {
-                Log("NOT Found Temp Gamemanager Asset:" + TempGameManger, LogType.Error);
-            }
-            else
+            Debug.Log(TempGameManger);
+            if (File.Exists(TempGameManger))
             {
                 Log("Found Temp Gamemanager Asset:" + TempGameManger, LogType.Info);
                 ReplaceGamemanagerAsset(TempGameManger, monoSwapMaps);
             }
-
             string CacheGameManagerPath = BuildResolver.GetGameManagerAssetFromCache(EditorUserBuildSettings.activeBuildTarget);
-            if (!File.Exists(CacheGameManagerPath))
-            {
-                Log("NOT Found Cache Gamemanager Asset:" + CacheGameManagerPath, LogType.Error);
-            }
-            else
+            Debug.Log(CacheGameManagerPath);
+            if (File.Exists(CacheGameManagerPath))
             {
                 Log("Found Cache Gamemanager Asset:" + CacheGameManagerPath, LogType.Info);
                 ReplaceGamemanagerAsset(CacheGameManagerPath, monoSwapMaps);
             }
+            if (!File.Exists(CacheGameManagerPath) && !File.Exists(TempGameManger))
+            {
+                Log("NOT Found Manager Asset", LogType.Error);
+            }
         }
-        */
             return null;
     }
 #if UNITY_2021_2_OR_NEWER
 #else
     public void OnBeforeRun(BuildReport report, UnityLinkerBuildPipelineData data)
     {
-        //Log("LinkXmlFile BeforeRun...");
     }
 
     public void OnAfterRun(BuildReport report, UnityLinkerBuildPipelineData data)
     {
-        //Log("LinkXmlFile AfterRun...");
     }
 #endif
     static string[] ArrayCombine(string[] a, string[] b)
@@ -261,13 +205,8 @@ public class EtherPipelineBuildProcessor : IPreprocessBuildWithReport, IFilterBu
         }
         if (_Config.Enable_Obfuscator)
         {
-            if (hasObfuscated && _Config.Obfus.Keyfunc.ObfusType)
+            if (hasObfuscated && _Config.Obfus.Obfuscations.Obfusfunc)
             {
-                //if (!OverwriteAssetCheck(_Report))
-                    //return;
-                if (!(_Report.summary.platform == BuildTarget.StandaloneWindows || _Report.summary.platform == BuildTarget.StandaloneWindows64 ||
-                    _Report.summary.platform == BuildTarget.StandaloneLinux64 || _Report.summary.platform == BuildTarget.StandaloneOSX))
-                    return;
                 string path = BuildResolver.GetGameManagersAssetStandalone(_Report);
                 if (File.Exists(path))
                 {
@@ -340,24 +279,13 @@ public class EtherPipelineBuildProcessor : IPreprocessBuildWithReport, IFilterBu
         MonoUtils.SetMonoMapToAssetFile(asset, Map);
         MonoUtils.SaveAssetsToFile(asset, path);
     }
-    public bool OverwriteAssetCheck(BuildReport report)
-    {
-        bool IsStandalone = report.summary.platform == BuildTarget.StandaloneWindows || report.summary.platform == BuildTarget.StandaloneWindows64 || report.summary.platform == BuildTarget.StandaloneLinux64 || report.summary.platform == BuildTarget.StandaloneOSX;
-        bool IsCompressed = !typeof(EditorUserBuildSettings).GetMethod("GetCompressionType", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static).Invoke(null, new object[] { EditorUserBuildSettings.selectedBuildTargetGroup }).ToString().Equals("None");
-        bool IsIl2CPP = PlayerSettings.GetScriptingBackend(EditorUserBuildSettings.selectedBuildTargetGroup) == ScriptingImplementation.IL2CPP;
-        if (IsCompressed)
-            return false;
-        if(!IsStandalone && !IsIl2CPP)
-            return false;
-        return true;
-    }
     public enum LogType
     {
         Info,
         Warning,
         Error
     }
-    public void Log(object msg, LogType type = LogType.Info)
+    public void Log(object msg, LogType type)
     {
         switch(type)
         {

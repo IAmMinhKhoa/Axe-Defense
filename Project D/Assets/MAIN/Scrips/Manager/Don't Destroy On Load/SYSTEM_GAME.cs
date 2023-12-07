@@ -162,6 +162,7 @@ public class SYSTEM_GAME : MonoBehaviour
 
     public int GetCoin()
     {
+     //   SecurityManager.Instance.PrintKeyPair();
       //  Debug.Log(encryptedValue);
         string temp= SecurityManager.Instance.Decrypt(encryptedValue);
         int afterDecry = int.Parse(temp);

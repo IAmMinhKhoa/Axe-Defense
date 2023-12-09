@@ -6,6 +6,8 @@ Trailer : https://www.youtube.com/watch?v=1Afv0_Cqn30&t=2s
 
 Play Demo : https://hub.skymavis.com/games/axie-battle-defense
 
+Canvas Designer Game : https://www.canva.com/design/DAFvYbwvdGc/hJqyqonTFgyeGm3mrMcJTg/edit?utm_content=DAFvYbwvdGc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+
 
 
 
@@ -25,9 +27,18 @@ Prepare yourself for a challenging strategic world where you will need to use yo
 ![image](https://github.com/IAmMinhKhoa/Axe-Defense/assets/88275892/c6e8cb18-c169-4858-b797-9a9e3e629fae)
 ![image](https://github.com/IAmMinhKhoa/Axe-Defense/assets/88275892/033c9238-8ca6-4fa1-8b9d-d1ad55e0ffcd)
 ![image](https://github.com/IAmMinhKhoa/Axe-Defense/assets/88275892/2bd422fd-9790-44f3-b5cc-91e0ab6fe43d)
+![image](https://github.com/IAmMinhKhoa/Axe-Defense/assets/88275892/2c14607c-3742-496d-a5e7-b1585427b43d)
 
 ![image](https://github.com/IAmMinhKhoa/Axe-Defense/assets/88275892/e112fa58-5c2c-4cf0-832d-a1977e736b8f)
 ![image](https://github.com/IAmMinhKhoa/Axe-Defense/assets/88275892/0984473a-b00f-4d42-b7d8-625423b8e8a5)
 ![image](https://github.com/IAmMinhKhoa/Axe-Defense/assets/88275892/e883f906-5ac4-4c0e-a64f-bbb2a4abd995)
 
+![image](https://github.com/IAmMinhKhoa/Axe-Defense/assets/88275892/75f630d4-bb1f-499d-9bed-01e4d93aaca7)
+![image](https://github.com/IAmMinhKhoa/Axe-Defense/assets/88275892/c8f8fa53-e009-459f-86a3-4280fd649722)
+![image](https://github.com/IAmMinhKhoa/Axe-Defense/assets/88275892/91794d46-0abf-4674-9f18-f42eb3e14b97)
+
+
+![image](https://github.com/IAmMinhKhoa/Axe-Defense/assets/88275892/c14c18cf-9d1c-4723-8cdc-0c6eec1e1a19)
+![image](https://github.com/IAmMinhKhoa/Axe-Defense/assets/88275892/8cf30b0d-0649-4d28-864a-ff97b772bd6f)
+![image](https://github.com/IAmMinhKhoa/Axe-Defense/assets/88275892/f02036ed-202b-4ab0-a4dd-455f3391ce4d)
 

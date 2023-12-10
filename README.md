@@ -10,7 +10,7 @@
 ## linked links
 [**Trailer**](https://www.youtube.com/watch?v=1Afv0_Cqn30&t=2s) <p>
 [**Play Demo**](https://hub.skymavis.com/games/axie-battle-defense) <p>
-[**Canvas Designer Game**](https://www.canva.com/design/DAFvYbwvdGc/hJqyqonTFgyeGm3mrMcJTg/edit?utm_content=DAFvYbwvdGc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+[**Canvas Game Designer**](https://www.canva.com/design/DAFvYbwvdGc/hJqyqonTFgyeGm3mrMcJTg/edit?utm_content=DAFvYbwvdGc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 ) <p>
 
 
@@ -28,6 +28,7 @@ The trailer will give you a glimpse of the colorful and stunning world of Battle
 Prepare yourself for a challenging strategic world where you will need to use your thinking abilities and creativity to build optimal defensive and offensive strategies. Battle Defense - the pinnacle of intelligence and decisiveness has begun!
 
 ## Some Images In Game
+### UI Menu
 ![image](https://github.com/IAmMinhKhoa/Axe-Defense/assets/88275892/7e6839f1-b82f-405c-9fcb-4cc5b9159de9)
 ![image](https://github.com/IAmMinhKhoa/Axe-Defense/assets/88275892/cbe89e6c-dce4-4d68-ab5a-01e17f82626b)
 ![image](https://github.com/IAmMinhKhoa/Axe-Defense/assets/88275892/ff619842-5c54-458b-8862-bb9d3a3d178f)
@@ -51,3 +52,6 @@ Prepare yourself for a challenging strategic world where you will need to use yo
 ![image](https://github.com/IAmMinhKhoa/Axe-Defense/assets/88275892/f02036ed-202b-4ab0-a4dd-455f3391ce4d)
 
 ## The requested date range "August 10, 2023, to October 29, 2023" (spans a period of three weeks).
+Member : 
++To Nguyen Minh Khoa (Lead , Dev)
++Tran Truong Minh Nghia (Art , Dev)

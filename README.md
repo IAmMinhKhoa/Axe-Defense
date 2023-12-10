@@ -12,10 +12,12 @@
 [**Play Demo**](https://hub.skymavis.com/games/axie-battle-defense) <p>
 [**Canvas Game Designer**](https://www.canva.com/design/DAFvYbwvdGc/hJqyqonTFgyeGm3mrMcJTg/edit?utm_content=DAFvYbwvdGc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 ) <p>
+[**CONTACT TO ME**](https://www.facebook.com/Ireking666)
+#### **Email: tnminhkhoa666@gmail.com**
 
 
 ## Introduction
-
+_**Game Genre**_ : Tower Defends + Card
 
 **"Axie Battle Defense"** will bring you a thrilling and promising strategy game. In the peaceful kingdom of Axies, a terrifying threat emerges from monstrous creatures that want to destroy the kingdom. As the player, you will rise up and lead the Axies in the battle to protect the kingdom.
 
@@ -30,28 +32,34 @@ Prepare yourself for a challenging strategic world where you will need to use yo
 ## Some Images In Game
 ### UI Menu
 ![image](https://github.com/IAmMinhKhoa/Axe-Defense/assets/88275892/7e6839f1-b82f-405c-9fcb-4cc5b9159de9)
+### UI Shop
 ![image](https://github.com/IAmMinhKhoa/Axe-Defense/assets/88275892/cbe89e6c-dce4-4d68-ab5a-01e17f82626b)
 ![image](https://github.com/IAmMinhKhoa/Axe-Defense/assets/88275892/ff619842-5c54-458b-8862-bb9d3a3d178f)
 ![image](https://github.com/IAmMinhKhoa/Axe-Defense/assets/88275892/c6e8cb18-c169-4858-b797-9a9e3e629fae)
 ![image](https://github.com/IAmMinhKhoa/Axe-Defense/assets/88275892/033c9238-8ca6-4fa1-8b9d-d1ad55e0ffcd)
 ![image](https://github.com/IAmMinhKhoa/Axe-Defense/assets/88275892/2bd422fd-9790-44f3-b5cc-91e0ab6fe43d)
-![image](https://github.com/IAmMinhKhoa/Axe-Defense/assets/88275892/2c14607c-3742-496d-a5e7-b1585427b43d)
 
+### UI Tutorial Game Modes
+![image](https://github.com/IAmMinhKhoa/Axe-Defense/assets/88275892/2c14607c-3742-496d-a5e7-b1585427b43d)
+### UI Pause
 ![image](https://github.com/IAmMinhKhoa/Axe-Defense/assets/88275892/e112fa58-5c2c-4cf0-832d-a1977e736b8f)
+
+### UI In Game Mode "Normal"
 ![image](https://github.com/IAmMinhKhoa/Axe-Defense/assets/88275892/0984473a-b00f-4d42-b7d8-625423b8e8a5)
 ![image](https://github.com/IAmMinhKhoa/Axe-Defense/assets/88275892/e883f906-5ac4-4c0e-a64f-bbb2a4abd995)
 
-![image](https://github.com/IAmMinhKhoa/Axe-Defense/assets/88275892/75f630d4-bb1f-499d-9bed-01e4d93aaca7)
+### UI In Game Mode "Hard "
 ![image](https://github.com/IAmMinhKhoa/Axe-Defense/assets/88275892/c8f8fa53-e009-459f-86a3-4280fd649722)
+![image](https://github.com/IAmMinhKhoa/Axe-Defense/assets/88275892/75f630d4-bb1f-499d-9bed-01e4d93aaca7)
 ![image](https://github.com/IAmMinhKhoa/Axe-Defense/assets/88275892/91794d46-0abf-4674-9f18-f42eb3e14b97)
 
 
-
+### UI In Game Mode "Hell"
 ![image](https://github.com/IAmMinhKhoa/Axe-Defense/assets/88275892/c14c18cf-9d1c-4723-8cdc-0c6eec1e1a19)
 ![image](https://github.com/IAmMinhKhoa/Axe-Defense/assets/88275892/8cf30b0d-0649-4d28-864a-ff97b772bd6f)
 ![image](https://github.com/IAmMinhKhoa/Axe-Defense/assets/88275892/f02036ed-202b-4ab0-a4dd-455f3391ce4d)
 
 ## The requested date range "August 10, 2023, to October 29, 2023" (spans a period of three weeks).
-Member : 
-+To Nguyen Minh Khoa (Lead , Dev)
-+Tran Truong Minh Nghia (Art , Dev)
+**Member : </p>
++To Nguyen Minh Khoa (Lead , Dev) </p>
++Tran Truong Minh Nghia (Art , Dev) </p>**

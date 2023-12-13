@@ -14,7 +14,7 @@
 ) <p>
 [**Applying security measures to the game**](https://www.canva.com/design/DAF2OXnCLu8/pQqccsh-H1JEtXwMZ1sRRA/edit?utm_content=DAF2OXnCLu8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton) <p>
 [**CONTACT TO ME**](https://www.facebook.com/Ireking666)
-#### **Email: tnminhkhoa666@gmail.com**
+#### **Email: khoaminh6969@gmail.com**
 
 
 ## Introduction

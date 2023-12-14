@@ -33,6 +33,16 @@ Prepare yourself for a challenging strategic world where you will need to use yo
 ## Some Images In Game
 ### UI Menu
 ![image](https://github.com/IAmMinhKhoa/Axe-Defense/assets/88275892/7e6839f1-b82f-405c-9fcb-4cc5b9159de9)
+
+### UI Tutorual Game Play
+
+![image](https://github.com/IAmMinhKhoa/Axe-Defense/assets/88275892/1b06a3d2-d63a-45f5-9a3a-d49fe6ce9f68)
+![image](https://github.com/IAmMinhKhoa/Axe-Defense/assets/88275892/edebebbe-0252-46c1-bdea-3cece8a81d91)
+![image](https://github.com/IAmMinhKhoa/Axe-Defense/assets/88275892/d81c3116-c0d0-40ef-ba8c-5989e6e4ac1f)
+![image](https://github.com/IAmMinhKhoa/Axe-Defense/assets/88275892/6401717c-a6fa-4135-8571-d3eee56dc400)
+![image](https://github.com/IAmMinhKhoa/Axe-Defense/assets/88275892/e0c1b795-ce6b-495f-8c5b-678943efb201)
+
+
 ### UI Shop
 ![image](https://github.com/IAmMinhKhoa/Axe-Defense/assets/88275892/cbe89e6c-dce4-4d68-ab5a-01e17f82626b)
 ![image](https://github.com/IAmMinhKhoa/Axe-Defense/assets/88275892/ff619842-5c54-458b-8862-bb9d3a3d178f)

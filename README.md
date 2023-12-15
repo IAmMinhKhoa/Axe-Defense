@@ -32,6 +32,10 @@ The trailer will give you a glimpse of the colorful and stunning world of Battle
 
 Prepare yourself for a challenging strategic world where you will need to use your thinking abilities and creativity to build optimal defensive and offensive strategies. Battle Defense - the pinnacle of intelligence and decisiveness has begun!
 
+## The game is currently being uploaded to Mavis Hub
+![image](https://github.com/IAmMinhKhoa/Axe-Defense/assets/88275892/a9bfb2ea-c0ed-490c-87b7-8a8ed06250ad)
+
+
 ## Some Images In Game
 ### UI Menu
 ![image](https://github.com/IAmMinhKhoa/Axe-Defense/assets/88275892/7e6839f1-b82f-405c-9fcb-4cc5b9159de9)

@@ -9,10 +9,12 @@
 
 ## linked links
 [**Trailer**](https://www.youtube.com/watch?v=1Afv0_Cqn30&t=2s) <p>
-[**Play Demo**](https://hub.skymavis.com/games/axie-battle-defense) <p>
+[**Game Public In Mavis Hub**](https://hub.skymavis.com/games/axie-battle-defense) <p>
 [**Canvas Game Designer**](https://www.canva.com/design/DAFvYbwvdGc/hJqyqonTFgyeGm3mrMcJTg/edit?utm_content=DAFvYbwvdGc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 ) <p>
-[**Applying security measures to the game**](https://www.canva.com/design/DAF2OXnCLu8/pQqccsh-H1JEtXwMZ1sRRA/edit?utm_content=DAF2OXnCLu8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton) <p>
+[**Play Game**](https://ngobakhasix6nine9.itch.io/axie-battle-defends)<p>
+
+[**Applying security measures to the game**](https:/www.canva.com/design/DAF2OXnCLu8/pQqccsh-H1JEtXwMZ1sRRA/edit?utm_content=DAF2OXnCLu8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton) <p>
 [**CONTACT TO ME**](https://www.facebook.com/Ireking666)
 #### **Email: khoaminh6969@gmail.com**
 
